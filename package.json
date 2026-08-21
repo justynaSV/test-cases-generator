@@ -1,0 +1,10 @@
+{
+  "name": "svcloud-test-case-generator",
+  "version": "1.0.0",
+  "description": "Generate SVCloud test case scenarios via GitHub Copilot (or any chat LLM), in the established Azure DevOps CSV style.",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate.js --dir test_cases/generated"
+  },
+  "license": "UNLICENSED"
+}

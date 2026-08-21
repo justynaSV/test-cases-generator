@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SVCloud Test Case Generator</title>
+<style>
+  :root {
+    --bg: #12161d;
+    --panel: #1a2029;
+    --panel-2: #1f2630;
+    --border: #2b3341;
+    --text: #e8eaed;
+    --text-dim: #92a0b3;
+    --accent: #e8a33d;
+    --accent-dim: #6b5326;
+    --ok: #4caf77;
+    --err: #e2596b;
+    --warn: #e8a33d;
+    --mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, Consolas, monospace;
+    --sans: "IBM Plex Sans", "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.5;
+  }
+
+  a { color: var(--accent); }
+
+  header {
+    padding: 32px clamp(20px, 5vw, 64px) 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  header .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  header h1 {
+    margin: 0 0 8px;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 600;
+  }
+
+  header p {
+    margin: 0;
+    color: var(--text-dim);
+    max-width: 62ch;
+  }
+
+  header .links {
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px clamp(20px, 5vw, 64px) 80px;
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; }
+    .rail { display: none; }
+  }
+
+  .rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    color: var(--border);
+  }
+  .rail .line {
+    width: 1px;
+    flex: 1;
+    background: var(--border);
+    min-height: 200px;
+  }
+  .rail .arrow {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 18px;
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .panel + .panel { margin-top: 0; }
+
+  .step-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .panel h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .panel .hint {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin: 0 0 18px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin: 16px 0 6px;
+  }
+  label:first-of-type { margin-top: 0; }
+
+  input[type="text"], select, textarea {
+    width: 100%;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    padding: 10px 12px;
+    font-family: var(--sans);
+    font-size: 14px;
+  }
+
+  textarea {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    resize: vertical;
+  }
+
+  input:focus, select:focus, textarea:focus, button:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  button {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  button.primary {
+    background: var(--accent);
+    color: #1a1204;
+  }
+  button.primary:hover { background: #f3b453; }
+
+  button.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  button.secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .actions { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .status {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    min-height: 16px;
+  }
+
+  .results {
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+  }
+
+  .result-line {
+    display: flex;
+    gap: 8px;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .result-line:last-child { border-bottom: none; }
+
+  .dot {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-top: 5px;
+  }
+  .dot.ok { background: var(--ok); }
+  .dot.err { background: var(--err); }
+  .dot.warn { background: var(--warn); }
+
+  .summary {
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+  }
+  .summary.ok { background: rgba(76,175,119,0.12); color: var(--ok); }
+  .summary.fail { background: rgba(226,89,107,0.12); color: var(--err); }
+
+  footer {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 12px;
+    padding: 24px;
+    font-family: var(--mono);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">SVCloud QA / browser fallback</div>
+  <h1>Test Case Generator</h1>
+  <p>
+    For anyone without GitHub Copilot in VS Code. Build a prompt with the
+    style rules baked in, run it in any chat LLM, then paste the CSV back
+    here to check it and save it.
+  </p>
+  <div class="links">Prefer VS Code? Use the <code>/generate-test-case</code> Copilot slash-command instead — see the repo README.</div>
+</header>
+
+<main>
+  <section class="panel" id="panel-build">
+    <div class="step-label">Step 1</div>
+    <h2>Build your prompt</h2>
+    <p class="hint">Fill this in, copy the assembled prompt, and paste it into Copilot Chat, Claude, or any other chat LLM.</p>
+
+    <label for="feature">Feature description / user story</label>
+    <textarea id="feature" rows="6" placeholder="e.g. Admin screen for configuring calendar event icon visibility and priority. Menu path: Konfiguracja systemowa → ... Access: Local Administrator only. Fields: ..."></textarea>
+
+    <div class="row">
+      <div>
+        <label for="module">Module</label>
+        <input type="text" id="module" placeholder="e.g. Konfiguracja" />
+      </div>
+      <div>
+        <label for="priority">Default QA Priority</label>
+        <select id="priority">
+          <option>Medium</option>
+          <option>Low</option>
+          <option>High</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="examples">Reference example(s) — optional, paste 1–2 of your own CSVs for best results</label>
+    <textarea id="examples" rows="5" placeholder="Paste one or two of your existing scenario CSVs here so the model imitates your real style, not just the guide."></textarea>
+
+    <div class="actions">
+      <button class="primary" id="build-btn">Build prompt</button>
+      <button class="secondary" id="copy-btn">Copy to clipboard</button>
+    </div>
+    <div class="status" id="build-status"></div>
+
+    <label for="assembled">Assembled prompt</label>
+    <textarea id="assembled" rows="14" readonly placeholder="Your assembled prompt will appear here."></textarea>
+  </section>
+
+  <div class="rail">
+    <div class="line"></div>
+    <div class="arrow">▼</div>
+    <div class="line"></div>
+  </div>
+
+  <section class="panel" id="panel-validate">
+    <div class="step-label">Step 2</div>
+    <h2>Validate &amp; save</h2>
+    <p class="hint">Paste back whatever CSV the LLM gave you. This checks it against the same rules as <code>scripts/validate.js</code>.</p>
+
+    <label for="csv-input">Generated CSV</label>
+    <textarea id="csv-input" rows="12" placeholder="Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions&#10;..."></textarea>
+
+    <div class="actions">
+      <button class="primary" id="validate-btn">Validate</button>
+      <button class="secondary" id="download-btn">Download as .csv</button>
+    </div>
+
+    <div id="results"></div>
+  </section>
+</main>
+
+<footer>svcloud-test-case-generator — style rules live in style/style_guide.md</footer>
+
+<script>
+/* ---------- Embedded style guide (kept in sync with style/style_guide.md) ---------- */
+const STYLE_GUIDE = `# SVCloud Test Scenario Style Guide
+
+## File format
+CSV, semicolon-delimited. Columns:
+Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
+
+## Row structure
+- Row 1: Title + metadata filled, Step/Expected Result EMPTY.
+- Subsequent rows: Title EMPTY, Step + Expected Result filled.
+- Last row: Step = "End of test.", Expected Result empty.
+
+## Title format
+"[Module] - [feature/page] ([qualifier if applicable])"
+Layout tests always suffixed "(page layout)".
+Filter tests suffixed "(single filter)" / "(single filter - grid)" / "(single filter - columns)" / "(multiple filters)".
+
+## Step format
+- Imperative, second-person implied: "Click", "Go to:", "Fill in field '...'", "Verify..."
+- Multi-item checks go in ONE cell as a quoted multi-line bullet list:
+  "Verify X:
+  - item 1
+  - item 2"
+- Reuse of other scenarios via placeholder: "[LINK]" or "<link>" instead of repeating steps.
+- Always end with literal step: "End of test."
+
+## Expected result format
+- Short and declarative: "Field is filled in.", "It displays correctly.", "The list is filtered correctly."
+- Exact UI copy quoted verbatim (preserve language, e.g. Polish error strings) in single quotes.
+- State/color checks as bullet list, same multi-line-cell style as above.
+
+## Coverage pattern per feature
+1. Page layout scenario (verify all UI elements exist) — ALWAYS FIRST.
+2. Happy path (add/create).
+3. Edit scenario.
+4. Delete scenario.
+5. Single-filter/search/sort scenario (repeated once per column).
+6. Multiple-filter scenario (combine 2-3 filters).
+7. Negative/validation scenario (empty/invalid data → mandatory field errors).
+8. Cross-application/state-transition scenarios where relevant.
+Only generate the coverage types that actually apply to this feature.
+
+## Metadata defaults
+Area Path: QA\\SVCloud
+Iteration Path: QA\\SVCloud\\<Module>
+QA Priority: Medium (unless specified otherwise)
+Assigned To: per-tester, not a constant — if unknown, leave the literal placeholder <tester email>.
+Preconditions: plain text, can be multi-line.
+
+## Vocabulary
+- "Verify if..." / "Verify that..." for UI state checks
+- "It displays correctly." as generic positive layout result
+- Polish UI labels always in single quotes, kept in original language
+- English used for step descriptions/instructions`;
+
+/* ---------- Step 1: build prompt ---------- */
+function buildPrompt() {
+  const feature = document.getElementById('feature').value.trim();
+  const module = document.getElementById('module').value.trim();
+  const priority = document.getElementById('priority').value;
+  const examples = document.getElementById('examples').value.trim();
+
+  if (!feature) {
+    document.getElementById('build-status').textContent = 'Add a feature description first.';
+    return;
+  }
+
+  let prompt = `# Task\nGenerate SVCloud test case scenarios in the established style, following the style guide below, for this feature:\n\n${feature}\n\n`;
+  prompt += `# Style Guide\n${STYLE_GUIDE}\n\n`;
+  if (examples) {
+    prompt += `# Reference Example(s) (style to imitate, not to copy content from)\n\`\`\`csv\n${examples}\n\`\`\`\n\n`;
+  }
+  prompt += `# Defaults For This Run\n`;
+  if (module) prompt += `- Suggested Iteration Path: QA\\SVCloud\\${module}\n`;
+  prompt += `- Default QA Priority: ${priority} (unless the feature clearly needs another)\n`;
+  prompt += `- Default Area Path: QA\\SVCloud\n`;
+  prompt += `- Assigned To: no tester specified — leave the literal placeholder "<tester email>" in the output.\n\n`;
+  prompt += `# Instructions\n`;
+  prompt += `- Only generate the coverage types from the style guide that actually apply to this feature.\n`;
+  prompt += `- If you assumed something not stated above, list it as a short bullet BEFORE the CSV.\n`;
+  prompt += `- Output the scenarios as a single semicolon-delimited CSV block, matching the format and row-structure rules exactly.\n`;
+
+  document.getElementById('assembled').value = prompt;
+  document.getElementById('build-status').textContent = 'Prompt built. Copy it and paste it into your chat LLM.';
+}
+
+function copyPrompt() {
+  const ta = document.getElementById('assembled');
+  if (!ta.value) {
+    document.getElementById('build-status').textContent = 'Build the prompt first.';
+    return;
+  }
+  ta.select();
+  ta.setSelectionRange(0, ta.value.length);
+  let copied = false;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(ta.value).then(() => {
+      document.getElementById('build-status').textContent = 'Copied to clipboard.';
+    }).catch(() => {
+      document.getElementById('build-status').textContent = 'Could not auto-copy — text is selected, press Ctrl+C / Cmd+C.';
+    });
+    copied = true;
+  }
+  if (!copied) {
+    try {
+      document.execCommand('copy');
+      document.getElementById('build-status').textContent = 'Copied to clipboard.';
+    } catch (e) {
+      document.getElementById('build-status').textContent = 'Could not auto-copy — text is selected, press Ctrl+C / Cmd+C.';
+    }
+  }
+}
+
+/* ---------- Step 2: validate ---------- */
+const EXPECTED_HEADER = ["Title","Step","Expected result","Area Path","Iteration Path","QA Priority","Assigned To","Preconditions"];
+const EXPECTED_LAST_STEP = "End of test.";
+const VALID_PRIORITIES = new Set(["Low","Medium","High"]);
+const EXPECTED_AREA_PATH = "QA\\SVCloud";
+const PLACEHOLDER_ASSIGNED_TO = "<tester email>";
+
+function parseCSV(text, delimiter = ';') {
+  const rows = [];
+  let row = [], field = '', inQuotes = false, i = 0;
+  const n = text.length;
+  while (i < n) {
+    const ch = text[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (text[i+1] === '"') { field += '"'; i += 2; continue; }
+        inQuotes = false; i += 1; continue;
+      }
+      field += ch; i += 1; continue;
+    }
+    if (ch === '"') { inQuotes = true; i += 1; continue; }
+    if (ch === delimiter) { row.push(field); field = ''; i += 1; continue; }
+    if (ch === '\r') { i += 1; continue; }
+    if (ch === '\n') { row.push(field); rows.push(row); row = []; field = ''; i += 1; continue; }
+    field += ch; i += 1;
+  }
+  if (field.length > 0 || row.length > 0) { row.push(field); rows.push(row); }
+  if (rows.length && rows[rows.length - 1].every(c => c === '')) rows.pop();
+  return rows;
+}
+
+function padRow(row) {
+  const out = row.slice(0, EXPECTED_HEADER.length);
+  while (out.length < EXPECTED_HEADER.length) out.push('');
+  return out;
+}
+
+function validateCSVText(text) {
+  const report = { errors: [], warnings: [], scenarioCount: 0 };
+  const rows = parseCSV(text);
+  if (rows.length === 0) { report.errors.push('Input is empty.'); return report; }
+
+  const header = rows[0];
+  if (header.join(';') !== EXPECTED_HEADER.join(';')) {
+    report.errors.push(`Header mismatch. Expected: ${EXPECTED_HEADER.join(';')}`);
+  }
+
+  const dataRows = rows.slice(1);
+  if (dataRows.length === 0) { report.errors.push('No data rows after header.'); return report; }
+
+  const blocks = [];
+  let current = null;
+  for (const raw of dataRows) {
+    const row = padRow(raw);
+    if (row[0].trim()) {
+      if (current) blocks.push(current);
+      current = [row];
+    } else {
+      if (!current) { report.errors.push(`Step row found before any Title row: "${row[1]}"`); continue; }
+      current.push(row);
+    }
+  }
+  if (current) blocks.push(current);
+  report.scenarioCount = blocks.length;
+
+  const seen = new Set();
+  for (const block of blocks) {
+    const [titleRow, ...stepRows] = block;
+    const [title, step, expected, areaPath, iterationPath, priority, assignedTo] = titleRow;
+    const t = title.trim();
+
+    if (seen.has(t)) report.errors.push(`Duplicate scenario title: '${t}'`);
+    seen.add(t);
+
+    if (step.trim() || expected.trim()) report.errors.push(`'${t}': Title row must have empty Step/Expected result.`);
+    if (!areaPath.trim()) report.errors.push(`'${t}': missing Area Path.`);
+    else if (areaPath.trim() !== EXPECTED_AREA_PATH) report.warnings.push(`'${t}': Area Path is '${areaPath.trim()}' (expected '${EXPECTED_AREA_PATH}').`);
+    if (!iterationPath.trim()) report.errors.push(`'${t}': missing Iteration Path.`);
+    if (!priority.trim()) report.errors.push(`'${t}': missing QA Priority.`);
+    else if (!VALID_PRIORITIES.has(priority.trim())) report.errors.push(`'${t}': invalid QA Priority '${priority.trim()}'.`);
+    if (!assignedTo.trim()) report.errors.push(`'${t}': missing Assigned To.`);
+    else if (assignedTo.trim() === PLACEHOLDER_ASSIGNED_TO) report.warnings.push(`'${t}': Assigned To is still the placeholder.`);
+
+    if (stepRows.length === 0) { report.errors.push(`'${t}': scenario has no Step rows.`); continue; }
+    for (const sr of stepRows) {
+      if (!sr[1].trim()) report.errors.push(`'${t}': a Step row has an empty Step.`);
+    }
+    const last = stepRows[stepRows.length - 1];
+    if (last[1].trim() !== EXPECTED_LAST_STEP) report.errors.push(`'${t}': last Step is '${last[1].trim()}', expected 'End of test.'.`);
+    if (last[2].trim()) report.errors.push(`'${t}': the End of test. row should have empty Expected result.`);
+  }
+  return report;
+}
+
+function renderResults(report) {
+  const el = document.getElementById('results');
+  const ok = report.errors.length === 0;
+  let html = `<div class="summary ${ok ? 'ok' : 'fail'}">${ok ? 'OK' : 'FAIL'} — ${report.scenarioCount} scenario(s)</div>`;
+  html += '<div class="results">';
+  for (const e of report.errors) html += `<div class="result-line"><span class="dot err"></span><span>${escapeHtml(e)}</span></div>`;
+  for (const w of report.warnings) html += `<div class="result-line"><span class="dot warn"></span><span>${escapeHtml(w)}</span></div>`;
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function runValidate() {
+  const text = document.getElementById('csv-input').value;
+  if (!text.trim()) {
+    document.getElementById('results').innerHTML = '<div class="summary fail">Paste a CSV first.</div>';
+    return;
+  }
+  const report = validateCSVText(text);
+  renderResults(report);
+}
+
+function downloadCSV() {
+  const text = document.getElementById('csv-input').value;
+  if (!text.trim()) {
+    document.getElementById('results').innerHTML = '<div class="summary fail">Nothing to download yet — paste a CSV first.</div>';
+    return;
+  }
+  const module = document.getElementById('module').value.trim().replace(/[^a-zA-Z0-9_-]+/g, '_') || 'feature';
+  const blob = new Blob([text], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `TC_${module}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('build-btn').addEventListener('click', buildPrompt);
+document.getElementById('copy-btn').addEventListener('click', copyPrompt);
+document.getElementById('validate-btn').addEventListener('click', runValidate);
+document.getElementById('download-btn').addEventListener('click', downloadCSV);
+</script>
+</body>
+</html>
