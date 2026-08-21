@@ -1,0 +1,1038 @@
+Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions;https://cloud-qa.softvig.pl/
+Flota Dealera - page layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;User is logged in (https://dev.azure.com/softvig/QA/_workitems/edit/105);
+;In application page go to 'Flota Dealera' -> 'Auta zastępcze'.;Vehicle calendar page is displayed.;;;;;;
+;"Verify menu content (left side of the page):
+- Kalendarz pojazdów
+- Lista umów
+- Parki
+- Lista pojazdów
+- Uprawnienia do parków
+- Kalendarz myjni
+- Lista myć";It displays correctly.;;;;;;
+;"Verify left panel on the page:
+- today's date in format: full day name, DD.MM.YYY
+- 'Dzisiaj' button
+- 'Wybierz dzień' button
+- search bar (drop-down list)
+- parks' list with assigned replacement cars";It displays correctly.;;;;;;
+;"Verify top panel of the page:
+- toggle switch: 'Dostępny na dziś'
+- button: 'Wyszukaj rezerwację'
+- drop-down list with time
+- toggle switch: '7 dni 30 dni'
+- button: 'Sortowanie grup'";It displays correctly.;;;;;;
+;"Verify that below top panel calendar days are displayed:
+- shortened name's day
+-DD.MM";It displays correctly.;;;;;;
+;End of test;;;;;;;
+Flota Dealera - add new park;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Parki';Page 'Parki samochodów' is loaded.;;;;;;
+;"Verify columns in page layout:
+- Operacje
+- Nazwa parku
+- filter icon";It displays correctly.;;;;;;
+;Click 'Dodaj nowy park';Pop-up window 'Nowy park samochodów' is displayed.;;;;;;
+;Click 'Zapisz'.;Warning message occurs: 'Proszę poprawić błędy w formularzu';;;;;;
+;Fill in field 'Nazwa parku' and click 'Zapisz'.;Pop-up window 'Nowy park samochodów' is closed.;;;;;;
+;Verify if created park exists on the parks list.;Created park is visible on the list.;;;;;;
+;"Check available operations for the park:
+- edit
+- delete";Available operations are correct.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - edit park;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Parki';Page 'Parki samochodów' is loaded.;;;;;;
+;Create new park [LINK];New park is created.;;;;;;
+;Click edit icon next to newly created park.;Pop-up window 'Edycja parku samochodów' is displayed.;;;;;;
+;Modify park's name and click 'Zapisz'.;Pop-up window 'Edycja parku samochodów' is closed.;;;;;;
+;Verify if park's name has been changed.;Park's name is changed.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - delete park;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Parki';Page 'Parki samochodów' is loaded.;;;;;;
+;Create new park [LINK];New park is created.;;;;;;
+;Click delete icon next to newly created park.;Pop-up window 'Potwierdzenie' is displayed.;;;;;;
+;"Verify message in pop-up window: ""Czy na pewno chcesz usunąć park samochodów?""";It displays correctly.;;;;;;
+;Click 'Nie'.;Pop-up window is closed.;;;;;;
+;Verify if the park is still on the list.;Park is on the list.;;;;;;
+;Click delete icon next to newly created park.;Pop-up window 'Potwierdzenie' is displayed.;;;;;;
+;Click 'Tak'.;Pop-up window is closed.;;;;;;
+;Verify if the park is NOT visible on the parks list.;The park is NOT visible on the list.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - pojazdy: page layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;"Verify columns in page layout:
+- Operacje
+- Nr rej.
+- VIN
+- Model
+- Marka
+- Nadwozie
+- Rodzaj paliwa
+- Rodzaj skrzyni
+- Status
+- Park
+- Termin badania technicznego
+- Termin ubezpieczenia
+- Termin przeglądu
+- Data rejestracji
+- Rodzaj opon
+- Stan licznika";It displays correctly.;;;;;;
+;Verify if all columns are sortable (except column Operacje);Columns are sortable.;;;;;;
+;Verify if under each column name (except column 'Operacje') there is a search field.;It displays correctly.;;;;;;
+;"Move the mouse over search icon to verify searching type (columns from 'Nr rej.' to 'Rodzaj skrzyni' and 'Stan licznika'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;;
+;"Verify if search field for column 'Status' is a drop-down list with following values:
+- (Wszystkie)
+- Dostępny
+- Niedostępny";It displays correctly.;;;;;;
+;Verify if search field for column 'Park' is a drop-down list with all available parks.;It displays correctly.;;;;;;
+;Verify if search field for columns from 'Termin badania technicznego' to 'Data rejestracji' is a calendar.;It displays correctly.;;;;;;
+;"Move the mouse over search icon to verify searching type (columns with calendars):
+- Równy
+- Nierówny
+- Mniejsze od
+- Większe
+- Mniejszy lub równy
+- Większy lub równy
+- Pomiędzy
+- Wyczyść";It displays correctly.;;;;;;
+;"Verify if search field for column 'Rodzaj opon' is a drop-down list with following values:
+- (Wszystkie)
+- Zimowe
+- Letnie
+- Wielosezonowe";It displays correctly.;;;;;;
+;"Verify top panel of the page:
+- button: 'Wydrukuj'
+- button: 'Dodaj pojazd'
+- button: 'Odśwież'
+- button: 'Wyczyść filtry'
+- three dots menu: 'Eksport do Excela'";It displays correctly.;;;;;;
+;"Verify available options for pagination:
+- 30
+- 50
+- 100";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - add new vehicle: form layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click 'Dodaj pojazd';Pop-up window 'Dodaj nowy pojazd' is displayed.;;;;;;
+;"Verify section 'Przypisane':
+- 'Park samochodów' (drop-down list, mandatory)
+- 'Właściciel' (drop-down list, mandatory)
+- 'Status' (drop-dow list: 'Dostępny', 'Niedostępny')
+- 'Czy wydany?' (checkbox)";It displays correctly.;;;;;;
+;"Verify section 'Dane pojazdu':
+- 'Numer rejestracyjny' (mandatory)
+- 'Data rejestracji' (calendar)
+- 'VIN'
+- 'Rok produckji'
+- 'Marka' (mandatory)
+- 'Model' (mandatory)
+- 'Typ' (mandatory)
+- 'Nadwozie'
+- 'Segment'
+- 'Rodzaj skrzyni'
+- 'Rodzaj paliwa'
+- 'Rodzaj opon' (drop-down list)";It displays correctly.;;;;;;
+;"Verify section 'Dostępność pojazdu':
+- 'Dostępny od' (calendar)
+- 'Dostępny do' (calendar)";It displays correctly.;;;;;;
+;"Verify section 'Terminy':
+- 'Termin badania technicznego' (calendar)
+- 'Termin przeglądu' (calendar)
+- 'Termin ubezpieczenia' (calendar)";It displays correctly.;;;;;;
+;"Verify section 'Ewidencja przejazdu':
+- 'Wymaga ewidencji przebiegu' (checkbox)
+- 'Data początku ewidencji' (calendar)
+- 'Licznik na początek ewidencji'
+- 'Data końca ewidencji' (calendar)
+- 'Licznik na koniec ewidencji'.";It displays correctly.;;;;;;
+;"Verify section 'Dane dodatkowe':
+- 'Początek amortyzacji' (calendar)
+- 'Koniec amortyzacji' (calendar)
+- 'Status VAT'
+- 'Status ewidencji'
+- 'Stawka wynajmu'
+- 'Przebieg początkowy'.";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - add new vehicle;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click 'Dodaj pojazd';Pop-up window 'Dodaj nowy pojazd' is displayed.;;;;;;
+;Click 'Zapisz zmiany';Warning message occurs: 'Proszę poprawić błędy w formularzu';;;;;;
+;"Verify if mandatory fields are marked with red icon:
+- Park samochodów
+- Właściciel
+- Numer rejestracyjny 
+- Marka
+- Model
+- Typ";It displays correctly.;;;;;;
+;"Click on any mandatory field to check error message: ""Pole nie może być puste"".";It displays correctly.;;;;;;
+;Fill in all mandatory fields (from step 4).;Fields are filled in.;;;;;;
+;Click 'Zapisz zmiany';Pop-up window 'Dodaj nowy pojazd' is closed.;;;;;;confirmation message
+;Verify if newly created vehicle is available on the vehicles list;Vehicle is available on the list.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - edit vehicle;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Create new vehicle <link>;Vehicle is created.;;;;;;
+;Find created vehicle on the list.;Vehicle is available on the list.;;;;;;
+;Click 'Edytuj' icon (column 'Operacje) next to created vehicle.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Modify vehicle's data and click 'Zapisz zmiany'.;Pop-up window 'Edycja pojazdu' is closed.;;;;;;
+;Verify if vehicle has changed data.;Vehicle's data is changed.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - delete vehicle;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Create new vehicle <link>;Vehicle is created.;;;;;;
+;Find created vehicle on the list.;Vehicle is available on the list.;;;;;;
+;Click 'Usuń' icon (column 'Operacje) next to created vehicle.;Pop-up window 'Potwierdzenie' is displayed.;;;;;;
+;"Verify message in pop-up window: ""Czy na pewno chcesz usunąć pojazd?""";It displays correctly.;;;;;;
+;Click 'Nie'.;Pop-up window is closed.;;;;;;
+;Verify if the vehicle is still on the list.;Vehicle is on the list.;;;;;;
+;Click 'Usuń' icon (column 'Operacje) next to created vehicle.;Pop-up window 'Potwierdzenie' is displayed.;;;;;;
+;Click 'Tak'.;Pop-up window is closed.;;;;;;
+;Verify if the vehicle is NOT visible on the list.;The vehicle is NOT visible on the list.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - Lista umów: page layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista umów';Page 'Lista umów' is loaded.;;;;;;
+;"Verify top panel of the page:
+- button: 'Odśwież'
+- button: 'Wyczyść filtry'
+- three dots menu: 'Eksport do Excela'
+- filter button
+- checkbox: Bez naprawy
+- checkbox: Otwarte przeterminowane";It displays correctly.;;;;;;
+;"Verify columns in page layout, section 'Pojazd wynajmowany':
+- Operacje
+- Nr rej.
+- Model
+- Park
+- Data wydania
+- Data przyjęcia";It displays correctly.;;;;;;
+;"Verify columns in page layout, section 'Umowa':
+- Numer umowy
+- Status
+- Data od
+- Data do
+- Dotyczy naprawy";It displays correctly.;;;;;;
+;"Verify columns in page layout, section 'Pojazd naprawiany':
+- Najemca
+- Nr rej.
+- Model
+- Umowa dla
+- Utworzył";It displays correctly.;;;;;;
+;Verify if all columns are sortable (except column Operacje);Columns are sortable.;;;;;;
+;Verify if under each column name (except column 'Operacje') there is a search field.;It displays correctly.;;;;;;
+;"Move the mouse over search icon to verify searching type (columns from 'Nr rej.' and 'Model'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;;
+;Verify if search field for column 'Park' is a drop-down list with the list of parks.;It displays correctly.;;;;;;
+;Verify if search field for columns 'Data wydania', 'Data przyjęcia' is a calendar.;It displays correctly.;;;;;;
+;"Move the mouse over search icon to verify searching type (column 'Numer umowy'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;;
+;"Verify if search field for column 'Status' is a drop-down list with following values:
+- (Wszystkie)
+- Otwarta
+- Zamknięta";It displays correctly.;;;;;;
+;Verify if search field for columns 'Data od', 'Data do' is a calendar.;It displays correctly.;;;;;;
+;"Move the mouse over search icon to verify searching type (columns from 'Dotyczy naprawy' to 'Nr rej'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;;
+;Verify if search field for column 'Model' (section 'Pojazd naprawiany') is a drop-down list with the list of models.;It displays correctly.;;;;;;
+;"Move the mouse over search icon to verify searching type (columns 'Umowa dla', 'Utworzył'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - Uprawnienia do parków: page layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Uprawnienia do parków';Page 'Uprawnienia do parków' is loaded.;;;;;;
+;Verify if on top panel of the page, 'Wyczyść filtry' button is visible.;It displays correctly.;;;;;;
+;"Verify columns in page layout:
+- Uprawnienia
+- Nazwa parku
+- Jednostka
+- Lokalizacja
+- Firma";It displays correctly.;;;;;;
+;Verify if all columns are sortable (except column 'Uprawnienia');Columns are sortable.;;;;;;
+;Verify if next to sortring icons there are filter icons in each column (except column 'Uprawnienia');It displays correctly.;;;;;;
+;Click on filter icon in column 'Nazwa parku' to check if parks' list with checkboxes is displayed.;It displays correctly.;;;;;;
+;Click on filter icon in column 'Jednostka' to check if units' list with checkboxes is displayed.;It displays correctly.;;;;;;
+;Click on filter icon in column 'Lokalizacja' to check if locations' list with checkboxes is displayed.;It displays correctly.;;;;;;
+;Click on filter icon in column 'Firma' to check if companies' list with checkboxes is displayed.;It displays correctly.;;;;;;
+;Verify if under each column name (except column 'Uprawnienia') there is a search field.;It displays correctly.;;;;;;
+;"Move the mouse over search icon to verify searching type (columns from 'Nazwa parku' to 'Firma'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;;
+;Verify if column 'Uprawnienia' contains drop-down list for each record.;It displays correctly.;;;;;;
+;"Verify drop-down list content in column 'Uprawnienia':
+- Brak dostępu
+- Odczyt
+- Rezerwacja
+- Edycja";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - Park entitlements verification: Bodyshop;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Parki';Page 'Parki samochodów' is loaded.;;;;;;
+;Create new park [LINK];New park is created.;;;;;;
+;Create new vehicle [LINK] ('Park samochodów': the one created in step 2).;New vehicle is created.;;;;;;
+;On the left-side menu, go to 'Uprawnienia do parków';Page 'Uprawnienia do parków' is loaded.;;;;;;
+;"Verify if below data are assigned to the park:
+- Jednostka: BOK CLS
+- Lokalizacja: Lokalizacja 1
+- Firma: SvCompany 1";It displays correctly.;;;;;;
+;In 'Uprawnienia' column, set 'Brak dostępu' for the new park.;'Brak dostępu' is set.;;;;;;
+;In the new window, go to 'Blacharnia' application.;'Blacharnia' page is displayed.;;;;;;
+;Go to 'BOK Blacharnia' -> BOK CLS (the one for which park is assigned).;BOK CLS  page is displayed.;;;;;;
+;On the left-side menu, go to 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;Verify if the new park is NOT visible on the list.;The park is NOT visible on the list.;;;;;;
+;Go back to 'Uprawnienia parków' and change park's entitlements to 'Odczyt'.;'Odczyt' is set.;;;;;;
+;Go back to 'BOK CLS' page and verify if park is visible on the list.;The park is visible on the list.;;;;;;
+;Verify if reservation CANNOT be done (warning message occurs: 'Brak uprawnień do rezerwacji tego zasobu').;Reservation CANNOT be done, message displays correctly.;;;;;;
+;Go back to 'Uprawnienia parków' and change park's entitlements to 'Rezerwacja'.;'Rezerwacja' is set.;;;;;;
+;Go back to 'BOK CLS' page and add a reservation for the car in the park.;Reservation has been added.;;;;;;
+;"Verify the reservation:
+- colour: violet
+- title (after hovering over): Awizo";It displays correctly.;;;;;;
+;Edit the reservation created in step 15.;Reservation has been edited.;;;;;;
+;Go back to 'Uprawnienia parków' and change park's entitlements to 'Edycja'.;'Edycja' is set.;;;;;;
+;Go back to 'BOK CLS' page and add new reservation.;Reservation has been added.;;;;;;
+;"Verify the reservation:
+- colour: dark blue
+- title (after hovering over): Rezerwacja";It displays correctly.;;;;;;
+;Edit the reservation created in step 19.;Reservation has been edited.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicles' calendar: 'Nowe zadanie': page layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Park is created with entitlement: Rezerwacja [LINK]
+Vehicle is assinged to the park";
+;On the left-side menu, go to 'Kalendarz pojazdów';Page 'Kalendarz pojazdów' is loaded.;;;;;;
+;Click on a day in calendar view in a row with vehicle assigned to created park.;Pop-up window 'Nowe zadanie' is displayed.;;;;;;
+;"Verify section 'Czas trwania':
+- toggle switch 'Planuj wg czasu / Planuj wg dat'
+- Data rozpoczęcia (calendar)
+- Data zakończenia (calendar)
+- Dni
+- Godziny";It displays correctly.;;;;;;
+;"Click toggle switch to 'Planuj wg czasu' and verify the section:
+- Data rozpoczęcia - field is active
+- Data zakończenia - field is inactive
+- Dni - field is active
+- Godziny - field is active";It displays correctly.;;;;;;
+;"Click toggle switch to 'Planuj wg dat' and verify the section:
+- Data rozpoczęcia - field is active
+- Data zakończenia - field is active
+- Dni - field is inactive
+- Godziny - field is inactive";It displays correctly.;;;;;;
+;"Verify 'Dane rezerwacji' section:
+- Typ (drop-down list)
+- Komentarz";It displays correctly.;;;;;;
+;"Verify 'Typ' drop-down list content:
+- Rezerwacja do naprawy
+- Rezerwacja na pojazd
+- Wyłączenie
+- Jazda próbna";It displays correctly.;;;;;;
+;Verify if in section 'Pojazd zarezerwowany' vehicle's data is displayed.;It displays correctly.;;;;;;
+;"Verify section 'Dział':
+- Utworzone przez - inactive, pre-filled ('Auta zastępcze')
+- Utworzył - inactive, pre-filled
+- Utworzone dla - active, drop-down list.";It displays correctly.;;;;;;
+;"Verify section 'Pojazd':
+- Numer rejestracyjny
+- Model";It displays correctly.;;;;;;
+;"Verify section'Kontakt':
+- Imię
+- Nazwisko
+- Prefix
+- Numer telefonu
+- E-mail";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicles' calendar: create reservation;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Park is created with entitlement: Rezerwacja [LINK]
+Vehicle is assinged to the park";
+;On the left-side menu, go to 'Kalendarz pojazdów';Page 'Kalendarz pojazdów' is loaded.;;;;;;
+;Click on a day in calendar view in a row with vehicle assigned to created park.;Pop-up window 'Nowe zadanie' is displayed.;;;;;;
+;In section 'Czas trwania' switch to 'Planuj wg dat'.;Toggle switch is set correctly.;;;;;;
+;Verify if fields 'Data rozpoczęcia' and 'Data zakończenia' are filled in.;It displays correctly.;;;;;;
+;Verify if date in 'Data zakończenia' is set one day after 'Data rozpoczęcia' by default.;It displays correctly.;;;;;;
+;Set 'Typ' to 'Rezerwacja na pojazd'.;'Typ' is selected.;;;;;;
+;Fill in field 'Komentarz' with a comment, e.g. 'Test comment'.;Field is filled in.;;;;;;
+;Click 'Dodaj rezerwację'.;Pop-up window 'Nowe zadanie' is closed.;;;;;;
+;"Verify if reservation is visible in the calendar:
+- colour: dark blue
+- title (after hovering over): Rezerwacja";It displays correctly.;;;;;;
+;"Right-click on the reservation to verify the list of actions:
+- Usuń
+- Wydaj
+- Wydrukuj protokół wydania
+- Dodaj umowę
+- Przeplanuj";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicles' calendar: edit reservation;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Park is created with entitlement: Rezerwacja [LINK]
+Vehicle is assinged to the park";
+;On the left-side menu, go to 'Kalendarz pojazdów';Page 'Kalendarz pojazdów' is loaded.;;;;;;
+;Create a reservation [LINK];Reservation is created.;;;;;;
+;Single-click on the reservation.;Pop-up window 'Edycja rezerwacji' is displayed.;;;;;;
+;"Verify if below fields are inactive:
+- Typ
+- Utworzone dla";It displays correctly.;;;;;;
+;Change the date in 'Data rozpoczęcia'.;Date has been changed.;;;;;;
+;Click 'Zapisz zmiany'.;Pop-up window 'Edycja rezerwacji' is closed.;;;;;;
+;Verify if the reservation is visble in new date on calendar.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicles' calendar: delete reservation;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Park is created with entitlement: Rezerwacja [LINK]
+Vehicle is assinged to the park";
+;On the left-side menu, go to 'Kalendarz pojazdów';Page 'Kalendarz pojazdów' is loaded.;;;;;;
+;Create a reservation [LINK];Reservation is created.;;;;;;
+;Right-click on the reservation and click 'Usuń'.;Reservation is deleted.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - Bodyshop: create reservation (type: Rezerwacja);;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Park is created with entitlement: Edycja [LINK]
+Vehicle is assinged to the park";
+;In the new window, go to 'Blacharnia' application.;'Blacharnia' page is displayed.;;;;;;
+;Go to 'BOK Blacharnia' -> BOK CLS (the one for which park is assigned).;BOK CLS  page is displayed.;;;;;;
+;On the left-side menu, go to 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;Click on a day in calendar view in a row with vehicle assigned to created park.;Pop-up window 'Nowe zadanie' is displayed.;;;;;;
+;Click 'Dodaj rezerwację'.;Pop-up window 'Nowe zadanie' is closed.;;;;;;
+;"Verify if reservation is visible in the calendar:
+- colour: dark blue
+- title (after hovering over): Rezerwacja";It displays correctly.;;;;;;
+;Go to 'Flota Dealera' -> 'Auta zastępcze' -> 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;Verify if reservation created in steps 4-5 is visible on the calendar in the same way as in step 6.;The reservation is visible on the calendar.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - Bodyshop: create reservation (type: Awizo);;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Park is created with entitlement: Rezerwacja [LINK]
+Vehicle is assinged to the park";
+;In the new window, go to 'Blacharnia' application.;'Blacharnia' page is displayed.;;;;;;
+;Go to 'BOK Blacharnia' -> BOK CLS (the one for which park is assigned).;BOK CLS  page is displayed.;;;;;;
+;On the left-side menu, go to 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;Click on a day in calendar view in a row with vehicle assigned to created park.;Pop-up window 'Nowe zadanie' is displayed.;;;;;;
+;Click 'Dodaj rezerwację'.;Pop-up window 'Nowe zadanie' is closed.;;;;;;
+;"Verify if reservation is visible in the calendar:
+- colour: violet
+- title (after hovering over): Awizo";It displays correctly.;;;;;;
+;Go to 'Flota Dealera' -> 'Auta zastępcze' -> 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;Verify if reservation created in steps 4-5 is visible on the calendar in the same way as in step 6.;The reservation is visible on the calendar.;;;;;;
+;"Right-click on the reservation to verify the list of actions:
+- Usuń
+- Ustaw jako rezerwację
+- Przeplanuj";It displays correctly.;;;;;;
+;Click 'Ustaw jako rezerwację'.;Colour has been changed to dark blue.;;;;;;
+;"Verify the reservation in the calendar:
+- colour: dark blue
+- title (after hovering over): Rezerwacja";It displays correctly.;;;;;;
+;Go back to 'Blacharnia' to verify if reservation has been changed from 'Awizo' to ' Rezerwacja';It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicle: Ewidencja przebiegu page layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Park is created.
+Vehicle is assinged to the park";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click edit icon next to created vehicle.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Click 'Ewidencja przebiegu' tab.;'Ewidencja przebiegu' page is displayed.;;;;;;
+;"Verify header buttons:
+- Wydrukuj
+- Utwórz ewidencję
+- Odśwież
+- Wyczyść filtry";It displays correctly.;;;;;;
+;"Verify columns:
+- Operacje
+- R
+- Data wydania (with calendar search field)
+- Data przyjęcia (with calendar search field)
+- Przebieg  początkowy (with search field)
+- Przebieg końcowy (with search field)
+- Dystans (with search field)
+- Osoba obierająca (with search field)
+- Cel wynajmu (with search field)
+- Opis trasy (with search field)
+- Nr umowy (with search field)
+- Utworzył (with search field)
+- Data utworzenia (with calendar search field)";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicle: add mileage record;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Park is created.
+Vehicle is assinged to the park";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click edit icon next to created vehicle.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Click 'Ewidencja przebiegu' tab.;'Ewidencja przebiegu' page is displayed.;;;;;;
+;Click 'Utwórz ewidencję'.;Mileage record form is displayed.;;;;;;
+;"Verify fields in the form:
+- Data wydania (calendar)
+- Data przyjęcia (calendar)
+- Przebieg początkowy
+- Przebieg końcowy
+- Dystans (inactive)
+- Imię osoby odbierającej
+- Nazwisko osoby odbierającej
+- Cel wynajmu
+- Opis trasy/uwagi";It displays correctly.;;;;;;
+;"Click 'Zapisz zmiany' to verify if message ""Proszę poprawić błędy w formularzu"".";It displays correctly.;;;;;;
+;"Verify if:
+- field 'Dystans' in inactive
+- the rest of fields have error message: ""Pole nie może być puste"".";It displays correctly.;;;;;;
+;Fill in 'Data wydania'.;Field is filled in.;;;;;;
+;Fill in 'Data przyjęcia' - one day before 'Data wydania'.;Field is filled in.;;;;;;
+;"Click 'Zapisz zmiany' to verify message in field 'Data przyjęcia' - ""Wartość pola musi być większa niż {Data wydania}""";It displays correctly.;;;;;;
+;Change the date in 'Data przyjęcia' after the date in 'Data wydania'. ;Date has been changed.;;;;;;
+;"Fill in fields ""Przebieg początkowy"" and ""Przebieg końcowy"".";Fields are filled in.;;;;;;
+;"Verify if:
+- value in field 'Dystans' has been calculated automatically (difference between 'Przebieg końcowy' and 'Przebieg początkowy')
+- field 'Dystans' is still inactive.";It displays correctly.;;;;;;
+;Fill in all remaing fields.;Fields are filled in.;;;;;;
+;Click 'Zapisz zmiany'.;The form is closed, user is redirected to mileage records list.;;;;;;
+;Verify if created record is visible on the list.;It displays correctly.;;;;;;
+;Click 'Utwórz ewidencję' again.;'Ewidencja przebiegu' page is displayed.;;;;;;
+;"Verify if:
+- 'Przebieg początkowy' field is prefilled with the same value as 'Przebieg końcowy' from step 12.
+- New section is displayed: 'Poprzedni wpis w ewidencji'";It displays correctly.;;;;;;
+;"Verify columns in section 'Poprzedni wpis w ewidencji':
+- Data wydania
+- Data przyjęcia
+- Przebieg początkowy
+- Przebieg końcowy
+- Dystans
+- Imię osoby odbierającej";It displays correctly.;;;;;;
+;Verify if data in section 'Poprzedni wpis w ewidencji' are consistent with data provided in steps 8-14.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicle: edit mileage record;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Mileage record for vehicle is created.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click edit icon next to created vehicle.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Click 'Ewidencja przebiegu' tab.;'Ewidencja przebiegu' page is displayed.;;;;;;
+;Click edit icon next to the record which is to be edited.;Mileage record form is displayed.;;;;;;
+;Change any data in the form and click 'Zapisz zmiany'.;The form is closed, user is redirected to mileage records list.;;;;;;
+;Verify if modified data is visible on the records' list.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicle: delete mileage record;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Mileage record for vehicle is created.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click edit icon next to created vehicle.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Click 'Ewidencja przebiegu' tab.;'Ewidencja przebiegu' page is displayed.;;;;;;
+;Click delete icon next to the record which is to be edited.;Pop-up window 'Potwierdzenie' is displayed.;;;;;;
+;Click 'Nie'.;Pop-up window 'Potwierdzenie' is closed.;;;;;;
+;Verify if mileage record is still on the list.;It displays correctly.;;;;;;
+;Click delete icon next to the record which is to be edited.;Pop-up window 'Potwierdzenie' is displayed.;;;;;;
+;Click 'Tak'.;Pop-up window 'Potwierdzenie' is closed.;;;;;;
+;Verify if mileage record is NOT on the list.;Mileage record is NOTon the list.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - add mileage record in Blacharnia application;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Mileage record for vehicle is created.";
+;Go to 'Blacharnia' application.;'Blacharnia' page is displayed.;;;;;;
+;Go to 'BOK Blacharnia' -> BOK CLS (the one for which park is assigned).;BOK CLS  page is displayed.;;;;;;
+;On the left-side menu, go to 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;On the left panel, find created vehicle.;Vehicle is on the list.;;;;;;
+;Next to the vehicle, click three-dot menu to verify if 'Ewidencja przebiegu' button is displayed.;It displays correctly.;;;;;;
+;Click 'Ewidencja przebiegu'.;Pop-up window 'Ewidencja przebiegu' is displayed.;;;;;;
+;Verify if previously created mileage record is visible on the list.;It displays correctly.;;;;;;
+;Click 'Utwórz ewidencję'.;Nowy wpis do ewidencji' form is displayed.;;;;;;
+;Fill in all fields and click 'Zapisz zmiany'.;The form is closed, user is redirected to mileage records list.;;;;;;
+;Verify if created record is visible on the list.;It displays correctly.;;;;;;
+;Go to 'Flota Dealera' -> 'Auta zastępcze'.;Kalendarz pojazdów' page is displayed.;;;;;;
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click edit icon next to created vehicle.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Click 'Ewidencja przebiegu' tab.;'Ewidencja przebiegu' page is displayed.;;;;;;
+;Verify if mileage record created in 'Blacharnia' application, steps 8-9, is visible on the list.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicle: print mileage record;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Mileage record for vehicle is created.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click edit icon next to created vehicle.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Click 'Ewidencja przebiegu' tab.;'Ewidencja przebiegu' page is displayed.;;;;;;
+;Click 'Wydrukuj'.;Calendar is displayed.;;;;;;
+;Choose a month for which mileage records are to be printed and click 'Wydrukuj'.;Calendar is closed, pdf file is generated.;;;;;;
+;Open generated PDF file to verify if data is consistent with mileage records.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - print mileage record;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Click 'Wydrukuj'.;Calendar is displayed.;;;;;;
+;Choose a month for which mileage records are to be printed and click 'Wydrukuj'.;Calendar is closed, pdf file is generated.;;;;;;
+;Verify if PDF file contains mileage records for all listed vehicles.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - print mileage record (filtered data);;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;Filter data, e.g. by brand.;The list is filtered.;;;;;;
+;Click 'Wydrukuj'.;Calendar is displayed.;;;;;;
+;Choose a month for which mileage records are to be printed and click 'Wydrukuj'.;Calendar is closed, pdf file is generated.;;;;;;
+;Verify if PDF file contains mileage records for filtered vehicles.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - vehicle status: Niedostępny;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.";
+;Next to created vehicle, click three-dot menu -> 'Edytuj pojazd'.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Change 'Status': Niedostępny and click 'Zapisz zmiany'.;Pop-up window 'Edycja pojazdu' is closed.;;;;;;
+;Without refreshing the page, verify if vehicle is still visible on the list.;It displays correctly.;;;;;;
+;Refresh the page and verify if vehicle is NOT visible on the list.;Vehicle is NOT visible on the list.;;;;;;
+;Go to 'Lista pojazdów'.;'Lista pojazdów' page is displayed.;;;;;;
+;Find the vehicle edited in previous steps and verify if it has status 'Niedostępny'.;It displays correctly.;;;;;;
+;Click 'Edytuj' icon (column 'Operacje) next to edited vehicle.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;Change 'Status': Dostępny and click 'Zapisz zmiany'.;Pop-up window 'Edycja pojazdu' is closed.;;;;;;
+;Go back to 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;Without refreshing the page, verify if vehicle is still NOT visible on the list.;Vehicle is NOT visible on the list.;;;;;;
+;Refresh the page and verify if vehicle is now visible on the list.;Vehicle is visible on the list.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: release vehicle form layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.";
+;In 'Kalendarz pojazdów' page, create new reservation [LINK].;Reservation is created.;;;;;;
+;Right-click on the reservation and click 'Wydaj'.;Pop-up window 'Wydanie pojazdu' is displayed.;;;;;;
+;"Verify 'Wydanie pojazdu' section:
+- toggle switch 'Planowana data/Dzisiejsza data' ('Planowana data' active by default)
+- Data wydania (calendar)
+- Doradca wydający (inactive, pre-filled automatically)";It displays correctly.;;;;;;
+;Switch toggle to 'Dzisiejsza data' and verify if 'Data wydania is changed to today's date.;It displays correctly.;;;;;;
+;"Verify 'Informacje o kierowcy' section:
+- 'Wyczyść' button
+- Imię
+- Nazwisko
+- Prefix
+- Telefon
+- E-mail
+- Prawo jazdy
+- Pesel";It displays correctly.;;;;;;
+;"Verify 'Ewidencja przebiegu pojazdu' section:
+- Przebieg
+- Poziom pawliwa
+- Cel wynajmu";It displays correctly.;;;;;;
+;"Verify if 'Poziom paliwa' is a drop-down list with values:
+- R
+- 1/4
+- 1/2
+- 3/4
+- 1/1";It displays correctly.;;;;;;
+;"Verify 'Komentarz i wyposażenie' section:
+- Komentarz
+- Wyposażenie standardowe
+- Wyposażenie dodatkowe";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: release vehicle (mileage record mandatory);;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;"Create new vehicle [LINK]:
+- assign to created park
+- 'Wymaga ewidencji pojazdu' checkbox is marked";Vehicle is created.;;;;;;
+;Go back to 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;Create reservation [LINK] for vehicle created is step 2 (date for today).;Reservation has been created.;;;;;;
+;Right-click on the reservation and click 'Wydaj'.;Pop-up window 'Wydanie pojazdu' is displayed.;;;;;;
+;"Click 'Wydaj' to verify mandatory fields:
+- Imię
+- Nazwisko
+- Przebieg
+- Poziom paliwa
+- Cel wynajmu.";It displays correctly.;;;;;;
+;Verify if in all mandatory fields there is a warning message: 'Pole nie może być puste'.;It displays correctly.;;;;;;
+;Fill in all mandatory fields and click 'Wydaj'.;Pop-up window 'Wydanie pojazdu' is closed.;;;;;;
+;"Verify if:
+- information 'Pojazd został wydany' appeared.
+- reservation colour in calendar is changed to light blue
+- tiltle is changed to 'Wydany' (after hovering over)";It displays correctly.;;;;;;
+;"Verify available actions after right-click on the reservation:
+- Przyjmij
+- Wydrukuj protokół przyjęcia
+- Cofnij wydanie
+- Edycja wydania
+- Dodaj umowę";It displays correctly.;;;;;;
+;Right-click on the reservation and click 'Przyjmij'.;Pop-up window 'Przyjęcie pojazdu' is displayed.;;;;;;
+;"Click 'Przyjmij' to verify mandatory fields:
+- Przebieg
+- Poziom paliwa
+- Opis trasy.";It displays correctly.;;;;;;
+;Verify if 'Wartość z wydania' information is visible in field 'Przebieg'.;It displays correctly.;;;;;;
+;Fill in all mandatory fields and click 'Przyjmij'.;Pop-up window 'Przyjęcie pojazdu' is closed.;;;;;;
+;"Verify if:
+- information 'Pojazd został przyjęty' appeared.
+- reservation colour in calendar is changed to dark green
+- tiltle is changed to 'Przyjęty' (after hovering over)";It displays correctly.;;;;;;
+;"Verify available actions after right-click on the reservation:
+- Cofnij przyjęcie
+- Edycja przyjęcia
+- Dodaj umowę
+- Rozlicz";It displays correctly.;;;;;;
+;Right-click on the reservation and click 'Rozlicz';Reservation is settled.;;;;;;
+;"Verify if:.
+- reservation colour in calendar is changed to light grey
+- tiltle is changed to 'Rozliczone' (after hovering over)";It displays correctly.;;;;;;
+;"Verify available actions after right-click on the reservation:
+- Ustaw jako przyjęty
+- Dodaj umowę";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: release vehicle (mileage record not mandatory);;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Lista pojazdów';Page 'Lista pojazdów' is loaded.;;;;;;
+;"Create new vehicle [LINK]:
+- assign to created park
+- 'Wymaga ewidencji pojazdu' checkbox is NOT marked";Vehicle is created.;;;;;;
+;Go back to 'Kalendarz pojazdów'.;'Kalendarz pojazdów' page is displayed.;;;;;;
+;Create reservation [LINK] for vehicle created is step 2 (date for today).;Reservation has been created.;;;;;;
+;Right-click on the reservation and click 'Wydaj'.;Pop-up window 'Wydanie pojazdu' is displayed.;;;;;;
+;"Click 'Wydaj' to verify mandatory fields:
+- Imię
+- Nazwisko
+- Poziom paliwa
+- Cel wynajmu.";It displays correctly.;;;;;;
+;Verify if in all mandatory fields there is a warning message: 'Pole nie może być puste'.;It displays correctly.;;;;;;
+;Fill in all mandatory fields and click 'Wydaj'.;Pop-up window 'Wydanie pojazdu' is closed.;;;;;;
+;"Verify if:
+- information 'Pojazd został wydany' appeared.
+- reservation colour in calendar is changed to light blue
+- tiltle is changed to 'Wydany' (after hovering over)";It displays correctly.;;;;;;
+;Right-click on the reservation and click 'Przyjmij'.;Pop-up window 'Przyjęcie pojazdu' is displayed.;;;;;;
+;"Click 'Przyjmij' to verify mandatory fields:
+- Przebieg
+- Poziom paliwa
+- Opis trasy.";It displays correctly.;;;;;;
+;Verify if 'Wartość z wydania' information is visible in field 'Przebieg'.;It displays correctly.;;;;;;
+;Fill in all mandatory fields and click 'Przyjmij'.;Pop-up window 'Przyjęcie pojazdu' is closed.;;;;;;
+;"Verify if:
+- information 'Pojazd został przyjęty' appeared.
+- reservation colour in calendar is changed to dark green
+- tiltle is changed to 'Przyjęty' (after hovering over)";It displays correctly.;;;;;;
+;"Verify available actions after right-click on the reservation:
+- Cofnij przyjęcie
+- Edycja przyjęcia
+- Dodaj umowę
+- Rozlicz";It displays correctly.;;;;;;
+;Right-click on the reservation and click 'Rozlicz';Reservation is settled.;;;;;;
+;"Verify if:.
+- reservation colour in calendar is changed to light grey
+- tiltle is changed to 'Rozliczone' (after hovering over)";It displays correctly.;;;;;;
+;"Verify available actions after right-click on the reservation:
+- Ustaw jako przyjęty
+- Dodaj umowę";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: release vehicle - Edit release;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.";
+;In 'Kalendarz pojazdów' page, create new reservation [LINK].;Reservation is created.;;;;;;
+;Release the vehicle [LINK - release vehicle];Vehicle is released, reservation has status: Wydany.;;;;;;
+;Right-click on the reservation and click 'Edycja wydania'.;Pop-up window 'Edycja wydania' is displayed.;;;;;;
+;Change any data in the form and click 'Zapisz'.;Pop-up window 'Edycja wydania' is closed.;;;;;;
+;Click on the reservation to check if provided changes have been saved.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: Nowa umowa form layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.";
+;In 'Kalendarz pojazdów' page, create new reservation [LINK].;Reservation is created.;;;;;;
+;Right-click on the reservation and click 'Dodaj umowę'.;Pop-up window 'Nowa umowa' is displayed.;;;;;;
+;"Verify 'Umowa' section:
+- toggle switch 'Otwarta/Zamknięta
+- Szablon dokumentu (drop-down list)
+- Status umowy
+- Numer umowy
+- Data zawarcia umowy (calendar)
+- Jednostka rozliczeniowa (drop-down list)
+- Data od (calendar)
+- Data do (calendar)
+- Liczba jednostek
+- Stawka netto
+- Wartość netto
+- Kaucja
+- Dzienny limit przebiegu
+- Dotyczy naprawy
+- Dział";It displays correctly.;;;;;;
+;"Verify 'Najemca' section:
+- 'Wyczyść' button
+- 'Firma' checkbox
+- Imię
+- Nazwisko
+- Kraj
+- Wybierz adres";It displays correctly.;;;;;;
+;"Mark 'Firma'checkbox and verify 'Najemca' section again:
+- Nip prefix
+- Nip
+- Regon
+- Nazwa firmy
+- Kraj
+- Wybierz adres";;;;;;;
+;"Verify 'Kierowca' section:
+- 'Wyczyść' button
+- Imię
+- Nazwisko
+- Prefiks
+- Telefon
+- PESEL
+- Nr prawa jazdy
+- Email
+- Kraj
+- Wybierz adres
+- Wynajmujący (block with company data)
+- Pojazd wynajmowany (block with vehivle data)";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: add contract;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.";
+;In 'Kalendarz pojazdów' page, create new reservation [LINK].;Reservation is created.;;;;;;
+;Right-click on the reservation and click 'Dodaj umowę'.;Pop-up window 'Nowa umowa' is displayed.;;;;;;
+;Click 'Zapisz'.;Warning message occurs: 'Proszę poprawić błędy w formularzu';;;;;;
+;"Verify if mandatory fields are marked with red icon:
+- Szablon dokumentu
+- Jednostka rozliczeniowa";It displays correctly.;;;;;;
+;Fill in the form and click 'Zapisz';Pop-up window 'Nowa umowa' is closed.;;;;;;
+;Right-click on the reservation to check if option 'Edytuj umowę' is available.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: edit contract;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.";
+;In 'Kalendarz pojazdów' page, create new reservation [LINK].;Reservation is created.;;;;;;
+;Right-click on the reservation and click 'Dodaj umowę'.;Pop-up window 'Nowa umowa' is displayed.;;;;;;
+;Fill in only section 'Umowa' and click 'Zapisz';Pop-up window 'Nowa umowa' is closed.;;;;;;
+;Right-click on the reservation and click 'Edytuj umowę'.;Pop-up window 'Edycja umowy' is displayed.;;;;;;
+;"Verify if below fields in section 'Umowa' are disabled for edition:
+- Szablon dokumentu
+- Status umowy
+- Numer umowy
+- Liczba jednostek
+- Dział";It displays correctly.;;;;;;
+;Click 'Zapisz'.;Warning message occurs: 'Proszę poprawić błędy w formularzu';;;;;;
+;"Verify if mandatory fields are marked with red icon:
+- Imię and Nazwisko in section 'Najemca'
+- Imię and Nazwisko in section 'Kierowca'";It displays correctly.;;;;;;
+;"Mark 'Firma' checkbox and click 'Zapisz' to check mandatory fields:
+- Nip prefix
+- Nazwa firmy";It displays correctly.;;;;;;
+;Fill in mandatory fields and click 'Zapisz'.;Pop-up window 'Edycja umowy' is closed.;;;;;;
+;Open 'Edycja umowy' again to verify if modified data is saved.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: vehilce availability;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.";
+;Next to created vehicle, click three-dot menu -> 'Edytuj pojazd'.;Pop-up window 'Edycja pojazdu' is displayed.;;;;;;
+;"In section 'Dostępność pojazdu' select dates:
+- Dostępny od: Tuesday date
+- Dostępny do: Friday date";Dates are selected.;;;;;;
+;"Click 'Zapisz zmiany' to verify if message ""Proszę poprawić błędy w formularzu"".";It displays correctly.;;;;;;
+;"Verfiy error message in field 'Dostępny od': ""Data rozpoczęcia użytkowania pojazdu musi przypadać na poniedziałek"".";It displays correctly.;;;;;;
+;"Verfiy error message in field 'Dostępny do': ""Data zakończenia użytkowania pojazdu musi przypadać na niedzielę"".";It displays correctly.;;;;;;
+;"Change dates in section 'Dostępność pojazdu':
+- Dostępny od: Monday date
+- Dostępny do: Sunday date BEFORE selected Monday";Dates are selected.;;;;;;
+;"Click 'Zapisz zmiany' to verify if message ""Proszę poprawić błędy w formularzu"".";It displays correctly.;;;;;;
+;"Verfiy error message in field 'Dostępny do': ""Wartość pola musi być większa niż {date in field 'Dostępny od'}"".";It displays correctly.;;;;;;
+;Change date in 'Dostępny do' to Sunday after selected Monday.;Date is changed.;;;;;;
+;Click 'Zapisz zmiany'. ;Pop-up window 'Edycja pojazdu' is closed.;;;;;;
+;Verify if fields in calendar are changed to white (for dates selected in steps 6, 9);It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - reservation: vehilce in ongoing rental;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.
+Reservation created in status 'Wydany'.";
+;In 'Kalendarz pojazdów' page, create new reservation for current day for the vehicle (after existing reservation) [LINK].;Reservation is created.;;;;;;
+;"Right-click on the reservation to verify the list of actions:
+- Usuń
+- Dodaj umowę
+- Przeplanuj
+- Przejdź do trwającego wynajmu.";It displays correctly.;;;;;;
+;Click 'Przejdź do trwającego wynajmu'.;Calendar is swtiched to the day with ongoing rental.;;;;;;
+;Verify if found reservation is marked with red frame.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - searching reservation view layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.";
+;"In 'Kalendarz pojazdów' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;;
+;"Verify header buttons:
+- Pokaż tylko przeterminowane (toggle switch)
+- Wyczyść filtry";It displays correctly.;;;;;;
+;"Switch toggle to activate 'Pokaż tylko przeterminowane' to verify if:
+- only overdue reservation are displayed
+- overdue reservation are in red font";It displays correctly.;;;;;;
+;"Verify columns in section 'Rezerwacje':
+- Nazwa
+- Imię
+- Nazwisko
+- Nr rejestracyjny
+- Tel. Kontaktowy
+- Status (drop-down list)
+- Komentarz
+- Zasób
+- Typ rezerwacji (drop-down list)
+- Od (calendar)
+- Do (calendar)
+- Akcje";It displays correctly.;;;;;;
+;"Verify if there is a search field under columns:
+- Nazwa
+- Imię
+- Nazwisko
+- Nr rejestracyjny
+- Tel. Kontaktowy
+- Komentarz
+- Zasób";It displays correctly.;;;;;;
+;"Verify items in 'Status' drop-down list:
+- (Wszystkie)
+- Przyjęty
+- Rezerwacja
+- Wydany
+- Awizo
+- Rozliczone
+- Domyślny";It displays correctly.;;;;;;
+;"Verify items in 'Typ rezerwacji' drop-down list:
+- (Wszytskie)
+- Rezerwacja do naprawy
+- Rezeracja na pojazd
+- Wyłączenie
+- Jazda próbna";It displays correctly.;;;;;;
+;"In column 'Akcje', click 'Pokaż' next to any reservation to verify if:
+- pop-up window 'Wyszukiwanie rezerwacji' is closed
+- in 'Kalendarz pojazdów' selected reservation is displayed and highllighted with red frame";It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - carwash reservation;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Park is created.
+Vehicle is assinged to the park.
+Flota Dealera page is loaded.";
+;On the left-side menu, go to 'Kalendarz myjni';Page 'Kalendarz myjni' is loaded.;;;;;;
+;"Click on ""Myjnia automatyczna"".";"""Myjnia automatyczna"" calendar is displayed.";;;;;;
+;In top panel of the carwash calendar, click on next Monday.;Calendar is switched to selected day.;;;;;;
+;In the main window of the calendar, click on the field next to any available hour (e.g. 10:00).;Pop-up window 'Dodaj rezerwację' is displayed.;;;;;;
+;Click 'Dodaj'.;Warning message occurs: 'Proszę poprawić błędy w formularzu';;;;;;
+;"Verify if mandatory fields are marked with red icon:
+- Numer rejestracyjny 
+- Nr VIN";It displays correctly.;;;;;;
+;"In ""Typ"" drop-down list select ""Rezerwacja na pojazd"".";"""Rezerwacja na pojazd"" is selected.";;;;;;
+;"Verify if ""Dział, dla którego jest mycia"" field is:
+- inactive
+- prefilled with correct dealer fleet.";It displays correctly.;;;;;;
+;"In ""Program mycia"" drop-down list select any washing program.";Program is selected.;;;;;;
+;"Verify if ""Data"" field is:
+- inactive
+- prefilled with correct date";It displays correctly.;;;;;;
+;"Verify if ""Godzina od"" field is:
+- inactive
+- prefilled with correct hour.";It displays correctly.;;;;;;
+;"Verify if ""Godzina do"" field is:
+- inactive
+- prefilled with correct hour according to time of selected program.";It displays correctly.;;;;;;
+;"Fill in fields ""Numer rejestracyjny"" and ""Nr VIN"".";Fields are filled in.;;;;;;
+;"Click ""Dodaj"".";Pop-up window 'Dodaj rezerwację' is closed.;;;;;;
+;Verify if washing is visible on the calendar.;It displays correctly.;;;;;;
+;"Verify the washing:
+- colour: dark blue
+- title (after hovering over): Status mycia - Zaplanowane";It displays correctly.;;;;;;
+;"Right-click on the washing to verify available actions:
+- Przeplanuj
+- Usuń";It displays correctly.;;;;;;
+;Go to application: Myjnia -> Myjnia automatyczna;"""Myjnia automatyczna"" page is displayed.";;;;;;
+;Verify if washing created in previous steps is visble in the calendar.;It displays correctly.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - searching reservation (single filter);;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Multiple reservations are available.";
+;"In 'Kalendarz pojazdów' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;;
+;"Verify searching by name (column 'Nazwa'):
+- in search field type in a part of customer's name";The list is filtered correctly.;;;;;;
+;Verify if searching by name (column 'Nazwa') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;;
+;Verify sorting by name (column 'Nazwa') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by first name (column 'Imię'):
+- in search field type in a part of customer's first name";The list is filtered correctly.;;;;;;
+;Verify if searching by first name (column 'Imię') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;;
+;Verify sorting by first name (column 'Imię') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by last name (column 'Nazwisko'):
+- in search field type in a part of customer's last name";The list is filtered correctly.;;;;;;
+;Verify if searching by last name (column 'Nazwisko') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;;
+;Verify sorting by last name (column 'Nazwisko') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by registration plate (column 'Nr rejestracyjny'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;;
+;Verify if searching by registration plate (column 'Nr rejestracyjny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;;
+;Verify sorting by registration plate (column 'Nr rejestracyjny') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by phone number (column 'Tel.kontaktowy'):
+- in search field type in a part of phone number";The list is filtered correctly.;;;;;;
+;Verify sorting by phone number (column 'Tel.kontaktowy') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by status (column 'Status'):
+- select any status from drop-down list";The list is filtered correctly.;;;;;;
+;Verify sorting by status (column 'Status') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by comment (column 'Komentarz'):
+- in search field type in a part of a comment";The list is filtered correctly.;;;;;;
+;Verify if searching by comment (column 'Komentarz') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;;
+;Verify sorting by comment (column 'Komentarz') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by resource (column 'Zasób'):
+- in search field type in a part of a resource";The list is filtered correctly.;;;;;;
+;Verify if searching by resource (column 'Zasób') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;;
+;Verify sorting by resource (column 'Zasób') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by reservation type (column 'Typ rezerwacji'):
+- select any type from drop-down list";The list is filtered correctly.;;;;;;
+;Verify sorting by reservation type (column 'Typ rezerwacji') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by 'from' date (column 'Od'):
+- select any date";The list is filtered correctly.;;;;;;
+;Verify sorting by 'from' date (column 'Od') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;"Verify searching by 'to' date (column 'Do'):
+- select any date";The list is filtered correctly.;;;;;;
+;Verify sorting by 'from' date (column 'Do') by clicking on column's header.;The list is sorted correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;End of test.;;;;;;;
+Flota Dealera - searching reservation (multiple filters);;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Flota Dealera page is loaded.
+Multiple reservations are available.";
+;"In 'Kalendarz pojazdów' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;;
+;Filter data by first name.;The list is filtered correctly.;;;;;;
+;Add filtering by last name.;The list is filtered correctly.;;;;;;
+;Add filtering by date.;The list is filtered correctly.;;;;;;
+;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;;
+;End of test.;;;;;;;

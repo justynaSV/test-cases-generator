@@ -1,0 +1,228 @@
+Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions;;https://cloud-qa.softvig.pl/
+User login with valid credentials;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
+;In field 'Hasło' put valid password.;Field is filled in.;;;;;;;
+;Click 'Logowanie'.;User is logged in, main page is loaded.;;;;;;;
+;End of test.;;;;;;;;
+User login - valid e-mail, invalid password;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
+;In field 'Hasło' put invalid password;Field is filled in.;;;;;;;
+;Click 'Logowanie'.;Error message appears: 'Błędny login lub hasło';;;;;;;
+;End of test.;;;;;;;;
+User login - invalid e-mail, valid password;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;In field 'Adres e-mail' put e-mail address for which no account has been created but in correct format.;Field is filled in.;;;;;;;
+;In field 'Hasło' put valid password;Field is filled in.;;;;;;;
+;Click 'Logowanie'.;Error message appears: 'Błędny login lub hasło';;;;;;;
+;End of test.;;;;;;;;
+User login - invalid e-mail format;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;In field 'Adres e-mail' put e-mail address in incorrect format, e.g. without @;Red exclamation mark appears in the field.;;;;;;;
+;Click on exclamation mark.;Error message appears: 'Niepoprawny adres e-mail';;;;;;;
+;Click 'Logowanie'.;Button is not active.;;;;;;;
+;End of test.;;;;;;;;
+User login - empty credentails;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;Leave fields 'Adres e-mail' and 'Hasło' empty.;Fields are empty;;;;;;;
+;Click 'Logowanie'.;Red exclamation marks appear in the fields.;;;;;;;
+;Click on exclamation mark in 'Adres e-mail' field.;Error message appears: 'Adres e-mail jest wymagany';;;;;;;
+;Click on exclamation mark in 'Hasło' field.;Error message appears: 'Hasło jest wymagane';;;;;;;
+;Click 'Logowanie'.;Button is not active.;;;;;;;
+;End of test.;;;;;;;;
+User login - invalid e-mail, invalid password;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;In field 'Adres e-mail' put e-mail address for which no account has been created but in correct format.;Field is filled in.;;;;;;;
+;In field 'Hasło' put invalid password;Field is filled in.;;;;;;;
+;Click 'Logowanie'.;Error message appears: 'Błędny login lub hasło';;;;;;;
+;End of test.;;;;;;;;
+User login - blocking the account;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
+;In field 'Hasło' put invalid password.;Field is filled in.;;;;;;;
+;Click 'Logowanie'.;Error message appears: 'Błędny login lub hasło';;;;;;;
+;Repeat steps 3-4 two more times.;User account is blocked, error message appears: 'Twoje konto zostało zablokowane. Odzyskaj hasło korzystając z operacji poniżej.';;;;;;;
+;End of test.;;;;;;;;
+User login - unblocking the account;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Block user account (see <link>);User account is blocked.;;;;;;;
+;Below error message, put valid e-mail address in 'Adres e-mail' field.;Field is filled in.;;;;;;;
+;Click 'Odzyskaj'.;Message appears: 'Na Twój adres e-mail został wysłany link umożliwiający odzyskanie hasła.';;;;;;;
+;Go to your e-mail box.;E-mail titled 'Reset hasła na platformie SvCloud' is available.;;;;;;;
+;In the e-mail click link 'Odzyskaj hasło'.;User is redirected to password reset page.;;;;;;;
+;In fields 'Wprowadź nowe hasło' and 'Wprowadź ponownie nowe hasło' enter the last valid password.;Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Nowe hasło nie może być takie samo jak aktualne hasło';;;;;;;
+;Enter new password in field 'Wprowadź nowe hasło'.;Field is filled in.;;;;;;;
+;Enter different password in field 'Wprowadź ponownie nowe hasło'.;Field is filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the second field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Brak zgodności pomiędzy nowym hasłem a jego powtórzeniem';;;;;;;
+;Enter new password to both fields with only small letters.;Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Nowe hasło wymaga przynajmniej jednej dużej i małej litery';;;;;;;
+;Change one letter to big (keep the same password in both fields).;Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Nowe hasło wymaga przynajmniej jednej cyfry';;;;;;;
+;Change the password in both fields to: Test1;Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Nowe hasło nie spełnia warunków długości hasła. Minimalna długość hasła to: 8 znaków.';;;;;;;
+;"Change the password in both fields to one which is complient with requirements:
+- at least one small and one big letter,
+- at least one number,
+- no less than 8 signs.";Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Message appears: 'Twoje hasło zostało zmienione na nowe, za chwilę zostaniesz przekierowany do strony logowania.', user is redirected to login page.;;;;;;;
+;Log in with new password.;User is logged in, main page is loaded.;;;;;;;
+;End of test.;;;;;;;;
+User login - change password;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Log in to the system (see <link>);User is logged in.;;;;;;;
+;Click on the dropdown menu in top-right corner and select 'Zmień hasło';User is redirected to password reset page.;;;;;;;
+;"Verify page layout:
+- password requirements,
+- Adres E-mail
+- Wprowadź obecne hasło,
+- Wprowadź nowe hasło,
+- Wprowadź ponownie nowe hasło
+- checkbox: 'Pokaż hasło',
+- button: 'Anuluj',
+- button: 'Zmień hasło'.";It displays correctly;;;;;;;
+;Verify that e-mail address cannot be edited.;Field cannot be edited.;;;;;;;
+;Fill in 'Adres E-mail' field with current password.;The field is filled in.;;;;;;;
+;Provide new compliant password in field 'Wprowadź obecne hasło'. ;The field is filled in.;;;;;;;
+;Provide the same password in field 'Wprowadź ponownie nowe hasło';The field is filled in.;;;;;;;
+;Click 'Zmień hasło'.;Message appears: 'Pomyślnie zmieniono hasło. Za chwię zostaniesz przekierowany na stronę wyboru aplikacji.';;;;;;;
+;Click on the dropdown menu in top-right corner and select 'Wyloguj';User is redirected to login page.;;;;;;;
+;Log in using new password.;User is logged in successfully.;;;;;;;
+;End of test.;;;;;;;;
+User login - change password validations;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Log in to the system (see <link>);User is logged in.;;;;;;;
+;Click on the drop-down menu in top-right corner and select 'Zmień hasło';User is redirected to password reset page.;;;;;;;
+;Fill in 'Adres E-mail' field with invalid password.;The field is filled in.;;;;;;;
+;Provide new compliant password in field 'Wprowadź obecne hasło'. ;The field is filled in.;;;;;;;
+;Provide the same password in field 'Wprowadź ponownie nowe hasło';The field is filled in.;;;;;;;
+;Click 'Zmień hasło'.;Error message appears: 'Błędny login lub hasło'.;;;;;;;
+;Fill in 'Adres E-mail' field with current password.;The field is filled in.;;;;;;;
+;In fields 'Wprowadź nowe hasło' and 'Wprowadź ponownie nowe hasło' enter current password.;Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Nowe hasło nie może być takie samo jak aktualne hasło';;;;;;;
+;Enter new password in field 'Wprowadź nowe hasło'.;Field is filled in.;;;;;;;
+;Enter different password in field 'Wprowadź ponownie nowe hasło'.;Field is filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the second field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Brak zgodności pomiędzy nowym hasłem a jego powtórzeniem';;;;;;;
+;Enter new password to both fields with only small letters.;Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Nowe hasło wymaga przynajmniej jednej dużej i małej litery';;;;;;;
+;Change one letter to big (keep the same password in both fields).;Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Nowe hasło wymaga przynajmniej jednej cyfry';;;;;;;
+;Change the password in both fields to: Test1;Fields are filled in.;;;;;;;
+;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
+;Click on the exclamation mark.;Error message appears: 'Nowe hasło nie spełnia warunków długości hasła. Minimalna długość hasła to: 8 znaków.';;;;;;;
+;End of test.;;;;;;;;
+User login - log in via Omnetic;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;User has an account created in Omnetic (valid e-mail and password);;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;Click 'Logowanie z Omnetic'.;Omnetic login page is loaded.;;;;;;;
+;Field 'Workspace' is filled in with 'metada' (non editable).;It displays correctly;;;;;;;
+;Fill the 'E-mail' field with valid Omnetic e-mail.;Field is filled in.;;;;;;;
+;Fill the 'Password' field with valid Omnetic password.;Field is filled in.;;;;;;;
+;Click 'Log in'.;User is logged in, main page is loaded.;;;;;;;
+;End of test.;;;;;;;;
+User login - log in via Omnetic, invalid credentials;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;User has an account created in Omnetic (valid e-mail and password);;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;Click 'Logowanie z Omnetic'.;Omnetic login page is loaded.;;;;;;;
+;Field 'Workspace' is filled in with 'metada' (non editable).;It displays correctly;;;;;;;
+;Fill the 'E-mail' field with valid Omnetic e-mail.;Field is filled in.;;;;;;;
+;Fill the 'Password' field with invalid Omnetic password.;Field is filled in.;;;;;;;
+;Click 'Log in'.;Invalid credentials' message occurs, user is not logged in.;;;;;;;
+;Fill the 'E-mail' field with invalid Omnetic e-mail.;Field is filled in.;;;;;;;
+;Fill the 'Password' field with invalid Omnetic password.;Field is filled in.;;;;;;;
+;Click 'Log in'.;Invalid credentials' message occurs, user is not logged in.;;;;;;;
+;Fill the 'E-mail' field with invalid Omnetic e-mail.;Field is filled in.;;;;;;;
+;Fill the 'Password' field with valid Omnetic password.;Field is filled in.;;;;;;;
+;Click 'Log in'.;Invalid credentials' message occurs, user is not logged in.;;;;;;;
+;End of test.;;;;;;;;
+User login - opening help center;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;Click on the help icon in top-right corner.;Drop-down menu is visible.;;;;;;;
+;"Verify drop-down menu content:
+- Centrum pomocy
+- Zgłoś problem
+- Zadaj pytanie";It displays correctly.;;;;;;;
+;Click 'Centrum pomocy'.;In the new window help center page is opened (https://help.svcloud.pl/svcloudwiki/doku.php?id=platforma_logowania:start);;;;;;;
+;Go back to login page to click 'Zgłoś problem'.;In the new window, customer support portal is opened (with request form).;;;;;;;
+;Go back to login page to click 'Zadaj pytanie'.;In the new window, customer support portal is opened (with request form).;;;;;;;
+;End of test.;;;;;;;;
+User login - log in/out on multiple browser tabs;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;User has a created account (valid e-mail and password);;
+;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
+;Open any application.;Application page is loaded.;;;;;;;
+;In the new tab, go to https://cloud-qa.softvig.pl/;User is automatically logged in.;;;;;;;
+;Log out in the tab opened in previous step.;User is logged out.;;;;;;;
+;Go back to the first tab (from step 1).;User is automatically logged out.;;;;;;;
+;Log in again in the first tab.;User is logged in.;;;;;;;
+;Verify that the session before logging out is restored (application selected in step 2 is loaded).;Session is restored.;;;;;;;
+;End of test.;;;;;;;;
+User login - log in on mobile phone;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;User has a created account (valid e-mail and password);;
+;Go to https://cloud-qa.softvig.pl/ on mobile phone.;Login page is loaded.;;;;;;;
+;Verify if the page is scaled correctly.;It displays correctly.;;;;;;;
+;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
+;In field 'Hasło' put valid password.;Field is filled in.;;;;;;;
+;Click 'Logowanie'.;User is logged in, main page is loaded.;;;;;;;
+;"Verify if the page recognized the device:
+- mobile phone icon is highlighted.";It displays correctly.;;;;;;;
+;"Verify the list of available applications:
+- Rejestrator postępu prac blacharni
+- Rejestrator postępu prac myjni
+- Blacharnia mobilna
+- Mobile Video Service
+- Door to door";It displays correctly.;;;;;;;
+;Select any available application.;Application page is loaded.;;;;;;;
+;Verify if appliaction is scaled correctly.;It displays correctly.;;;;;;;
+;End of test.;;;;;;;;
+User login - log in on tablet;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;User has a created account (valid e-mail and password);;
+;Go to https://cloud-qa.softvig.pl/ on a tablet;Login page is loaded.;;;;;;;
+;Verify if the page is scaled correctly.;It displays correctly.;;;;;;;
+;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
+;In field 'Hasło' put valid password.;Field is filled in.;;;;;;;
+;Click 'Logowanie'.;User is logged in, main page is loaded.;;;;;;;
+;"Verify if the page recognized the device:
+- mobile phone icon is highlighted.";It displays correctly.;;;;;;;
+;"Verify the list of available applications:
+- Rejestrator postępu prac blacharni
+- Rejestrator postępu prac myjni
+- Blacharnia mobilna
+- Mobile Video Service
+- Door to door";It displays correctly.;;;;;;;
+;Select any available application.;Application page is loaded.;;;;;;;
+;Verify if appliaction is scaled correctly.;It displays correctly.;;;;;;;
+;End of test.;;;;;;;;
+User login - edit profile data;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;"User has a created account (valid e-mail and password)
+User is logged in.";;
+;On the main page, click on drop-down menu on the top-right corner.;Drop-down menu is visible.;;;;;;;
+;Click 'Mój profil'.;'Mój profil' page is displayed.;;;;;;;
+;Click 'Edytuj awatar'.;Page for editing photo is displayed.;;;;;;;
+;Click 'Zmień zdjęcie'. ;Window for selecting photo is displayed.;;;;;;;
+;Choose a photo to upload.;Photo is uploaded.;;;;;;;
+;Adjust the photo using 'Powiększ' and 'Wyprostuj' slides.;Photo is adjusted.;;;;;;;
+;Click 'Zapisz'.;Photo is saved, user is redirected back to 'Mój profil' page.;;;;;;;
+;"Verify if below fields are filled in and not editable:
+- Imię
+- Nazwisko
+- Login";Fields are filled in, not editable.;;;;;;;
+;Fill in the 'Prefix' field.;Filed is filled in.;;;;;;;
+;Fill in the 'Numer telefonu komórkowego' field.;Filed is filled in.;;;;;;;
+;Click 'Zapisz'. ;Confirmation message occurs, user is redirected to main page.;;;;;;;
+;Click on the user photo which is now visible next to the help icon.;'Mój profil' page is displayed.;;;;;;;
+;Verify if data modified in previous steps is visible (photo, phone number);Data is correct.;;;;;;;
+;End of test.;;;;;;;;
+User login - role verification: Admin;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;;;
+;Log in to the system as admin (see <link>);User is logged in, main page is loaded.;;;;;"User has valid credentials
+User has admin role assigned";;
+;"Verify the list of available applications:
+- x
+- y
+- z";It displays correctly.;;;;;;;
+;Switch to mobile view by clicking mobile icon.;;;;;;;;
+;"Verify the list of available applications:
+- x
+- y
+- z";;;;;;;;
+;Switch back to desktop view by clicking desktop icon;;;;;;;;
