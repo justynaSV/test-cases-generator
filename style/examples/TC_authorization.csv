@@ -1,4 +1,4 @@
-Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions;;https://cloud-qa.softvig.pl/
+Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
 User login with valid credentials;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
 ;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
 ;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
@@ -226,3 +226,4 @@ User has admin role assigned";;
 - y
 - z";;;;;;;;
 ;Switch back to desktop view by clicking desktop icon;;;;;;;;
+;End of test.;;;;;;;;

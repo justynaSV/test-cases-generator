@@ -1,4 +1,4 @@
-Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions;https://cloud-qa.softvig.pl/
+Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
 Flota Dealera - page layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;User is logged in (https://dev.azure.com/softvig/QA/_workitems/edit/105);
 ;In application page go to 'Flota Dealera' -> 'Auta zastępcze'.;Vehicle calendar page is displayed.;;;;;;
 ;"Verify menu content (left side of the page):
@@ -24,7 +24,7 @@ Flota Dealera - page layout;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernac
 ;"Verify that below top panel calendar days are displayed:
 - shortened name's day
 -DD.MM";It displays correctly.;;;;;;
-;End of test;;;;;;;
+;End of test.;;;;;;;
 Flota Dealera - add new park;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;"User is logged in
 Flota Dealera page is loaded.";
 ;On the left-side menu, go to 'Parki';Page 'Parki samochodów' is loaded.;;;;;;

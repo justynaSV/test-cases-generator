@@ -129,6 +129,48 @@
     margin: 0 0 18px;
   }
 
+  .subhead {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 24px 0 2px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .subhead.first {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+  .subhead small {
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-dim);
+    font-size: 11px;
+  }
+
+  .check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .check input {
+    width: auto;
+    margin: 2px 0 0;
+    accent-color: var(--accent);
+  }
+  .check span small {
+    display: block;
+    color: var(--text-dim);
+    font-size: 11.5px;
+  }
+
   label {
     display: block;
     font-size: 13px;
@@ -260,18 +302,33 @@
   <section class="panel" id="panel-build">
     <div class="step-label">Step 1</div>
     <h2>Build your prompt</h2>
-    <p class="hint">Fill this in, copy the assembled prompt, and paste it into Copilot Chat, Claude, or any other chat LLM.</p>
+    <p class="hint">Fill in what you know — the more concrete detail (especially real Polish UI labels), the closer the output. Blank fields are fine; the assembled prompt tells the LLM to ask before guessing. Then copy it into Copilot Chat, Claude, or any chat LLM.</p>
 
-    <label for="feature">Feature description / user story</label>
-    <textarea id="feature" rows="6" placeholder="e.g. Admin screen for configuring calendar event icon visibility and priority. Menu path: Konfiguracja systemowa → ... Access: Local Administrator only. Fields: ..."></textarea>
-
+    <div class="subhead first">Required</div>
     <div class="row">
       <div>
         <label for="module">Module</label>
         <input type="text" id="module" placeholder="e.g. Konfiguracja" />
       </div>
       <div>
-        <label for="priority">Default QA Priority</label>
+        <label for="screen">Screen / feature name</label>
+        <input type="text" id="screen" placeholder="e.g. Ikony zdarzeń kalendarza" />
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="screentype">Screen type</label>
+        <select id="screentype">
+          <option value="">— choose —</option>
+          <option>List with filters</option>
+          <option>Add / edit form</option>
+          <option>Read-only dashboard</option>
+          <option>Wizard / multi-step</option>
+          <option>Other / mixed</option>
+        </select>
+      </div>
+      <div>
+        <label for="priority">QA Priority</label>
         <select id="priority">
           <option>Medium</option>
           <option>Low</option>
@@ -280,8 +337,48 @@
       </div>
     </div>
 
-    <label for="examples">Reference example(s) — optional, paste 1–2 of your own CSVs for best results</label>
-    <textarea id="examples" rows="5" placeholder="Paste one or two of your existing scenario CSVs here so the model imitates your real style, not just the guide."></textarea>
+    <div class="subhead">Details <small>— optional, each one improves the result</small></div>
+
+    <label for="menupath">Menu path to the screen</label>
+    <input type="text" id="menupath" placeholder="e.g. Konfiguracja → Kalendarz → Ikony zdarzeń" />
+
+    <label for="labels">UI labels, verbatim in Polish — buttons, fields, columns, menu items, section headers</label>
+    <textarea id="labels" rows="4" placeholder="'Zapisz', 'Anuluj', 'Wyczyść filtry', column 'Widoczność', header 'Zarządzanie ikonami', ..."></textarea>
+    <label class="check" for="hasshots">
+      <input type="checkbox" id="hasshots" />
+      <span>I'll attach screenshot(s) of the screen in my chat LLM
+        <small>The built prompt will tell the LLM to read labels straight from the images. Works in Claude, Copilot (web), ChatGPT — attach the image in the same message as the pasted prompt. Fill the box above only for labels not visible in the screenshots.</small>
+      </span>
+    </label>
+
+    <label for="fields">Fields — name, type, mandatory?, valid vs. invalid example values</label>
+    <textarea id="fields" rows="4" placeholder="'Nazwa' — text — mandatory&#10;'Priorytet' — dropdown 1–5 — mandatory&#10;'Widoczność' — checkbox — optional"></textarea>
+
+    <label for="columns">Filterable / sortable columns (one "Verify searching/sorting by X" step each)</label>
+    <input type="text" id="columns" placeholder="'Nazwa', 'Widoczność', 'Priorytet'" />
+
+    <label for="errors">Exact error messages (Polish) + what triggers each</label>
+    <textarea id="errors" rows="3" placeholder="'Pole jest wymagane' — when saving with 'Nazwa' empty"></textarea>
+
+    <div class="row">
+      <div>
+        <label for="roles">Access / roles</label>
+        <input type="text" id="roles" placeholder="e.g. Administrator lokalny only" />
+      </div>
+      <div>
+        <label for="tester">Tester email (Assigned To)</label>
+        <input type="text" id="tester" placeholder="blank → <tester email> placeholder" />
+      </div>
+    </div>
+
+    <label for="logic">State / colour logic or cross-module effects</label>
+    <textarea id="logic" rows="3" placeholder="e.g. 'Status' turns red when overdue; saving here updates the Blacharnia list"></textarea>
+
+    <label for="notes">Anything else — user story, spec excerpts, edge cases</label>
+    <textarea id="notes" rows="4" placeholder="Paste a user story or spec notes here."></textarea>
+
+    <label for="examples">Reference example(s) — optional, paste 1–2 of your own CSVs for best style match</label>
+    <textarea id="examples" rows="5" placeholder="Paste one or two existing scenario CSVs so the model imitates your real style, not just the guide."></textarea>
 
     <div class="actions">
       <button class="primary" id="build-btn">Build prompt</button>
@@ -375,33 +472,80 @@ Preconditions: plain text, can be multi-line.
 - English used for step descriptions/instructions`;
 
 /* ---------- Step 1: build prompt ---------- */
-function buildPrompt() {
-  const feature = document.getElementById('feature').value.trim();
-  const module = document.getElementById('module').value.trim();
-  const priority = document.getElementById('priority').value;
-  const examples = document.getElementById('examples').value.trim();
+function val(id) {
+  const el = document.getElementById(id);
+  return el ? (el.value || '').trim() : '';
+}
 
-  if (!feature) {
-    document.getElementById('build-status').textContent = 'Add a feature description first.';
+function buildPrompt() {
+  const module = val('module');
+  const screen = val('screen');
+  const screentype = val('screentype');
+  const priority = document.getElementById('priority').value;
+  const menupath = val('menupath');
+  const labels = val('labels');
+  const hasshots = document.getElementById('hasshots').checked;
+  const fields = val('fields');
+  const columns = val('columns');
+  const errors = val('errors');
+  const roles = val('roles');
+  const tester = val('tester');
+  const logic = val('logic');
+  const notes = val('notes');
+  const examples = val('examples');
+
+  const missing = [];
+  if (!module) missing.push('Module');
+  if (!screen) missing.push('Screen / feature name');
+  if (!screentype) missing.push('Screen type');
+  if (missing.length) {
+    document.getElementById('build-status').textContent = 'Fill in the Required fields first: ' + missing.join(', ') + '.';
     return;
   }
 
-  let prompt = `# Task\nGenerate SVCloud test case scenarios in the established style, following the style guide below, for this feature:\n\n${feature}\n\n`;
-  prompt += `# Style Guide\n${STYLE_GUIDE}\n\n`;
-  if (examples) {
-    prompt += `# Reference Example(s) (style to imitate, not to copy content from)\n\`\`\`csv\n${examples}\n\`\`\`\n\n`;
-  }
-  prompt += `# Defaults For This Run\n`;
-  if (module) prompt += `- Suggested Iteration Path: QA\\SVCloud\\${module}\n`;
-  prompt += `- Default QA Priority: ${priority} (unless the feature clearly needs another)\n`;
-  prompt += `- Default Area Path: QA\\SVCloud\n`;
-  prompt += `- Assigned To: no tester specified — leave the literal placeholder "<tester email>" in the output.\n\n`;
-  prompt += `# Instructions\n`;
-  prompt += `- Only generate the coverage types from the style guide that actually apply to this feature.\n`;
-  prompt += `- If you assumed something not stated above, list it as a short bullet BEFORE the CSV.\n`;
-  prompt += `- Output the scenarios as a single semicolon-delimited CSV block, matching the format and row-structure rules exactly.\n`;
+  let p = `# Task\nGenerate SVCloud test case scenarios in the established style, following the style guide below.\n\n`;
 
-  document.getElementById('assembled').value = prompt;
+  p += `# Feature\n`;
+  p += `- Module: ${module}\n`;
+  p += `- Screen / feature: ${screen}\n`;
+  p += `- Screen type: ${screentype}\n`;
+  if (menupath) p += `- Menu path: ${menupath}\n`;
+  if (roles) p += `- Access / roles: ${roles}\n`;
+  p += `\n`;
+
+  if (hasshots) {
+    p += `# UI labels\n`;
+    p += `Screenshot(s) of this screen are attached to this chat. Read every button, field label, column header, menu item, section title and visible message off the images and use them verbatim, in Polish, in single quotes — transcribe diacritics and casing exactly. Ask me about any label that isn't legible or isn't shown (hover tooltips, states not currently on screen, post-action error text) rather than guessing.\n`;
+    if (labels) p += `Extra labels / notes not visible in the screenshots:\n${labels}\n`;
+    p += `\n`;
+  } else if (labels) {
+    p += `# UI labels (use verbatim, in Polish, in single quotes)\n${labels}\n\n`;
+  }
+  if (fields)  p += `# Fields\n${fields}\n\n`;
+  if (columns) p += `# Filterable / sortable columns (one "Verify searching/sorting by X" step each)\n${columns}\n\n`;
+  if (errors)  p += `# Error messages (quote verbatim in the negative / validation scenario)\n${errors}\n\n`;
+  if (logic)   p += `# State / colour logic / cross-module effects\n${logic}\n\n`;
+  if (notes)   p += `# Additional context\n${notes}\n\n`;
+
+  p += `# Style Guide\n${STYLE_GUIDE}\n\n`;
+
+  if (examples) {
+    p += `# Reference Example(s) (style to imitate, not to copy content from)\n\`\`\`csv\n${examples}\n\`\`\`\n\n`;
+  }
+
+  p += `# Defaults For This Run\n`;
+  p += `- Area Path: QA\\SVCloud\n`;
+  p += `- Iteration Path: QA\\SVCloud\\${module}\n`;
+  p += `- QA Priority: ${priority} (unless a scenario clearly needs another)\n`;
+  p += `- Assigned To: ${tester ? tester : 'leave the literal placeholder "<tester email>"'}\n\n`;
+
+  p += `# Instructions\n`;
+  p += `- First decide which coverage types from the style guide actually apply to this screen type; skip the rest (e.g. no Edit/Delete for a read-only dashboard). Page layout scenario always first.\n`;
+  p += `- Use the UI labels above verbatim, in Polish, in single quotes. Do NOT invent Polish strings — if a label you need wasn't given, ask me for it before generating rather than guessing.\n`;
+  p += `- If you assume anything else not stated above, list it as short bullets BEFORE the CSV.\n`;
+  p += `- Output the scenarios as a single semicolon-delimited CSV block, matching the format and row-structure rules exactly (header row; Title row carries metadata only; last step "End of test." with an empty Expected result).\n`;
+
+  document.getElementById('assembled').value = p;
   document.getElementById('build-status').textContent = 'Prompt built. Copy it and paste it into your chat LLM.';
 }
 

@@ -20,7 +20,7 @@ Myjnia - page layout;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@sof
 - DD.MM
 - time usage/availability
 - number of events planned for this day";It displays correctly.;;;;;
-;End of test;;;;;;
+;End of test.;;;;;;
 Myjnia - add reservation (form layout);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
 Myjnia page is loaded"
 ;In top panel of the carwash calendar, click on next Monday.;Calendar is switched to selected day.;;;;;

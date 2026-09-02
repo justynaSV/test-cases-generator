@@ -305,7 +305,7 @@ Blacharnia page is loaded"
 - DD.MM
 - time usage/availability
 - number of events planned for this day";It displays correctly.;;;;;
-;End of test;;;;;;
+;End of test.;;;;;;
 Blacharnia - Lista myć (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
 Blacharnia page is loaded"
 ;On the left-side menu, go to 'Lista myć';Page 'Lista myć' is loaded.;;;;;
@@ -538,6 +538,7 @@ Multiple claims are available"
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify filtering by rescheduled claims by marking checkbox: 'Szkody całkowite'.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
+;End of test.;;;;;;
 Blacharnia - Lista szkód w toku (single filter - columns);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
 Blacharnia page is loaded
 Multiple claims are available"
@@ -1620,28 +1621,4 @@ Blacharnia page is loaded ('Zarządzanie szkodami')"
 - field in column 'Osoba weryfikująca' is empty
 - button 'Cofnij weryfikację' is changed to 'Zweryfikuj'.";It displays correctly.;;;;;
 ;End of test.;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
 ;;;;;;;
