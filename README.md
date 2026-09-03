@@ -16,6 +16,10 @@ Both run the same interview → generate → validate flow, read the same
 write to `test_cases/generated/`, and finish by running `scripts/validate.js`.
 It all happens in the chat — nothing to copy out and paste back.
 
+**New here? [`HOWTO.md`](HOWTO.md) is the full step-by-step** — generate, check,
+and import into Azure DevOps without mangling the multi-line cells or the
+Polish characters.
+
 ## Option A — VS Code Copilot slash-command
 
 1. Open this repo in VS Code with GitHub Copilot Chat.
@@ -93,6 +97,9 @@ test_cases/
   generated/                             # output lands here
 scripts/
   validate.js                            # the validator (used by CI and both slash-commands)
+  fix-encoding.js                        # re-save a CSV as UTF-8 + BOM (Excel encoding fixes)
+  flatten-multiline.js                   # fallback: collapse multi-line cells for raw grid paste
+HOWTO.md                                 # end-to-end walkthrough: generate → check → import
 ```
 
 ## Adding your own reference examples
@@ -119,25 +126,14 @@ remove one.
 
 ## Importing to Azure DevOps
 
-The scenarios use quoted multi-line cells for bullet lists, and Polish text
-throughout. Two paths keep both intact:
-
-- **Double-click the `.csv`** → it opens in Excel → copy the rows → paste into
-  the Test Plans grid.
-- **Test Plans → "Import test cases from CSV/XLSX"** → upload the file directly.
-
-Things that break it:
-
-- Pasting raw CSV *text* into the grid — splits every line into its own row.
-  (`scripts/flatten-multiline.js` makes a one-line-per-cell `*.azure.csv` for
-  this case, but you shouldn't normally need it.)
-- Excel's *Data → From Text/CSV* import wizard — drops multi-line cell content
-  into the Title column.
-- A missing UTF-8 BOM — Excel then opens the file as Windows-1250 and mangles
-  every Polish diacritic (`ś` → `Ĺ›`), which carries through to Azure. The
-  generated files are written with a BOM; `node scripts/fix-encoding.js <file>`
-  adds one to a file that lost it, and `npm run validate` warns when it's
-  missing.
+Full walkthrough with the click-by-click steps and a troubleshooting table:
+[`HOWTO.md`](HOWTO.md). In short — double-click the `.csv` to open it in Excel,
+copy the rows, paste into the Test Plans **Grid** view (or upload the file via
+**Import test cases from CSV/XLSX**). Do **not** paste raw CSV text into the
+grid, use Excel's *Data → From Text* wizard, or open a BOM-less file in Excel —
+each of those breaks either the multi-line cells or the Polish characters.
+Generated files carry a UTF-8 BOM; `node scripts/fix-encoding.js <file>` adds
+one back if a file loses it, and `npm run validate` warns when it's missing.
 
 ## Validating manually
 
