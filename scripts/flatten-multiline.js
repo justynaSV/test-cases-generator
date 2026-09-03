@@ -1,24 +1,23 @@
 #!/usr/bin/env node
 /**
- * flatten-multiline.js — legacy-conversion tool. The style guide now
- * requires single-line cells (multi-item checks joined with " | ") so new
- * generated CSVs don't need this step. Keep this around only for one-off
- * conversion of old/imported files that still have embedded newlines in
- * quoted cells (e.g. something authored by hand in Excel).
+ * flatten-multiline.js — fallback tool for ONE situation only: you have to
+ * paste raw CSV *text* straight into the Azure Test Plans grid. That path
+ * treats every newline as a new grid row, so a multi-line cell lands in the
+ * wrong column. This script collapses each multi-line cell onto a single
+ * physical line, its items joined with " | ".
  *
- * Why this exists at all: Azure DevOps Test Plans doesn't handle embedded
- * newlines inside a cell — both the Excel-based CSV import ("Double-quote
- * not enclosed in double-quotes" error) and pasting rows into the Test Plan
- * grid (each embedded newline is treated as a new grid row, so the
- * continuation text lands in the wrong column) break on them. This is a
- * hard limitation of Azure's paste parser (confirmed: switching delimiter to
- * comma, and replacing newlines with a vertical-tab "soft break", both
- * failed to fix it) — true multi-line cells only work if typed directly in
- * the Azure grid or pushed in via the REST API.
+ * You almost never need this. The normal way to get the generated CSV into
+ * Azure keeps true multi-line cells intact:
+ *   - open the .csv in Excel, then copy the rows and paste into the grid
+ *     (Excel↔grid paste preserves in-cell line breaks), or
+ *   - Test Plans → "Import test cases from CSV/XLSX" (its parser handles
+ *     newlines inside double-quoted cells).
+ * The "Double-quote not enclosed in double-quotes" error some imports throw
+ * is a CSV *quoting* bug (an unescaped " inside a cell), not a line-break
+ * limitation — `scripts/validate.js` now catches that class of error.
  *
  * This script NEVER overwrites the source file. It writes a companion
- * "<name>.azure.csv" (or a custom --out path) next to it, with each
- * multi-line cell's bullets joined with " | " into a single physical line.
+ * "<name>.azure.csv" (or a custom --out path) next to it.
  *
  * Usage:
  *   node scripts/flatten-multiline.js some-legacy-file.csv

@@ -1,7 +1,11 @@
-Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
+﻿Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
 Autoryzacja - login page (page layout);;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;<tester email>;User has an account created in Omnetic (valid e-mail and password)
 ;Go to: login page;It displays correctly.;;;;;
-;Verify elements in page layout: | 'Login' field | 'Hasło' field | 'Zaloguj' button | 'Zapomniałeś hasła?' link;All elements are visible and correctly labelled.;;;;;
+;"Verify elements in page layout:
+- 'Login' field
+- 'Hasło' field
+- 'Zaloguj' button
+- 'Zapomniałeś hasła?' link";All elements are visible and correctly labelled.;;;;;
 ;End of test.;;;;;;
 Autoryzacja - login (invalid credentials);;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;<tester email>;User has an account created in Omnetic (valid e-mail and password)
 ;Go to: login page;It displays correctly.;;;;;

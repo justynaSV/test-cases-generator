@@ -32,18 +32,34 @@ const EXPECTED_AREA_PATH = "QA\\SVCloud";
 const PLACEHOLDER_ASSIGNED_TO = "<tester email>";
 
 /**
- * Minimal RFC4180-style CSV parser for a custom delimiter.
- * Handles quoted fields, doubled "" as an escaped quote, and embedded
- * newlines/delimiters inside quoted fields (needed for the multi-line
- * bullet-list cells the style guide uses).
+ * RFC4180-style CSV parser for a custom delimiter.
+ *
+ * Handles quoted fields, doubled "" as an escaped quote, and real newlines
+ * inside quoted fields — the style guide's multi-line bullet cells rely on
+ * that, and Azure DevOps imports them fine as long as the cell is quoted
+ * correctly (open the CSV in Excel, then copy the rows into the Test Plans
+ * grid; or use "Import test cases from CSV/XLSX").
+ *
+ * It also reports the malformed-quoting cases that make Azure's importer fail
+ * with "Double-quote not enclosed in double-quotes": a bare " inside an
+ * otherwise-unquoted cell, text after a closing quote, or a quoted cell that
+ * is never closed. Returns { rows, errors }.
  */
 function parseCSV(text, delimiter = DELIMITER) {
   const rows = [];
+  const errors = [];
   let row = [];
   let field = "";
   let inQuotes = false;
+  let fieldHasContent = false; // any char taken for the current field yet?
   let i = 0;
   const n = text.length;
+
+  const lineAt = (idx) => {
+    let ln = 1;
+    for (let k = 0; k < idx && k < n; k++) if (text[k] === "\n") ln += 1;
+    return ln;
+  };
 
   while (i < n) {
     const ch = text[i];
@@ -56,6 +72,13 @@ function parseCSV(text, delimiter = DELIMITER) {
           continue;
         }
         inQuotes = false;
+        const next = text[i + 1];
+        if (next !== undefined && next !== delimiter && next !== "\r" && next !== "\n") {
+          errors.push(
+            `Line ${lineAt(i)}: text after a closing double-quote — a quoted cell ` +
+              `must end at the quote; double any literal " as "".`
+          );
+        }
         i += 1;
         continue;
       }
@@ -65,13 +88,24 @@ function parseCSV(text, delimiter = DELIMITER) {
     }
 
     if (ch === '"') {
-      inQuotes = true;
+      if (!fieldHasContent) {
+        inQuotes = true;
+        i += 1;
+        continue;
+      }
+      errors.push(
+        `Line ${lineAt(i)}: unescaped double-quote inside an unquoted cell — ` +
+          `wrap the whole cell in "..." and double any literal " as "".`
+      );
+      field += ch;
+      fieldHasContent = true;
       i += 1;
       continue;
     }
     if (ch === delimiter) {
       row.push(field);
       field = "";
+      fieldHasContent = false;
       i += 1;
       continue;
     }
@@ -84,11 +118,19 @@ function parseCSV(text, delimiter = DELIMITER) {
       rows.push(row);
       row = [];
       field = "";
+      fieldHasContent = false;
       i += 1;
       continue;
     }
     field += ch;
+    fieldHasContent = true;
     i += 1;
+  }
+
+  if (inQuotes) {
+    errors.push(
+      `Line ${lineAt(n)}: file ends inside a quoted cell — a closing double-quote is missing.`
+    );
   }
   // flush trailing field/row if the file doesn't end with a newline
   if (field.length > 0 || row.length > 0) {
@@ -99,7 +141,7 @@ function parseCSV(text, delimiter = DELIMITER) {
   if (rows.length && rows[rows.length - 1].every((c) => c === "")) {
     rows.pop();
   }
-  return rows;
+  return { rows, errors };
 }
 
 function padRow(row) {
@@ -111,15 +153,27 @@ function padRow(row) {
 function validateFile(filePath) {
   const report = { path: filePath, errors: [], warnings: [], scenarioCount: 0 };
 
-  let text;
+  let rawText;
   try {
-    text = fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, "");
+    rawText = fs.readFileSync(filePath, "utf8");
   } catch (err) {
     report.errors.push(`Could not read file: ${err.message}`);
     return report;
   }
 
-  const rows = parseCSV(text);
+  const hadBom = rawText.charCodeAt(0) === 0xfeff;
+  const text = hadBom ? rawText.slice(1) : rawText;
+  const hasNonAscii = Array.from(text).some((c) => c.charCodeAt(0) > 127);
+  if (!hadBom && hasNonAscii) {
+    report.warnings.push(
+      "File has no UTF-8 BOM and contains non-ASCII characters \u2014 Excel may " +
+        "read it as Windows-1250 on double-click and mangle Polish diacritics. " +
+        "Run `node scripts/fix-encoding.js` on it, or re-save with a BOM."
+    );
+  }
+
+  const { rows, errors: parseErrors } = parseCSV(text);
+  report.errors.push(...parseErrors);
   if (rows.length === 0) {
     report.errors.push("File is empty.");
     return report;

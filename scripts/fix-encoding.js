@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * fix-encoding.js — converts a CSV (or any text file) to real UTF-8.
+ * fix-encoding.js — converts a CSV (or any text file) to real UTF-8 with a BOM.
  *
  * Polish exports from Excel/Azure DevOps are very often saved as
  * Windows-1250 (or occasionally ISO-8859-2), not UTF-8. If you open one of
@@ -9,7 +9,11 @@
  * exact symptom is what this script fixes.
  *
  * It does NOT just relabel the file — it re-decodes the original bytes
- * using the correct source encoding and writes out genuine UTF-8 bytes.
+ * using the correct source encoding and writes out genuine UTF-8 bytes,
+ * prefixed with a UTF-8 BOM. The BOM matters: when you double-click a CSV,
+ * Excel on a Polish Windows reads a BOM-less UTF-8 file as Windows-1250 and
+ * mangles every diacritic (ś -> Ĺ›, ń -> Ĺ„, ...) — and that mojibake then
+ * carries through when you paste the rows into the Azure Test Plans grid.
  *
  * Usage:
  *   node scripts/fix-encoding.js style/examples/TC_foo.csv
@@ -68,7 +72,11 @@ function fixFile(filePath, { forcedEncoding, outPath } = {}) {
     const backup = `${filePath}.bak`;
     if (!fs.existsSync(backup)) fs.copyFileSync(filePath, backup);
   }
-  fs.writeFileSync(target, text, "utf8");
+  // Write UTF-8 with a BOM so Excel double-click opens it as UTF-8, not
+  // Windows-1250. Strip any existing BOM first so this stays idempotent.
+  const BOM = "﻿";
+  const withBom = BOM + text.replace(/^﻿/, "");
+  fs.writeFileSync(target, withBom, "utf8");
 
   return { filePath, target, detectedEncoding: encoding };
 }

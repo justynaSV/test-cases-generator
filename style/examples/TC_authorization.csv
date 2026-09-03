@@ -1,4 +1,4 @@
-Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
+﻿Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
 User login with valid credentials;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
 ;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
 ;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
@@ -66,14 +66,25 @@ User login - unblocking the account;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;j
 ;Change the password in both fields to: Test1;Fields are filled in.;;;;;;;
 ;Click 'Zmień hasło'.;Red exclamation mark appears in the first field.;;;;;;;
 ;Click on the exclamation mark.;Error message appears: 'Nowe hasło nie spełnia warunków długości hasła. Minimalna długość hasła to: 8 znaków.';;;;;;;
-;Change the password in both fields to one which is complient with requirements: | at least one small and one big letter, | at least one number, | no less than 8 signs.;Fields are filled in.;;;;;;;
+;"Change the password in both fields to one which is complient with requirements:
+- at least one small and one big letter,
+- at least one number,
+- no less than 8 signs.";Fields are filled in.;;;;;;;
 ;Click 'Zmień hasło'.;Message appears: 'Twoje hasło zostało zmienione na nowe, za chwilę zostaniesz przekierowany do strony logowania.', user is redirected to login page.;;;;;;;
 ;Log in with new password.;User is logged in, main page is loaded.;;;;;;;
 ;End of test.;;;;;;;;
 User login - change password;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
 ;Log in to the system (see <link>);User is logged in.;;;;;;;
 ;Click on the dropdown menu in top-right corner and select 'Zmień hasło';User is redirected to password reset page.;;;;;;;
-;Verify page layout: | password requirements, | Adres E-mail | Wprowadź obecne hasło, | Wprowadź nowe hasło, | Wprowadź ponownie nowe hasło | checkbox: 'Pokaż hasło', | button: 'Anuluj', | button: 'Zmień hasło'.;It displays correctly;;;;;;;
+;"Verify page layout:
+- password requirements,
+- Adres E-mail
+- Wprowadź obecne hasło,
+- Wprowadź nowe hasło,
+- Wprowadź ponownie nowe hasło
+- checkbox: 'Pokaż hasło',
+- button: 'Anuluj',
+- button: 'Zmień hasło'.";It displays correctly;;;;;;;
 ;Verify that e-mail address cannot be edited.;Field cannot be edited.;;;;;;;
 ;Fill in 'Adres E-mail' field with current password.;The field is filled in.;;;;;;;
 ;Provide new compliant password in field 'Wprowadź obecne hasło'. ;The field is filled in.;;;;;;;
@@ -132,7 +143,10 @@ User login - log in via Omnetic, invalid credentials;;;QA\SVCloud;QA\SVCloud\Aut
 User login - opening help center;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;;;
 ;Go to: https://cloud-qa.softvig.pl/;Login page is loaded.;;;;;;;
 ;Click on the help icon in top-right corner.;Drop-down menu is visible.;;;;;;;
-;Verify drop-down menu content: | Centrum pomocy | Zgłoś problem | Zadaj pytanie;It displays correctly.;;;;;;;
+;"Verify drop-down menu content:
+- Centrum pomocy
+- Zgłoś problem
+- Zadaj pytanie";It displays correctly.;;;;;;;
 ;Click 'Centrum pomocy'.;In the new window help center page is opened (https://help.svcloud.pl/svcloudwiki/doku.php?id=platforma_logowania:start);;;;;;;
 ;Go back to login page to click 'Zgłoś problem'.;In the new window, customer support portal is opened (with request form).;;;;;;;
 ;Go back to login page to click 'Zadaj pytanie'.;In the new window, customer support portal is opened (with request form).;;;;;;;
@@ -152,8 +166,14 @@ User login - log in on mobile phone;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;j
 ;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
 ;In field 'Hasło' put valid password.;Field is filled in.;;;;;;;
 ;Click 'Logowanie'.;User is logged in, main page is loaded.;;;;;;;
-;Verify if the page recognized the device: | mobile phone icon is highlighted.;It displays correctly.;;;;;;;
-;Verify the list of available applications: | Rejestrator postępu prac blacharni | Rejestrator postępu prac myjni | Blacharnia mobilna | Mobile Video Service | Door to door;It displays correctly.;;;;;;;
+;"Verify if the page recognized the device:
+- mobile phone icon is highlighted.";It displays correctly.;;;;;;;
+;"Verify the list of available applications:
+- Rejestrator postępu prac blacharni
+- Rejestrator postępu prac myjni
+- Blacharnia mobilna
+- Mobile Video Service
+- Door to door";It displays correctly.;;;;;;;
 ;Select any available application.;Application page is loaded.;;;;;;;
 ;Verify if appliaction is scaled correctly.;It displays correctly.;;;;;;;
 ;End of test.;;;;;;;;
@@ -163,12 +183,19 @@ User login - log in on tablet;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna
 ;In field 'Adres e-mail' put valid e-mail address.;Field is filled in.;;;;;;;
 ;In field 'Hasło' put valid password.;Field is filled in.;;;;;;;
 ;Click 'Logowanie'.;User is logged in, main page is loaded.;;;;;;;
-;Verify if the page recognized the device: | mobile phone icon is highlighted.;It displays correctly.;;;;;;;
-;Verify the list of available applications: | Rejestrator postępu prac blacharni | Rejestrator postępu prac myjni | Blacharnia mobilna | Mobile Video Service | Door to door;It displays correctly.;;;;;;;
+;"Verify if the page recognized the device:
+- mobile phone icon is highlighted.";It displays correctly.;;;;;;;
+;"Verify the list of available applications:
+- Rejestrator postępu prac blacharni
+- Rejestrator postępu prac myjni
+- Blacharnia mobilna
+- Mobile Video Service
+- Door to door";It displays correctly.;;;;;;;
 ;Select any available application.;Application page is loaded.;;;;;;;
 ;Verify if appliaction is scaled correctly.;It displays correctly.;;;;;;;
 ;End of test.;;;;;;;;
-User login - edit profile data;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;User has a created account (valid e-mail and password) | User is logged in.;;
+User login - edit profile data;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyna.biernacka@softvig.pl;"User has a created account (valid e-mail and password)
+User is logged in.";;
 ;On the main page, click on drop-down menu on the top-right corner.;Drop-down menu is visible.;;;;;;;
 ;Click 'Mój profil'.;'Mój profil' page is displayed.;;;;;;;
 ;Click 'Edytuj awatar'.;Page for editing photo is displayed.;;;;;;;
@@ -176,7 +203,10 @@ User login - edit profile data;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyn
 ;Choose a photo to upload.;Photo is uploaded.;;;;;;;
 ;Adjust the photo using 'Powiększ' and 'Wyprostuj' slides.;Photo is adjusted.;;;;;;;
 ;Click 'Zapisz'.;Photo is saved, user is redirected back to 'Mój profil' page.;;;;;;;
-;Verify if below fields are filled in and not editable: | Imię | Nazwisko | Login;Fields are filled in, not editable.;;;;;;;
+;"Verify if below fields are filled in and not editable:
+- Imię
+- Nazwisko
+- Login";Fields are filled in, not editable.;;;;;;;
 ;Fill in the 'Prefix' field.;Filed is filled in.;;;;;;;
 ;Fill in the 'Numer telefonu komórkowego' field.;Filed is filled in.;;;;;;;
 ;Click 'Zapisz'. ;Confirmation message occurs, user is redirected to main page.;;;;;;;
@@ -184,9 +214,16 @@ User login - edit profile data;;;QA\SVCloud;QA\SVCloud\Autoryzacja;Medium;justyn
 ;Verify if data modified in previous steps is visible (photo, phone number);Data is correct.;;;;;;;
 ;End of test.;;;;;;;;
 User login - role verification: Admin;;;QA\SVCloud;QA\SVCloud\Flota;Medium;justyna.biernacka@softvig.pl;;;
-;Log in to the system as admin (see <link>);User is logged in, main page is loaded.;;;;;User has valid credentials | User has admin role assigned;;
-;Verify the list of available applications: | x | y | z;It displays correctly.;;;;;;;
+;Log in to the system as admin (see <link>);User is logged in, main page is loaded.;;;;;"User has valid credentials
+User has admin role assigned";;
+;"Verify the list of available applications:
+- x
+- y
+- z";It displays correctly.;;;;;;;
 ;Switch to mobile view by clicking mobile icon.;;;;;;;;
-;Verify the list of available applications: | x | y | z;;;;;;;;
+;"Verify the list of available applications:
+- x
+- y
+- z";;;;;;;;
 ;Switch back to desktop view by clicking desktop icon;;;;;;;;
 ;End of test.;;;;;;;;

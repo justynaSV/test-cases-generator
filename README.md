@@ -105,7 +105,7 @@ Currently there:
 | File | Covers |
 |---|---|
 | `TC_authorization.csv` | login/roles, negative cases, cross-view |
-| `TC_bodyshop.csv` | largest sample — layout, filters (grid/columns), pipe-joined multi-item cells, document flows |
+| `TC_bodyshop.csv` | largest sample — layout, filters (grid/columns), multi-line bullet cells, document flows |
 | `TC_carwash.csv` | calendar/booking screen |
 | `TC_fleet.csv` | dealer fleet — extensive single-filter-per-column coverage |
 | `TEMPLATE_example.csv` | minimal format skeleton — keep as-is, it's the placeholder |
@@ -116,6 +116,28 @@ reference, so keep them passing `npm run validate` (CI doesn't check
 The example lists in `.github/prompts/generate-test-case.prompt.md` and
 `.claude/commands/generate-test-case.md` should be kept in sync when you add or
 remove one.
+
+## Importing to Azure DevOps
+
+The scenarios use quoted multi-line cells for bullet lists, and Polish text
+throughout. Two paths keep both intact:
+
+- **Double-click the `.csv`** → it opens in Excel → copy the rows → paste into
+  the Test Plans grid.
+- **Test Plans → "Import test cases from CSV/XLSX"** → upload the file directly.
+
+Things that break it:
+
+- Pasting raw CSV *text* into the grid — splits every line into its own row.
+  (`scripts/flatten-multiline.js` makes a one-line-per-cell `*.azure.csv` for
+  this case, but you shouldn't normally need it.)
+- Excel's *Data → From Text/CSV* import wizard — drops multi-line cell content
+  into the Title column.
+- A missing UTF-8 BOM — Excel then opens the file as Windows-1250 and mangles
+  every Polish diacritic (`ś` → `Ĺ›`), which carries through to Azure. The
+  generated files are written with a BOM; `node scripts/fix-encoding.js <file>`
+  adds one to a file that lost it, and `npm run validate` warns when it's
+  missing.
 
 ## Validating manually
 

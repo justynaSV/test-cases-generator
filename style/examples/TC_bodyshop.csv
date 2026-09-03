@@ -1,174 +1,528 @@
-Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
+﻿Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
 Blacharnia - page layout;;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in
 ;In application page go to 'Blacharnia' -> 'BOK SZCZECIN'.;"""Zarządzanie szkodami"" page is displayed.";;;;;
-;Verify menu content (left side of the page): | Zarządzanie szkodami | Kalendarz doradców | Kalendarz pojazdów | Lista umów | Myjnia | Lista myć | Lista szkód w toku | Lista szkód - historia | Panel kontrolny;It displays correctly.;;;;;
-;Verify top panel of the page: | Doradca (drop-down list) | Kosztorysant (drop-down list) | button: Wyszukaj szkodę w Audanet | button: Dodaj naprawę;It displays correctly.;;;;;
-;Verify sections visible on the page: | BOK SZCZECIN - samochód poza ASO | BOK SZCZECIN - samochód w ASO | Warsztat blacharsko-lakierniczy | Bufor | Zewnętrznt warsztat blacharsko-lakierniczy;It displays correctly.;;;;;
+;"Verify menu content (left side of the page):
+- Zarządzanie szkodami
+- Kalendarz doradców
+- Kalendarz pojazdów
+- Lista umów
+- Myjnia
+- Lista myć
+- Lista szkód w toku
+- Lista szkód - historia
+- Panel kontrolny";It displays correctly.;;;;;
+;"Verify top panel of the page:
+- Doradca (drop-down list)
+- Kosztorysant (drop-down list)
+- button: Wyszukaj szkodę w Audanet
+- button: Dodaj naprawę";It displays correctly.;;;;;
+;"Verify sections visible on the page:
+- BOK SZCZECIN - samochód poza ASO
+- BOK SZCZECIN - samochód w ASO
+- Warsztat blacharsko-lakierniczy
+- Bufor
+- Zewnętrznt warsztat blacharsko-lakierniczy";It displays correctly.;;;;;
 ;Verify if next to each section's name there is a number of assigned claims.;It displays correctly.;;;;;
-;"Verify columns in section ""BOK SZCZECIN - samochód poza ASO"": | Pierwsza wizyta | Oględziny | Dokumenty | Akceptacja | Części | Do przyjęcia";It displays correctly.;;;;;
+;"Verify columns in section ""BOK SZCZECIN - samochód poza ASO"":
+- Pierwsza wizyta
+- Oględziny
+- Dokumenty
+- Akceptacja
+- Części
+- Do przyjęcia";It displays correctly.;;;;;
 ;"Verify if next to each column's name there is a number of assigned claims (section ""BOK SZCZECIN - samochód poza ASO"").";It displays correctly.;;;;;
-;"Verify columns in section ""BOK SZCZECIN - samochód w ASO"": | Pierwsza wizyta | Oględziny | Dokumenty | Akceptacja | Części | Oczek. na wydanie";It displays correctly.;;;;;
+;"Verify columns in section ""BOK SZCZECIN - samochód w ASO"":
+- Pierwsza wizyta
+- Oględziny
+- Dokumenty
+- Akceptacja
+- Części
+- Oczek. na wydanie";It displays correctly.;;;;;
 ;"Verify if next to each column's name there is a number of assigned claims (section ""BOK SZCZECIN - samochód w ASO"").";It displays correctly.;;;;;
-;"Verify columns in section ""Warsztat blacharsko lakierniczy"": | Oczek. na naprawę | Dodatek | Części | Naprawa mechaniczna | Mycie | Odbiór jakościowy | Rozbrajanie | Naprawa | Przygotowanie do lakierowania | Lakierowanie | Zbrojenie | Polerowanie";It displays correctly.;;;;;
+;"Verify columns in section ""Warsztat blacharsko lakierniczy"":
+- Oczek. na naprawę
+- Dodatek
+- Części
+- Naprawa mechaniczna
+- Mycie
+- Odbiór jakościowy
+- Rozbrajanie
+- Naprawa
+- Przygotowanie do lakierowania
+- Lakierowanie
+- Zbrojenie
+- Polerowanie";It displays correctly.;;;;;
 ;"Verify if next to each column's name there is a number of assigned claims (section ""Warsztat blacharsko lakierniczy"").";It displays correctly.;;;;;
 ;Verify if in section's header there is a drop-down list.;It displays correctly.;;;;;
-;"Verify columns in section ""Bufor"": | Nowe | Zwrócone | Przekazane";It displays correctly.;;;;;
+;"Verify columns in section ""Bufor"":
+- Nowe
+- Zwrócone
+- Przekazane";It displays correctly.;;;;;
 ;"Verify if next to each column's name there is a number of assigned claims (section ""Bufor"").";It displays correctly.;;;;;
-;"Verify columns in section ""Zewnętrzny warsztat blacharsko lakierniczy"": | Do wysłania | Naprawa | Do odbioru";It displays correctly.;;;;;
+;"Verify columns in section ""Zewnętrzny warsztat blacharsko lakierniczy"":
+- Do wysłania
+- Naprawa
+- Do odbioru";It displays correctly.;;;;;
 ;"Verify if next to each column's name there is a number of assigned claims (section ""Zewnętrzny warsztat blacharsko lakierniczy"").";It displays correctly.;;;;;
 ;Verify if in section's header there is a drop-down list.;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Kalendarz doradców (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded.
+Blacharnia - Kalendarz doradców (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded."
 ;On the left-side menu, go to 'Kalendarz doradców';Page 'Kalendarz doradców' is loaded.;;;;;
-;Verify left panel on the page: | today's date in format: full day name, DD.MM.YYY | 'Dzisiaj' button | 'Wybierz dzień' button | search bar (drop-down list with workers' names) | workers' list in division per job title.;It displays correctly.;;;;;
-;Verify top panel of the page: | button: 'Wyszukaj rezerwację' | drop-down list with time | toggle switch: '7 dni / 30 dni' | toggle switch: 'Wyróżnij konflikty' | button: 'Pokaż godziny zamknięcia' | button: 'Sortowanie grup';It displays correctly.;;;;;
-;Verify that below top panel calendar days are displayed: | shortened name's day | DD.MM;It displays correctly.;;;;;
+;"Verify left panel on the page:
+- today's date in format: full day name, DD.MM.YYY
+- 'Dzisiaj' button
+- 'Wybierz dzień' button
+- search bar (drop-down list with workers' names)
+- workers' list in division per job title.";It displays correctly.;;;;;
+;"Verify top panel of the page:
+- button: 'Wyszukaj rezerwację'
+- drop-down list with time
+- toggle switch: '7 dni / 30 dni'
+- toggle switch: 'Wyróżnij konflikty'
+- button: 'Pokaż godziny zamknięcia'
+- button: 'Sortowanie grup'";It displays correctly.;;;;;
+;"Verify that below top panel calendar days are displayed:
+- shortened name's day
+- DD.MM";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - searching reservation view layout;;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded.
+Blacharnia - searching reservation view layout;;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded."
 ;On the left-side menu, go to 'Kalendarz doradców';Page 'Kalendarz doradców' is loaded.;;;;;
 ;"In 'Kalendarz doradców' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;
-;Verify header buttons: | Wyczyść filtry;It displays correctly.;;;;;
-;Verify columns in section 'Rezerwacje': | Nazwa | Imię | Nazwisko | Nr rejestracyjny | Tel. Kontaktowy | Status (drop-down list) | Komentarz | Zasób | Typ rezerwacji (drop-down list) | Utworzył | Od (calendar) | Do (calendar) | Akcje;It displays correctly.;;;;;
-;Verify if there is a search field under columns: | Nazwa | Imię | Nazwisko | Nr rejestracyjny | Tel. Kontaktowy | Komentarz | Zasób | Utworzył;It displays correctly.;;;;;
-;Verify items in 'Status' drop-down list: | (Wszystkie) | Oczekuje | Rozpoczęto | Wstrzymano | Wykonane | Zaplanowane;It displays correctly.;;;;;
-;In column 'Akcje', click 'Pokaż' next to any reservation to verify if: | pop-up window 'Wyszukiwanie rezerwacji' is closed | in 'Kalendarz doradców' selected reservation is displayed and highllighted with red frame;It displays correctly.;;;;;
+;"Verify header buttons:
+- Wyczyść filtry";It displays correctly.;;;;;
+;"Verify columns in section 'Rezerwacje':
+- Nazwa
+- Imię
+- Nazwisko
+- Nr rejestracyjny
+- Tel. Kontaktowy
+- Status (drop-down list)
+- Komentarz
+- Zasób
+- Typ rezerwacji (drop-down list)
+- Utworzył
+- Od (calendar)
+- Do (calendar)
+- Akcje";It displays correctly.;;;;;
+;"Verify if there is a search field under columns:
+- Nazwa
+- Imię
+- Nazwisko
+- Nr rejestracyjny
+- Tel. Kontaktowy
+- Komentarz
+- Zasób
+- Utworzył";It displays correctly.;;;;;
+;"Verify items in 'Status' drop-down list:
+- (Wszystkie)
+- Oczekuje
+- Rozpoczęto
+- Wstrzymano
+- Wykonane
+- Zaplanowane";It displays correctly.;;;;;
+;"In column 'Akcje', click 'Pokaż' next to any reservation to verify if:
+- pop-up window 'Wyszukiwanie rezerwacji' is closed
+- in 'Kalendarz doradców' selected reservation is displayed and highllighted with red frame";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - searching reservation (single filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded. | Multiple reservations are available.
+Blacharnia - searching reservation (single filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded.
+Multiple reservations are available."
 ;"In 'Kalendarz doradców' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;
-;Verify searching by name (column 'Nazwa'): | in search field type in a part of customer's name;The list is filtered correctly.;;;;;
+;"Verify searching by name (column 'Nazwa'):
+- in search field type in a part of customer's name";The list is filtered correctly.;;;;;
 ;Verify if searching by name (column 'Nazwa') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by name (column 'Nazwa') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by first name (column 'Imię'): | in search field type in a part of customer's first name;The list is filtered correctly.;;;;;
+;"Verify searching by first name (column 'Imię'):
+- in search field type in a part of customer's first name";The list is filtered correctly.;;;;;
 ;Verify if searching by first name (column 'Imię') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by first name (column 'Imię') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by last name (column 'Nazwisko'): | in search field type in a part of customer's last name;The list is filtered correctly.;;;;;
+;"Verify searching by last name (column 'Nazwisko'):
+- in search field type in a part of customer's last name";The list is filtered correctly.;;;;;
 ;Verify if searching by last name (column 'Nazwisko') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by last name (column 'Nazwisko') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by registration plate (column 'Nr rejestracyjny'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Nr rejestracyjny'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by registration plate (column 'Nr rejestracyjny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by registration plate (column 'Nr rejestracyjny') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by phone number (column 'Tel.kontaktowy'): | in search field type in a part of phone number;The list is filtered correctly.;;;;;
+;"Verify searching by phone number (column 'Tel.kontaktowy'):
+- in search field type in a part of phone number";The list is filtered correctly.;;;;;
 ;Verify sorting by phone number (column 'Tel.kontaktowy') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by status (column 'Status'): | select any status from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by status (column 'Status'):
+- select any status from drop-down list";The list is filtered correctly.;;;;;
 ;Verify sorting by status (column 'Status') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by comment (column 'Komentarz'): | in search field type in a part of a comment;The list is filtered correctly.;;;;;
+;"Verify searching by comment (column 'Komentarz'):
+- in search field type in a part of a comment";The list is filtered correctly.;;;;;
 ;Verify if searching by comment (column 'Komentarz') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by comment (column 'Komentarz') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by resource (column 'Zasób'): | in search field type in a part of a resource;The list is filtered correctly.;;;;;
+;"Verify searching by resource (column 'Zasób'):
+- in search field type in a part of a resource";The list is filtered correctly.;;;;;
 ;Verify if searching by resource (column 'Zasób') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by resource (column 'Zasób') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by reservation type (column 'Typ rezerwacji'): | select any type from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by reservation type (column 'Typ rezerwacji'):
+- select any type from drop-down list";The list is filtered correctly.;;;;;
 ;Verify sorting by reservation type (column 'Typ rezerwacji') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by who created reservation  (column 'Utworzył'): | in search field type in a part of worker's first name/last name;The list is filtered correctly.;;;;;
+;"Verify searching by who created reservation  (column 'Utworzył'):
+- in search field type in a part of worker's first name/last name";The list is filtered correctly.;;;;;
 ;Verify if searching by who created reservation  (column 'Utworzył') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by who created reservation  (column 'Utworzył') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by 'from' date (column 'Od'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by 'from' date (column 'Od'):
+- select any date";The list is filtered correctly.;;;;;
 ;Verify sorting by 'from' date (column 'Od') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by 'to' date (column 'Do'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by 'to' date (column 'Do'):
+- select any date";The list is filtered correctly.;;;;;
 ;Verify sorting by 'from' date (column 'Do') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - searching reservation (multiple filters);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded. | Multiple reservations are available.
+Blacharnia - searching reservation (multiple filters);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded.
+Multiple reservations are available."
 ;"In 'Kalendarz doradców' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;
 ;Filter data by first name.;The list is filtered correctly.;;;;;
 ;Add filtering by last name.;The list is filtered correctly.;;;;;
 ;Add filtering by date.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Kalendarz pojazdów (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded
+Blacharnia - Kalendarz pojazdów (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded"
 ;On the left-side menu, go to 'Kalendarz pojazdów';Page 'Kalendarz pojazdów' is loaded.;;;;;
-;Verify left panel on the page: | today's date in format: full day name, DD.MM.YYY | 'Dzisiaj' button | 'Wybierz dzień' button | search bar (drop-down list) | - parks' list with assigned cars;It displays correctly.;;;;;
-;Verify top panel of the page: | toggle switch: 'Dostępny na dziś' | button: 'Wyszukaj rezerwację' | drop-down list with time | toggle switch: '7 dni 30 dni' | button: 'Sortowanie grup';It displays correctly.;;;;;
-;Verify that below top panel calendar days are displayed: | shortened name's day | DD.MM;It displays correctly.;;;;;
+;"Verify left panel on the page:
+- today's date in format: full day name, DD.MM.YYY
+- 'Dzisiaj' button
+- 'Wybierz dzień' button
+- search bar (drop-down list)
+- - parks' list with assigned cars";It displays correctly.;;;;;
+;"Verify top panel of the page:
+- toggle switch: 'Dostępny na dziś'
+- button: 'Wyszukaj rezerwację'
+- drop-down list with time
+- toggle switch: '7 dni 30 dni'
+- button: 'Sortowanie grup'";It displays correctly.;;;;;
+;"Verify that below top panel calendar days are displayed:
+- shortened name's day
+- DD.MM";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista umów (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded
+Blacharnia - Lista umów (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded"
 ;On the left-side menu, go to 'Lista umów';Page 'Lista umów' is loaded.;;;;;
-;Verify top panel of the page: | button: 'Odśwież' | button: 'Wyczyść filtry' | three dots menu: 'Eksportuj do Excela' | filter button | checkbox: Bez naprawy | checkbox: Otwarte przeterminowane;It displays correctly.;;;;;
-;Verify columns in page layout, section 'Pojazd wynajmowany': | Operacje | Nr rej. | Model | Park (drop-down list) | Data wydania (calendar) | Data przyjęcia (calendar);It displays correctly.;;;;;
-;Verify columns in page layout, section 'Umowa': | Numer umowy | Status (drop-down lsit) | Data od (calendar) | Data do (calendar) | Dotyczy naprawy;It displays correctly.;;;;;
-;Verify columns in page layout, section 'Pojazd naprawiany': | Najemca | Nr rej. | Model (drop-down list) | Umowa dla | Utworzył;It displays correctly.;;;;;
+;"Verify top panel of the page:
+- button: 'Odśwież'
+- button: 'Wyczyść filtry'
+- three dots menu: 'Eksportuj do Excela'
+- filter button
+- checkbox: Bez naprawy
+- checkbox: Otwarte przeterminowane";It displays correctly.;;;;;
+;"Verify columns in page layout, section 'Pojazd wynajmowany':
+- Operacje
+- Nr rej.
+- Model
+- Park (drop-down list)
+- Data wydania (calendar)
+- Data przyjęcia (calendar)";It displays correctly.;;;;;
+;"Verify columns in page layout, section 'Umowa':
+- Numer umowy
+- Status (drop-down lsit)
+- Data od (calendar)
+- Data do (calendar)
+- Dotyczy naprawy";It displays correctly.;;;;;
+;"Verify columns in page layout, section 'Pojazd naprawiany':
+- Najemca
+- Nr rej.
+- Model (drop-down list)
+- Umowa dla
+- Utworzył";It displays correctly.;;;;;
 ;Verify if all columns are sortable (except column Operacje);Columns are sortable.;;;;;
 ;Verify if under each column name (except column 'Operacje') there is a search field.;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns from 'Nr rej.' and 'Model'): | Zawiera | Nie zawiera | Zaczyna się od | Kończy się | Równy | Nierówny | Wyczyść;It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns from 'Nr rej.' and 'Model'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;
 ;Verify if search field for column 'Park' is a drop-down list with the list of parks.;It displays correctly.;;;;;
 ;Verify if search field for columns 'Data wydania', 'Data przyjęcia' is a calendar.;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (column 'Numer umowy'): | Zawiera | Nie zawiera | Zaczyna się od | Kończy się | Równy | Nierówny | Wyczyść;It displays correctly.;;;;;
-;Verify if search field for column 'Status' is a drop-down list with following values: | (Wszystkie) | Otwarta | Zamknięta;It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (column 'Numer umowy'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;
+;"Verify if search field for column 'Status' is a drop-down list with following values:
+- (Wszystkie)
+- Otwarta
+- Zamknięta";It displays correctly.;;;;;
 ;Verify if search field for columns 'Data od', 'Data do' is a calendar.;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns from 'Dotyczy naprawy' to 'Nr rej'): | Zawiera | Nie zawiera | Zaczyna się od | Kończy się | Równy | Nierówny | Wyczyść;It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns from 'Dotyczy naprawy' to 'Nr rej'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;
 ;Verify if search field for column 'Model' (section 'Pojazd naprawiany') is a drop-down list with the list of models.;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns 'Umowa dla', 'Utworzył'): | Zawiera | Nie zawiera | Zaczyna się od | Kończy się | Równy | Nierówny | Wyczyść;It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns 'Umowa dla', 'Utworzył'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Myjnia (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded
+Blacharnia - Myjnia (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded"
 ;On the left-side menu, go to 'Myjnia';Page 'Myjnia' is loaded.;;;;;
-;Verify left panel on the page: | today's date in format: full day name, DD.MM.YYY | 'Dzisiaj' button | 'Wybierz dzień' button | hours (blocks of half an hour);It displays correctly.;;;;;
-;Verify top panel of the page: | button: 'Wyszukaj rezerwację';It displays correctly.;;;;;
-;Verify that below top panel calendar days are displayed: | shortened name's day | DD.MM | time usage/availability;It displays correctly.;;;;;
-;Verify if below days' panel there is a bar with data per day selected in above panel: | full day's name | DD.MM | time usage/availability | number of events planned for this day;It displays correctly.;;;;;
+;"Verify left panel on the page:
+- today's date in format: full day name, DD.MM.YYY
+- 'Dzisiaj' button
+- 'Wybierz dzień' button
+- hours (blocks of half an hour)";It displays correctly.;;;;;
+;"Verify top panel of the page:
+- button: 'Wyszukaj rezerwację'";It displays correctly.;;;;;
+;"Verify that below top panel calendar days are displayed:
+- shortened name's day
+- DD.MM
+- time usage/availability";It displays correctly.;;;;;
+;"Verify if below days' panel there is a bar with data per day selected in above panel:
+- full day's name
+- DD.MM
+- time usage/availability
+- number of events planned for this day";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista myć (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded
+Blacharnia - Lista myć (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded"
 ;On the left-side menu, go to 'Lista myć';Page 'Lista myć' is loaded.;;;;;
-;Verify to panel: | 'Odśwież' button | 'Wyczyść filtry' button | three-dot menu with 'Export do Excela' button;It displays correctly.;;;;;
-;Verify columns in page layout: | Postęp mycia | Dział zlecający mycie | Nr rejestracyjny | Nr nadwozia | Marka | Model | Zleceniodawca | Planowana data mycia od | Program mycia | Czas mycia | Kto wykonał mycie | Kiedy wykonał mycie | Uwagi | Mycie bezterminowe | Kto zaplanował mycie | Data utworzenia | Utworzył | Myjnia;It displays correctly.;;;;;
+;"Verify to panel:
+- 'Odśwież' button
+- 'Wyczyść filtry' button
+- three-dot menu with 'Export do Excela' button";It displays correctly.;;;;;
+;"Verify columns in page layout:
+- Postęp mycia
+- Dział zlecający mycie
+- Nr rejestracyjny
+- Nr nadwozia
+- Marka
+- Model
+- Zleceniodawca
+- Planowana data mycia od
+- Program mycia
+- Czas mycia
+- Kto wykonał mycie
+- Kiedy wykonał mycie
+- Uwagi
+- Mycie bezterminowe
+- Kto zaplanował mycie
+- Data utworzenia
+- Utworzył
+- Myjnia";It displays correctly.;;;;;
 ;Verify if all columns are sortable.;Columns are sortable.;;;;;
 ;Verify if next to each column's name there is a filter button.;It displays correctly.;;;;;
 ;Verify if under each column name there is a search field.;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns with calendars): | Równy | Nierówny | Mniejsze od | Większe | Mniejszy lub równy | Większy lub równy | Pomiędzy | Wyczyść;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (except columns 'Marka' and 'Model'): | Zawiera | Nie zawiera | Zaczyna się od | Kończy się | Równy | Nierówny | Wyczyść;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns 'Marka' and 'Model'): | Zawiera | Wyczyść;It displays correctly.;;;;;
-;Verify if search field for column 'Postęp mycia' is a drop-down list with following items: | (Wszystkie) | Zaplanowane | Rozpoczęte | Wstrzymane | Zakończone;It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns with calendars):
+- Równy
+- Nierówny
+- Mniejsze od
+- Większe
+- Mniejszy lub równy
+- Większy lub równy
+- Pomiędzy
+- Wyczyść";It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (except columns 'Marka' and 'Model'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns 'Marka' and 'Model'):
+- Zawiera
+- Wyczyść";It displays correctly.;;;;;
+;"Verify if search field for column 'Postęp mycia' is a drop-down list with following items:
+- (Wszystkie)
+- Zaplanowane
+- Rozpoczęte
+- Wstrzymane
+- Zakończone";It displays correctly.;;;;;
 ;Verify if search field for column 'Marka' is a drop-down list with the list of vehicle makes.;It displays correctly.;;;;;
 ;Verify if search field for column 'Model' is a drop-down list with the list of vehicle models.;It displays correctly.;;;;;
-;Verify if search field for column 'Mycie bezterminowe' is a drop-down list with following items: | (Wszystkie) | Tak | Nie;It displays correctly.;;;;;
-;Verify if search field for below columns is a calendar: | Planowana data mycia od | Kiedy wykonał mycie | Data utworzenia;It displays correctly.;;;;;
-;Verify available options for pagination: | 30 | 50 | 100;It displays correctly.;;;;;
+;"Verify if search field for column 'Mycie bezterminowe' is a drop-down list with following items:
+- (Wszystkie)
+- Tak
+- Nie";It displays correctly.;;;;;
+;"Verify if search field for below columns is a calendar:
+- Planowana data mycia od
+- Kiedy wykonał mycie
+- Data utworzenia";It displays correctly.;;;;;
+;"Verify available options for pagination:
+- 30
+- 50
+- 100";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista szkód w toku (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded
+Blacharnia - Lista szkód w toku (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded"
 ;On the left-side menu, go to 'Lista szkód w toku'.;Page 'Lista szkód w toku' is loaded.;;;;;
-;Verify to panel: | 'Odśwież' button | 'Wyczyść filtry' button | three-dot menu with 'Export do Excela' button;It displays correctly.;;;;;
-;Verify filtering section: | number input spinner: Szkody BOK poza ASO powyżej (ilość dni) | number input spinner: Szkody BOK w ASO powyżej (ilość dni) | number input spinner: Szkody warsztat powyżej (ilość dni) | Numer faktury | checkbox: Szkody bez zleceń | checkbox: Multiszkody | checkbox: Wiele zleceń od szkody | checkbox: Szkody z kosztorysem | checkbox: Szkody bez kosztorysu | checkbox: Szkody przeplanowane | checkbox: Szkody całkowite;It displays correctly.;;;;;
-;Verify columns in page layout: | Operacje | Nr naprawy | Nr faktury | Wystawiona faktura | Nr szkody | Nr rejestracyjny | Nr nadwozia | Marka | Model | Zleceniodawca | Telefon zleceniodawcy | Cecha ASO | Status szkody | Status pojazdu | Miejsce pojazdu | Miejsce parkingowe | Etap | Rodzaj szkody | Nazwa TU | Kwalifikacja | Opis szkody | Wartość netto aktywnego kosztorysu | Warsztat | BOK odpowiedzialny | Doradca odpowiedzialny | Kosztorysant odpowiedzialny | BOK obsługujący | Doradca obsługujący | Kosztorysant obsługujący | Uwagi do naprawy | Planowana data przyjęcia | Planowana data wydania | Utworzenie szkody | Utworzył szkodę | Wykonanie oględzin | Utworzenie zlecenia | Przyjęcie do naprawy | Zakończenie zlecenia | Zakończenie szkody | Kierowalność | Ilość przeplanowań | Email zleceniodawcy | Adres zleceniodawcy | Identyfikator naprawy;It displays correctly.;;;;;
+;"Verify to panel:
+- 'Odśwież' button
+- 'Wyczyść filtry' button
+- three-dot menu with 'Export do Excela' button";It displays correctly.;;;;;
+;"Verify filtering section:
+- number input spinner: Szkody BOK poza ASO powyżej (ilość dni)
+- number input spinner: Szkody BOK w ASO powyżej (ilość dni)
+- number input spinner: Szkody warsztat powyżej (ilość dni)
+- Numer faktury
+- checkbox: Szkody bez zleceń
+- checkbox: Multiszkody
+- checkbox: Wiele zleceń od szkody
+- checkbox: Szkody z kosztorysem
+- checkbox: Szkody bez kosztorysu
+- checkbox: Szkody przeplanowane
+- checkbox: Szkody całkowite";It displays correctly.;;;;;
+;"Verify columns in page layout:
+- Operacje
+- Nr naprawy
+- Nr faktury
+- Wystawiona faktura
+- Nr szkody
+- Nr rejestracyjny
+- Nr nadwozia
+- Marka
+- Model
+- Zleceniodawca
+- Telefon zleceniodawcy
+- Cecha ASO
+- Status szkody
+- Status pojazdu
+- Miejsce pojazdu
+- Miejsce parkingowe
+- Etap
+- Rodzaj szkody
+- Nazwa TU
+- Kwalifikacja
+- Opis szkody
+- Wartość netto aktywnego kosztorysu
+- Warsztat
+- BOK odpowiedzialny
+- Doradca odpowiedzialny
+- Kosztorysant odpowiedzialny
+- BOK obsługujący
+- Doradca obsługujący
+- Kosztorysant obsługujący
+- Uwagi do naprawy
+- Planowana data przyjęcia
+- Planowana data wydania
+- Utworzenie szkody
+- Utworzył szkodę
+- Wykonanie oględzin
+- Utworzenie zlecenia
+- Przyjęcie do naprawy
+- Zakończenie zlecenia
+- Zakończenie szkody
+- Kierowalność
+- Ilość przeplanowań
+- Email zleceniodawcy
+- Adres zleceniodawcy
+- Identyfikator naprawy";It displays correctly.;;;;;
 ;Verify if all columns are sortable (except columns Operajce, Adres zleceniodawcy).;Columns are sortable.;;;;;
 ;Verify if next to each column's name there is a filter button (except columns Operajce, Adres zleceniodawcy).;It displays correctly.;;;;;
 ;Verify if under each column name there is a search field (except columns Operajce, Adres zleceniodawcy).;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns with calendars and amount): | Równy | Nierówny | Mniejsze od | Większe | Mniejszy lub równy | Większy lub równy | Pomiędzy | Wyczyść;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (except columns 'Marka' and 'Model'): | Zawiera | Nie zawiera | Zaczyna się od | Kończy się | Równy | Nierówny | Wyczyść;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns 'Marka' and 'Model'): | Zawiera | Wyczyść;It displays correctly.;;;;;
-;Verify if search field for column 'Wystawiona faktura' is a drop-down list with following items: | (Wszystkie) | Tak | Nie;It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns with calendars and amount):
+- Równy
+- Nierówny
+- Mniejsze od
+- Większe
+- Mniejszy lub równy
+- Większy lub równy
+- Pomiędzy
+- Wyczyść";It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (except columns 'Marka' and 'Model'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns 'Marka' and 'Model'):
+- Zawiera
+- Wyczyść";It displays correctly.;;;;;
+;"Verify if search field for column 'Wystawiona faktura' is a drop-down list with following items:
+- (Wszystkie)
+- Tak
+- Nie";It displays correctly.;;;;;
 ;Verify if search field for column 'Marka' is a drop-down list with the list of vehicle makes.;It displays correctly.;;;;;
 ;Verify if search field for column 'Model' is a drop-down list with the list of vehicle models.;It displays correctly.;;;;;
-;Verify if search field for column 'Status szkody' is a drop-down list with following items: | (Wszystkie) | W toku | Niezakończona | W oczekiwaniu | Zakończona | Zawieszona | Brak naprawy | Anulowana;It displays correctly.;;;;;
-;Verify if search field for column 'Status pojazdu' is a drop-down list with following items: | (Wszystkie) | Nieprzyjęty | Przyjęty | Wydany;It displays correctly.;;;;;
-;Verify if search field for below columns is a calendar: | Planowana data przyjęcia | Planowana data wydania | Utworzenie szkody | Wykonanie oględzin | Utworzenie zlecenia | Przyjęcie do naprawy | Zakończenie zlecenia | Zakończenie szkody;It displays correctly.;;;;;
-;Verify summary section below the table: | Wartość kosztorysów | Naprawy | Szkody | Zlecenia;It displays correctly.;;;;;
-;Verify available options for pagination: | 30 | 50 | 100;It displays correctly.;;;;;
+;"Verify if search field for column 'Status szkody' is a drop-down list with following items:
+- (Wszystkie)
+- W toku
+- Niezakończona
+- W oczekiwaniu
+- Zakończona
+- Zawieszona
+- Brak naprawy
+- Anulowana";It displays correctly.;;;;;
+;"Verify if search field for column 'Status pojazdu' is a drop-down list with following items:
+- (Wszystkie)
+- Nieprzyjęty
+- Przyjęty
+- Wydany";It displays correctly.;;;;;
+;"Verify if search field for below columns is a calendar:
+- Planowana data przyjęcia
+- Planowana data wydania
+- Utworzenie szkody
+- Wykonanie oględzin
+- Utworzenie zlecenia
+- Przyjęcie do naprawy
+- Zakończenie zlecenia
+- Zakończenie szkody";It displays correctly.;;;;;
+;"Verify summary section below the table:
+- Wartość kosztorysów
+- Naprawy
+- Szkody
+- Zlecenia";It displays correctly.;;;;;
+;"Verify available options for pagination:
+- 30
+- 50
+- 100";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista szkód w toku (single filter - grid);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple claims are available
+Blacharnia - Lista szkód w toku (single filter - grid);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple claims are available"
 ;On the left-side menu, go to 'Lista szkód w toku'.;Page 'Lista szkód w toku' is loaded.;;;;;
-;Verify filtering by number input spinner: 'Szkody BOK poza ASO powyżej (ilość dni)': | click UP to increase the number of days.;The list is filtered correctly.;;;;;
+;"Verify filtering by number input spinner: 'Szkody BOK poza ASO powyżej (ilość dni)':
+- click UP to increase the number of days.";The list is filtered correctly.;;;;;
 ;In the same field, click DOWN to decrease number of days.;The list is filtered correctly.;;;;;
 ;In the same field, type the number of days manually.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify filtering by number input spinner: 'Szkody BOK w ASO powyżej (ilość dni)': | click UP to increase the number of days.;The list is filtered correctly.;;;;;
+;"Verify filtering by number input spinner: 'Szkody BOK w ASO powyżej (ilość dni)':
+- click UP to increase the number of days.";The list is filtered correctly.;;;;;
 ;In the same field, click DOWN to decrease number of days.;The list is filtered correctly.;;;;;
 ;In the same field, type the number of days manually.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify filtering by number input spinner: 'Szkody warsztat powyżej (ilość dni)': | click UP to increase the number of days.;The list is filtered correctly.;;;;;
+;"Verify filtering by number input spinner: 'Szkody warsztat powyżej (ilość dni)':
+- click UP to increase the number of days.";The list is filtered correctly.;;;;;
 ;In the same field, click DOWN to decrease number of days.;The list is filtered correctly.;;;;;
 ;In the same field, type the number of days manually.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify filtering by invoice number (field 'Numer faktury: | type in invoice number.;The list is filtered correctly.;;;;;
+;"Verify filtering by invoice number (field 'Numer faktury:
+- type in invoice number.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify filtering by claims wihout orders by marking checkbox: 'Szkody bez zleceń'.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
@@ -185,163 +539,210 @@ Blacharnia - Lista szkód w toku (single filter - grid);;;QA\SVCloud;QA\SVCloud\
 ;Verify filtering by rescheduled claims by marking checkbox: 'Szkody całkowite'.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista szkód w toku (single filter - columns);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple claims are available
+Blacharnia - Lista szkód w toku (single filter - columns);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple claims are available"
 ;On the left-side menu, go to 'Lista szkód w toku'.;Page 'Lista szkód w toku' is loaded.;;;;;
 ;Verify sorting by repair number (column 'Nr naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by repair number (column 'Nr naprawy'): | in search field type in a repair number;The list is filtered correctly.;;;;;
+;"Verify searching by repair number (column 'Nr naprawy'):
+- in search field type in a repair number";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by order number (column 'Nr zlecenia wiodącego') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by order number (column 'Nr zlecenia wiodącego'): | in search field type in a part of order number;The list is filtered correctly.;;;;;
+;"Verify searching by order number (column 'Nr zlecenia wiodącego'):
+- in search field type in a part of order number";The list is filtered correctly.;;;;;
 ;Verify if searching by order number (column 'Nr zlecenia wiodącego') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by invoice number (column 'Nr faktury') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by invoice number (column 'Nr faktury'): | in search field type in a part of invoice number;The list is filtered correctly.;;;;;
+;"Verify searching by invoice number (column 'Nr faktury'):
+- in search field type in a part of invoice number";The list is filtered correctly.;;;;;
 ;Verify if searching by invoice number (column 'Nr faktury') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by invoice status (column 'Wystawiona faktura') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by invoice status (column 'Wystawiona faktura'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by invoice status (column 'Wystawiona faktura'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim number (column 'Nr szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim number (column 'Nr szkody'): | in search field type in a part of claim number;The list is filtered correctly.;;;;;
+;"Verify searching by claim number (column 'Nr szkody'):
+- in search field type in a part of claim number";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by registration plate (column 'Nr rejestracyjny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (column 'Nr rejestracyjny'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Nr rejestracyjny'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by registration plate (column 'Nr rejestracyjny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by VIN (column 'Numer nadwozia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (column 'Numer nadwozia'): | in search field type in a part of VIN.;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Numer nadwozia'):
+- in search field type in a part of VIN.";The list is filtered correctly.;;;;;
 ;Verify if searching by VIN (column 'Numer nadwozia') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by make (column 'Marka') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by make (column 'Marka'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by make (column 'Marka'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by model (column 'Model') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by model (column 'Model'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by model (column 'Model'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client (column 'Zleceniodawca') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client (column 'Zleceniodawca'): | in search field type in a part of client's name.;The list is filtered correctly.;;;;;
+;"Verify searching by client (column 'Zleceniodawca'):
+- in search field type in a part of client's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by client (column 'Zleceniodawca') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client's phone number (column 'Telefon zleceniodawcy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client's phone number (column 'Telefon zleceniodawcy'): | in search field type in client's phone number.;The list is filtered correctly.;;;;;
+;"Verify searching by client's phone number (column 'Telefon zleceniodawcy'):
+- in search field type in client's phone number.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by ASO feature (column 'Cecha ASO') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by ASO feature (column 'Cecha ASO'): | in search field type in a part of ASO feature.;The list is filtered correctly.;;;;;
+;"Verify searching by ASO feature (column 'Cecha ASO'):
+- in search field type in a part of ASO feature.";The list is filtered correctly.;;;;;
 ;Verify if searching by ASO feature (column 'Cecha ASO') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim status (column 'Status szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim status (column 'Status szkody'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by claim status (column 'Status szkody'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by vehicle status (column 'Status pojazdu') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by vehicle status (column 'Status pojazdu'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by vehicle status (column 'Status pojazdu'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by vehicle place (column 'Miejsce pojazdu') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by vehicle place (column 'Miejsce pojazdu'): | in search field type in a part of vehicle's place.;The list is filtered correctly.;;;;;
+;"Verify searching by vehicle place (column 'Miejsce pojazdu'):
+- in search field type in a part of vehicle's place.";The list is filtered correctly.;;;;;
 ;Verify if searching by vehicle place (column 'Miejsce pojazdu') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by repair stage (column 'Etap') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by repair stage (column 'Etap'): | in search field type in a part of repair stage.;The list is filtered correctly.;;;;;
+;"Verify searching by repair stage (column 'Etap'):
+- in search field type in a part of repair stage.";The list is filtered correctly.;;;;;
 ;Verify if searching by repair stage (column 'Etap') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim type (column 'Rodzaj szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim type (column 'Rodzaj szkody'): | in search field type in a part of claim type.;The list is filtered correctly.;;;;;
+;"Verify searching by claim type (column 'Rodzaj szkody'):
+- in search field type in a part of claim type.";The list is filtered correctly.;;;;;
 ;Verify if searching by claim type (column 'Rodzaj szkody') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by insurance company (column 'Nazwa TU') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by insurance company (column 'Nazwa TU'): | in search field type in a part of insurance company name.;The list is filtered correctly.;;;;;
+;"Verify searching by insurance company (column 'Nazwa TU'):
+- in search field type in a part of insurance company name.";The list is filtered correctly.;;;;;
 ;Verify if searching by insurance company (column 'Nazwa TU') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by insurance type (column 'Kwalifikacja') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by insurance type (column 'Kwalifikacja'): | in search field type in insurance type.;The list is filtered correctly.;;;;;
+;"Verify searching by insurance type (column 'Kwalifikacja'):
+- in search field type in insurance type.";The list is filtered correctly.;;;;;
 ;Verify if searching by insurance type (column 'Kwalifikacja') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim description (column 'Opis szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim description (column 'Opis szkody'): | in search field type in a part of claim description.;The list is filtered correctly.;;;;;
+;"Verify searching by claim description (column 'Opis szkody'):
+- in search field type in a part of claim description.";The list is filtered correctly.;;;;;
 ;Verify if searching by claim description (column 'Opis szkody') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by net value of the active cost estimate (column 'Wartość netto aktywnego kosztorysu') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by net value of the active cost estimate (column 'Wartość netto aktywnego kosztorysu'): | in search field type in value.;The list is filtered correctly.;;;;;
+;"Verify searching by net value of the active cost estimate (column 'Wartość netto aktywnego kosztorysu'):
+- in search field type in value.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by workshop (column 'Warsztat') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by workshop (column 'Warsztat'): | in search field type in a part of workshop name.;The list is filtered correctly.;;;;;
+;"Verify searching by workshop (column 'Warsztat'):
+- in search field type in a part of workshop name.";The list is filtered correctly.;;;;;
 ;Verify if searching by claim description (column 'Opis szkody') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by responsible BOK (column 'BOK odpowiedzialny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by responsible BOK (column 'BOK odpowiedzialny'): | in search field type in a part of BOK name.;The list is filtered correctly.;;;;;
+;"Verify searching by responsible BOK (column 'BOK odpowiedzialny'):
+- in search field type in a part of BOK name.";The list is filtered correctly.;;;;;
 ;Verify if searching by responsible BOK (column 'BOK odpowiedzialny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by responsible advisor (column 'Doradca odpowiedzialny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by responsible advisor (column 'Doradca odpowiedzialny'): | in search field type in a part of advisor's name.;The list is filtered correctly.;;;;;
+;"Verify searching by responsible advisor (column 'Doradca odpowiedzialny'):
+- in search field type in a part of advisor's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by responsible advisor (column 'Doradca odpowiedzialny') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by responsible cost estimator (column 'Kosztorysant odpowiedzialny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by responsible cost estimator (column 'Kosztorysant odpowiedzialny'): | in search field type in a part of cost estimator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by responsible cost estimator (column 'Kosztorysant odpowiedzialny'):
+- in search field type in a part of cost estimator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by responsible cost estimator (column 'Kosztorysant odpowiedzialny') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by operating BOK (column 'BOK obsługujący') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by operating BOK (column 'BOK obsługujący'): | in search field type in a part of BOK name.;The list is filtered correctly.;;;;;
+;"Verify searching by operating BOK (column 'BOK obsługujący'):
+- in search field type in a part of BOK name.";The list is filtered correctly.;;;;;
 ;Verify if searching by operating BOK (column 'BOK obsługujący') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by operating advisor (column 'Doradca obsługujący') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by operating advisor (column 'Doradca obsługujący'): | in search field type in a part of advisor's name.;The list is filtered correctly.;;;;;
+;"Verify searching by operating advisor (column 'Doradca obsługujący'):
+- in search field type in a part of advisor's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by operating advisor (column 'Doradca obsługujący') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by operating cost estimator (column 'Kosztorysant odpowiedzialny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by operating cost estimator (column 'Kosztorysant odpowiedzialny'): | in search field type in a part of cost estimator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by operating cost estimator (column 'Kosztorysant odpowiedzialny'):
+- in search field type in a part of cost estimator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by operating cost estimator (column 'Kosztorysant odpowiedzialny') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by comments for repair (column 'Uwagi do naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by comments for repair (column 'Uwagi do naprawy'): | in search field type in a part of cost estimator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by comments for repair (column 'Uwagi do naprawy'):
+- in search field type in a part of cost estimator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by comments for repair (column 'Uwagi do naprawy') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by planned admission date (column 'Planowana data przyjęcia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by planned admission date (column 'Planowana data przyjęcia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by planned admission date (column 'Planowana data przyjęcia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by planned release date (column 'Planowana data wydania') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by planned release date (column 'Planowana data wydania'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by planned release date (column 'Planowana data wydania'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim creation (column 'Utworzenie szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim creation (column 'Utworzenie szkody'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by claim creation (column 'Utworzenie szkody'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim creator (column 'Utworzył szkodę') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim creator (column 'Utworzył szkodę'): | in search field type in a part of claim creator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by claim creator (column 'Utworzył szkodę'):
+- in search field type in a part of claim creator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by claim creator (column 'Utworzył szkodę') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by conducting an inspection (column 'Wykonanie oględzin') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by conducting an inspection (column 'Wykonanie oględzin'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by conducting an inspection (column 'Wykonanie oględzin'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by order creation (column 'Utworzenie zlecenia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by order creation (column 'Utworzenie zlecenia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by order creation (column 'Utworzenie zlecenia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by admission date (column 'Przyjęcie do naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by admission date (column 'Przyjęcie do naprawy'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by admission date (column 'Przyjęcie do naprawy'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by order completion (column 'Zakończenie zlecenia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by order completion (column 'Zakończenie zlecenia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by order completion (column 'Zakończenie zlecenia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim completion (column 'Zakończenie szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim completion (column 'Zakończenie szkody') : | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by claim completion (column 'Zakończenie szkody') :
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by steerability (column 'Kierowalność') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by steerability (column 'Kierowalność'): | in search field type in a steerability.;The list is filtered correctly.;;;;;
+;"Verify searching by steerability (column 'Kierowalność'):
+- in search field type in a steerability.";The list is filtered correctly.;;;;;
 ;Verify if searching by steerability (column 'Kierowalność') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by number of reschedules (column 'Ilość przeplanowań') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by number of reschedules (column 'Ilość przeplanowań'): | in search field type in a number.;The list is filtered correctly.;;;;;
+;"Verify searching by number of reschedules (column 'Ilość przeplanowań'):
+- in search field type in a number.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client's email (column 'Email zleceniodawcy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client's email (column 'Email zleceniodawcy'): | in search field type in a client's email.;The list is filtered correctly.;;;;;
+;"Verify searching by client's email (column 'Email zleceniodawcy'):
+- in search field type in a client's email.";The list is filtered correctly.;;;;;
 ;Verify if searching by client's email (column 'Email zleceniodawcy') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client's address (column 'Adres zleceniodawcy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client's address (column 'Adres zleceniodawcy'): | in search field type in a client's address.;The list is filtered correctly.;;;;;
+;"Verify searching by client's address (column 'Adres zleceniodawcy'):
+- in search field type in a client's address.";The list is filtered correctly.;;;;;
 ;Verify if searching by client's address (column 'Adres zleceniodawcy') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by repair ID (column 'Identyfikator naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by repair ID (column 'Identyfikator naprawy'): | in search field type in a repair ID.;The list is filtered correctly.;;;;;
+;"Verify searching by repair ID (column 'Identyfikator naprawy'):
+- in search field type in a repair ID.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista szkód w toku (multiple filters);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple claims are available
+Blacharnia - Lista szkód w toku (multiple filters);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple claims are available"
 ;On the left-side menu, go to 'Lista szkód w toku'.;Page 'Lista szkód w toku' is loaded.;;;;;
 ;Verify filtering by multiple orders for a claim by marking checkbox: 'Wiele zleceń do szkody'.;The list is filtered correctly.;;;;;
 ;Add filtering: 'Wystawiona faktura' = TAK;The list is filtered correctly.;;;;;
@@ -353,27 +754,119 @@ Blacharnia - Lista szkód w toku (multiple filters);;;QA\SVCloud;QA\SVCloud\Blac
 ;Add filter 'Szkody Warsztat powyżej (ilość dni) to 5.;The list is filtered correctly.;;;;;
 ;Add filtering: 'Status pojazdu' = Przyjęty;The list is filtered correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista szkód - historia (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded
+Blacharnia - Lista szkód - historia (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded"
 ;On the left-side menu, go to 'Lista szkód - historia'.;Page 'Lista szkód - historia' is loaded.;;;;;
-;Verify to panel: | 'Odśwież' button | 'Wyczyść filtry' button | three-dot menu with 'Export do Excela' button;It displays correctly.;;;;;
-;Verify filtering section: | Numer faktury | checkbox: Szkody bez zleceń | checkbox: Multiszkody | checkbox: Szkody nierozliczone | checkbox: Wiele zleceń od szkody | checkbox: Szkody z kosztorysem | checkbox: Szkody bez kosztorysu | checkbox: Szkody przeplanowane | checkbox: Szkody całkowite;It displays correctly.;;;;;
-;Verify columns in page layout: | Operacje | Status szkody | Utworzenie szkody | Utworzył szkodę | Nr naprawy | Nr zlecenia wiodącego | Nr faktury | Wystawiona faktura | Nr szkody | Nr rejestracyjny | Numer nadwozia | Marka | Model | Zleceniodawca | Telefon zleceniodawcy | Cecha ASO | Rodzaj szkody | Nazwa TU | Kwalifikacja | Opis szkody | Wartość netto aktywnego kosztorysu | Warsztat | BOK odpowiedzialny | Doradca odpowiedzialny | Kosztorysant odpowiedzialny | BOK obsługujący | Doradca obsługujący | Kosztorysant obsługujący | Uwagi do naprawy | Wykonanie oględzin | Utworzenie zlecenia | Przyjęcie do naprawy | Zakończenie zlecenia | Zakończenie szkody | Kierowalność | Ilość przeplanowań | Email zleceniodawcy | Adres zleceniodawcy | Identyfikator naprawy;It displays correctly.;;;;;
+;"Verify to panel:
+- 'Odśwież' button
+- 'Wyczyść filtry' button
+- three-dot menu with 'Export do Excela' button";It displays correctly.;;;;;
+;"Verify filtering section:
+- Numer faktury
+- checkbox: Szkody bez zleceń
+- checkbox: Multiszkody
+- checkbox: Szkody nierozliczone
+- checkbox: Wiele zleceń od szkody
+- checkbox: Szkody z kosztorysem
+- checkbox: Szkody bez kosztorysu
+- checkbox: Szkody przeplanowane
+- checkbox: Szkody całkowite";It displays correctly.;;;;;
+;"Verify columns in page layout:
+- Operacje
+- Status szkody
+- Utworzenie szkody
+- Utworzył szkodę
+- Nr naprawy
+- Nr zlecenia wiodącego
+- Nr faktury
+- Wystawiona faktura
+- Nr szkody
+- Nr rejestracyjny
+- Numer nadwozia
+- Marka
+- Model
+- Zleceniodawca
+- Telefon zleceniodawcy
+- Cecha ASO
+- Rodzaj szkody
+- Nazwa TU
+- Kwalifikacja
+- Opis szkody
+- Wartość netto aktywnego kosztorysu
+- Warsztat
+- BOK odpowiedzialny
+- Doradca odpowiedzialny
+- Kosztorysant odpowiedzialny
+- BOK obsługujący
+- Doradca obsługujący
+- Kosztorysant obsługujący
+- Uwagi do naprawy
+- Wykonanie oględzin
+- Utworzenie zlecenia
+- Przyjęcie do naprawy
+- Zakończenie zlecenia
+- Zakończenie szkody
+- Kierowalność
+- Ilość przeplanowań
+- Email zleceniodawcy
+- Adres zleceniodawcy
+- Identyfikator naprawy";It displays correctly.;;;;;
 ;Verify if all columns are sortable (except columns Operajce, Adres zleceniodawcy).;Columns are sortable.;;;;;
 ;Verify if next to each column's name there is a filter button (except columns Operajce, Adres zleceniodawcy).;It displays correctly.;;;;;
 ;Verify if under each column name there is a search field (except columns Operajce, Adres zleceniodawcy).;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns with calendars and amount): | Równy | Nierówny | Mniejsze od | Większe | Mniejszy lub równy | Większy lub równy | Pomiędzy | Wyczyść;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (except columns 'Marka' and 'Model'): | Zawiera | Nie zawiera | Zaczyna się od | Kończy się | Równy | Nierówny | Wyczyść;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns 'Marka' and 'Model'): | Zawiera | Wyczyść;It displays correctly.;;;;;
-;Verify if search field for column 'Wystawiona faktura' is a drop-down list with following items: | (Wszystkie) | Tak | Nie;It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns with calendars and amount):
+- Równy
+- Nierówny
+- Mniejsze od
+- Większe
+- Mniejszy lub równy
+- Większy lub równy
+- Pomiędzy
+- Wyczyść";It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (except columns 'Marka' and 'Model'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns 'Marka' and 'Model'):
+- Zawiera
+- Wyczyść";It displays correctly.;;;;;
+;"Verify if search field for column 'Wystawiona faktura' is a drop-down list with following items:
+- (Wszystkie)
+- Tak
+- Nie";It displays correctly.;;;;;
 ;Verify if search field for column 'Marka' is a drop-down list with the list of vehicle makes.;It displays correctly.;;;;;
 ;Verify if search field for column 'Model' is a drop-down list with the list of vehicle models.;It displays correctly.;;;;;
-;Verify if search field for column 'Status szkody' is a drop-down list with following items: | (Wszystkie) | W toku | Niezakończona | W oczekiwaniu | Zakończona | Zawieszona | Brak naprawy | Anulowana;It displays correctly.;;;;;
-;Verify if search field for below columns is a calendar: | Utworzenie szkody | Wykonanie oględzin | Utworzenie zlecenia | Przyjęcie do naprawy | Zakończenie zlecenia | Zakończenie szkody;It displays correctly.;;;;;
-;Verify available options for pagination: | 30 | 50 | 100;It displays correctly.;;;;;
+;"Verify if search field for column 'Status szkody' is a drop-down list with following items:
+- (Wszystkie)
+- W toku
+- Niezakończona
+- W oczekiwaniu
+- Zakończona
+- Zawieszona
+- Brak naprawy
+- Anulowana";It displays correctly.;;;;;
+;"Verify if search field for below columns is a calendar:
+- Utworzenie szkody
+- Wykonanie oględzin
+- Utworzenie zlecenia
+- Przyjęcie do naprawy
+- Zakończenie zlecenia
+- Zakończenie szkody";It displays correctly.;;;;;
+;"Verify available options for pagination:
+- 30
+- 50
+- 100";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista szkód - historia (single filter - grid);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple claims are available
+Blacharnia - Lista szkód - historia (single filter - grid);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple claims are available"
 ;On the left-side menu, go to 'Lista szkód - historia'.;Page 'Lista szkód - historia' is loaded.;;;;;
-;Verify filtering by invoice number (field 'Numer faktury: | type in invoice number.;The list is filtered correctly.;;;;;
+;"Verify filtering by invoice number (field 'Numer faktury:
+- type in invoice number.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify filtering by claims wihout orders by marking checkbox: 'Szkody bez zleceń'.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
@@ -392,146 +885,188 @@ Blacharnia - Lista szkód - historia (single filter - grid);;;QA\SVCloud;QA\SVCl
 ;Verify filtering by rescheduled claims by marking checkbox: 'Szkody całkowite'.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista szkód - historia (single filter - columns);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple claims are available
+Blacharnia - Lista szkód - historia (single filter - columns);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple claims are available"
 ;On the left-side menu, go to 'Lista szkód - historia'.;Page 'Lista szkód - historia' is loaded.;;;;;
 ;Verify sorting by claim status (column 'Status szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim status (column 'Status szkody'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by claim status (column 'Status szkody'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim creation (column 'Utworzenie szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim creation (column 'Utworzenie szkody'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by claim creation (column 'Utworzenie szkody'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim creator (column 'Utworzył szkodę') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim creator (column 'Utworzył szkodę'): | in search field type in a part of claim creator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by claim creator (column 'Utworzył szkodę'):
+- in search field type in a part of claim creator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by claim creator (column 'Utworzył szkodę') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by repair number (column 'Nr naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by repair number (column 'Nr naprawy'): | in search field type in a repair number;The list is filtered correctly.;;;;;
+;"Verify searching by repair number (column 'Nr naprawy'):
+- in search field type in a repair number";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by order number (column 'Nr zlecenia wiodącego') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by order number (column 'Nr zlecenia wiodącego'): | in search field type in a part of order number;The list is filtered correctly.;;;;;
+;"Verify searching by order number (column 'Nr zlecenia wiodącego'):
+- in search field type in a part of order number";The list is filtered correctly.;;;;;
 ;Verify if searching by order number (column 'Nr zlecenia wiodącego') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by invoice number (column 'Nr faktury') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by invoice number (column 'Nr faktury'): | in search field type in a part of invoice number;The list is filtered correctly.;;;;;
+;"Verify searching by invoice number (column 'Nr faktury'):
+- in search field type in a part of invoice number";The list is filtered correctly.;;;;;
 ;Verify if searching by invoice number (column 'Nr faktury') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by invoice status (column 'Wystawiona faktura') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by invoice status (column 'Wystawiona faktura'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by invoice status (column 'Wystawiona faktura'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim number (column 'Nr szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim number (column 'Nr szkody'): | in search field type in a part of claim number;The list is filtered correctly.;;;;;
+;"Verify searching by claim number (column 'Nr szkody'):
+- in search field type in a part of claim number";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by registration plate (column 'Nr rejestracyjny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (column 'Nr rejestracyjny'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Nr rejestracyjny'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by registration plate (column 'Nr rejestracyjny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by VIN (column 'Numer nadwozia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (column 'Numer nadwozia'): | in search field type in a part of VIN.;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Numer nadwozia'):
+- in search field type in a part of VIN.";The list is filtered correctly.;;;;;
 ;Verify if searching by VIN (column 'Numer nadwozia') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by make (column 'Marka') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by make (column 'Marka'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by make (column 'Marka'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by model (column 'Model') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by model (column 'Model'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by model (column 'Model'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client (column 'Zleceniodawca') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client (column 'Zleceniodawca'): | in search field type in a part of client's name.;The list is filtered correctly.;;;;;
+;"Verify searching by client (column 'Zleceniodawca'):
+- in search field type in a part of client's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by client (column 'Zleceniodawca') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client's phone number (column 'Telefon zleceniodawcy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client's phone number (column 'Telefon zleceniodawcy'): | in search field type in client's phone number.;The list is filtered correctly.;;;;;
+;"Verify searching by client's phone number (column 'Telefon zleceniodawcy'):
+- in search field type in client's phone number.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by ASO feature (column 'Cecha ASO') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by ASO feature (column 'Cecha ASO'): | in search field type in a part of ASO feature.;The list is filtered correctly.;;;;;
+;"Verify searching by ASO feature (column 'Cecha ASO'):
+- in search field type in a part of ASO feature.";The list is filtered correctly.;;;;;
 ;Verify if searching by ASO feature (column 'Cecha ASO') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim type (column 'Rodzaj szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim type (column 'Rodzaj szkody'): | in search field type in a part of claim type.;The list is filtered correctly.;;;;;
+;"Verify searching by claim type (column 'Rodzaj szkody'):
+- in search field type in a part of claim type.";The list is filtered correctly.;;;;;
 ;Verify if searching by claim type (column 'Rodzaj szkody') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by insurance company (column 'Nazwa TU') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by insurance company (column 'Nazwa TU'): | in search field type in a part of insurance company name.;The list is filtered correctly.;;;;;
+;"Verify searching by insurance company (column 'Nazwa TU'):
+- in search field type in a part of insurance company name.";The list is filtered correctly.;;;;;
 ;Verify if searching by insurance company (column 'Nazwa TU') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by insurance type (column 'Kwalifikacja') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by insurance type (column 'Kwalifikacja'): | in search field type in insurance type.;The list is filtered correctly.;;;;;
+;"Verify searching by insurance type (column 'Kwalifikacja'):
+- in search field type in insurance type.";The list is filtered correctly.;;;;;
 ;Verify if searching by insurance type (column 'Kwalifikacja') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim description (column 'Opis szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim description (column 'Opis szkody'): | in search field type in a part of claim description.;The list is filtered correctly.;;;;;
+;"Verify searching by claim description (column 'Opis szkody'):
+- in search field type in a part of claim description.";The list is filtered correctly.;;;;;
 ;Verify if searching by claim description (column 'Opis szkody') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by net value of the active cost estimate (column 'Wartość netto aktywnego kosztorysu') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by net value of the active cost estimate (column 'Wartość netto aktywnego kosztorysu'): | in search field type in value.;The list is filtered correctly.;;;;;
+;"Verify searching by net value of the active cost estimate (column 'Wartość netto aktywnego kosztorysu'):
+- in search field type in value.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by workshop (column 'Warsztat') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by workshop (column 'Warsztat'): | in search field type in a part of workshop name.;The list is filtered correctly.;;;;;
+;"Verify searching by workshop (column 'Warsztat'):
+- in search field type in a part of workshop name.";The list is filtered correctly.;;;;;
 ;Verify if searching by claim description (column 'Warsztat') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by responsible BOK (column 'BOK odpowiedzialny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by responsible BOK (column 'BOK odpowiedzialny'): | in search field type in a part of BOK name.;The list is filtered correctly.;;;;;
+;"Verify searching by responsible BOK (column 'BOK odpowiedzialny'):
+- in search field type in a part of BOK name.";The list is filtered correctly.;;;;;
 ;Verify if searching by responsible BOK (column 'BOK odpowiedzialny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by responsible advisor (column 'Doradca odpowiedzialny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by responsible advisor (column 'Doradca odpowiedzialny'): | in search field type in a part of advisor's name.;The list is filtered correctly.;;;;;
+;"Verify searching by responsible advisor (column 'Doradca odpowiedzialny'):
+- in search field type in a part of advisor's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by responsible advisor (column 'Doradca odpowiedzialny') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by responsible cost estimator (column 'Kosztorysant odpowiedzialny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by responsible cost estimator (column 'Kosztorysant odpowiedzialny'): | in search field type in a part of cost estimator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by responsible cost estimator (column 'Kosztorysant odpowiedzialny'):
+- in search field type in a part of cost estimator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by responsible cost estimator (column 'Kosztorysant odpowiedzialny') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by operating BOK (column 'BOK obsługujący') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by operating BOK (column 'BOK obsługujący'): | in search field type in a part of BOK name.;The list is filtered correctly.;;;;;
+;"Verify searching by operating BOK (column 'BOK obsługujący'):
+- in search field type in a part of BOK name.";The list is filtered correctly.;;;;;
 ;Verify if searching by operating BOK (column 'BOK obsługujący') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by operating advisor (column 'Doradca obsługujący') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by operating advisor (column 'Doradca obsługujący'): | in search field type in a part of advisor's name.;The list is filtered correctly.;;;;;
+;"Verify searching by operating advisor (column 'Doradca obsługujący'):
+- in search field type in a part of advisor's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by operating advisor (column 'Doradca obsługujący') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by operating cost estimator (column 'Kosztorysant odpowiedzialny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by operating cost estimator (column 'Kosztorysant odpowiedzialny'): | in search field type in a part of cost estimator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by operating cost estimator (column 'Kosztorysant odpowiedzialny'):
+- in search field type in a part of cost estimator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by operating cost estimator (column 'Kosztorysant odpowiedzialny') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by comments for repair (column 'Uwagi do naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by comments for repair (column 'Uwagi do naprawy'): | in search field type in a part of cost estimator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by comments for repair (column 'Uwagi do naprawy'):
+- in search field type in a part of cost estimator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by comments for repair (column 'Uwagi do naprawy') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by conducting an inspection (column 'Wykonanie oględzin') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by conducting an inspection (column 'Wykonanie oględzin'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by conducting an inspection (column 'Wykonanie oględzin'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by order creation (column 'Utworzenie zlecenia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by order creation (column 'Utworzenie zlecenia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by order creation (column 'Utworzenie zlecenia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by admission date (column 'Przyjęcie do naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by admission date (column 'Przyjęcie do naprawy'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by admission date (column 'Przyjęcie do naprawy'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by order completion (column 'Zakończenie zlecenia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by order completion (column 'Zakończenie zlecenia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by order completion (column 'Zakończenie zlecenia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by claim completion (column 'Zakończenie szkody') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by claim completion (column 'Zakończenie szkody') : | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by claim completion (column 'Zakończenie szkody') :
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by steerability (column 'Kierowalność') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by steerability (column 'Kierowalność'): | in search field type in a steerability.;The list is filtered correctly.;;;;;
+;"Verify searching by steerability (column 'Kierowalność'):
+- in search field type in a steerability.";The list is filtered correctly.;;;;;
 ;Verify if searching by steerability (column 'Kierowalność') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by number of reschedules (column 'Ilość przeplanowań') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by number of reschedules (column 'Ilość przeplanowań'): | in search field type in a number.;The list is filtered correctly.;;;;;
+;"Verify searching by number of reschedules (column 'Ilość przeplanowań'):
+- in search field type in a number.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client's email (column 'Email zleceniodawcy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client's email (column 'Email zleceniodawcy'): | in search field type in a client's email.;The list is filtered correctly.;;;;;
+;"Verify searching by client's email (column 'Email zleceniodawcy'):
+- in search field type in a client's email.";The list is filtered correctly.;;;;;
 ;Verify if searching by client's email (column 'Email zleceniodawcy') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client's address (column 'Adres zleceniodawcy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client's address (column 'Adres zleceniodawcy'): | in search field type in a client's address.;The list is filtered correctly.;;;;;
+;"Verify searching by client's address (column 'Adres zleceniodawcy'):
+- in search field type in a client's address.";The list is filtered correctly.;;;;;
 ;Verify if searching by client's address (column 'Adres zleceniodawcy') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by repair ID (column 'Identyfikator naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by repair ID (column 'Identyfikator naprawy'): | in search field type in a repair ID.;The list is filtered correctly.;;;;;
+;"Verify searching by repair ID (column 'Identyfikator naprawy'):
+- in search field type in a repair ID.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista szkód - historia (multiple filters);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple claims are available
+Blacharnia - Lista szkód - historia (multiple filters);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple claims are available"
 ;On the left-side menu, go to 'Lista szkód - historia'.;Page 'Lista szkód - historia' is loaded.;;;;;
 ;Verify filtering by multiple orders for a claim by marking checkbox: 'Wiele zleceń do szkody'.;The list is filtered correctly.;;;;;
 ;Add filtering: 'Wystawiona faktura' = TAK;The list is filtered correctly.;;;;;
@@ -543,125 +1078,162 @@ Blacharnia - Lista szkód - historia (multiple filters);;;QA\SVCloud;QA\SVCloud\
 ;Add filter 'Status szkody = Zakończona'.;The list is filtered correctly.;;;;;
 ;Add filtering: 'Status pojazdu' = Przyjęty;The list is filtered correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista myć (single filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple reservations are available
+Blacharnia - Lista myć (single filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple reservations are available"
 ;On the left-side menu, go to 'Lista myć';Page 'Lista myć' is loaded.;;;;;
 ;Verify sorting by washing progress (column 'Postęp mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by washing progress (column 'Postęp mycia'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by washing progress (column 'Postęp mycia'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by wash ordering department (column 'Dział zlecający mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by wash ordering department (column 'Dział zlecający mycie'): | in search field type in a part of department's name.;The list is filtered correctly.;;;;;
+;"Verify searching by wash ordering department (column 'Dział zlecający mycie'):
+- in search field type in a part of department's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by wash ordering department (column 'Dział zlecający mycie') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by registration plate (column 'Nr rejestracyjny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (column 'Nr rejestracyjny'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Nr rejestracyjny'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by registration plate (column 'Nr rejestracyjny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by VIN (column 'Numer nadwozia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (column 'Numer nadwozia'): | in search field type in a part of VIN.;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Numer nadwozia'):
+- in search field type in a part of VIN.";The list is filtered correctly.;;;;;
 ;Verify if searching by VIN (column 'Numer nadwozia') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by make (column 'Marka') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by make (column 'Marka'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by make (column 'Marka'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by model (column 'Model') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by model (column 'Model'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by model (column 'Model'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by client (column 'Zleceniodawca') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by client (column 'Zleceniodawca'): | in search field type in a part of client's name.;The list is filtered correctly.;;;;;
+;"Verify searching by client (column 'Zleceniodawca'):
+- in search field type in a part of client's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by client (column 'Zleceniodawca') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by planned washing date 'from' (column 'Planowana data mycia od') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by planned washing date 'from' (column 'Planowana data mycia od'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by planned washing date 'from' (column 'Planowana data mycia od'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by washing program (column 'Program mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by washing program (column 'Program mycia'): | in search field type in a part of program's name.;The list is filtered correctly.;;;;;
+;"Verify searching by washing program (column 'Program mycia'):
+- in search field type in a part of program's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by washing program (column 'Program mycia') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by washing time (column 'Czas mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by washing time (column 'Czas mycia'): | in search field type in washing time.;The list is filtered correctly.;;;;;
+;"Verify searching by washing time (column 'Czas mycia'):
+- in search field type in washing time.";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by who performed washing (column 'Kto wykonał mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by who performed washing (column 'Kto wykonał mycie'): | in search field type in a part of worker's name.;The list is filtered correctly.;;;;;
+;"Verify searching by who performed washing (column 'Kto wykonał mycie'):
+- in search field type in a part of worker's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by who performed washing (column 'Kto wykonał mycie') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by washing date (column 'Kiedy  wykonał mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by washing date (column 'Kiedy  wykonał mycie'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by washing date (column 'Kiedy  wykonał mycie'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by comments (column 'Uwagi') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by comments (column 'Uwagi'): | in search field type in a part of cost estimator's name.;The list is filtered correctly.;;;;;
+;"Verify searching by comments (column 'Uwagi'):
+- in search field type in a part of cost estimator's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by comments (column 'Uwagi') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by indefinite washing (column 'Mycie bezterminowe') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by indefinite washing (column 'Mycie bezterminowe'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by indefinite washing (column 'Mycie bezterminowe'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by who planned washing (column 'Kto zaplanował mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by who planned washing (column 'Kto zaplanował mycie'): | in search field type in a part of worker's name.;The list is filtered correctly.;;;;;
+;"Verify searching by who planned washing (column 'Kto zaplanował mycie'):
+- in search field type in a part of worker's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by who planned washing (column 'Kto zaplanował mycie') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by creation date (column 'Data utoworzenia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by creation date (column 'Data utoworzenia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by creation date (column 'Data utoworzenia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by who created washing (column 'Utworzył') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by who created washing (column 'Utworzył'): | in search field type in a part of worker's name.;The list is filtered correctly.;;;;;
+;"Verify searching by who created washing (column 'Utworzył'):
+- in search field type in a part of worker's name.";The list is filtered correctly.;;;;;
 ;Verify if searching by who created washing (column 'Utworzył') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by carwash (column 'Myjnia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by carwash (column 'Myjnia'): | in search field type in a part of carwash name.;The list is filtered correctly.;;;;;
+;"Verify searching by carwash (column 'Myjnia'):
+- in search field type in a part of carwash name.";The list is filtered correctly.;;;;;
 ;Verify if searching by carwash (column 'Myjnia') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista myć (multiple filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple reservations are available
+Blacharnia - Lista myć (multiple filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple reservations are available"
 ;On the left-side menu, go to 'Lista myć';Page 'Lista myć' is loaded.;;;;;
 ;Filter data by washing progress: in column 'Postęp mycia' select any status from drop-down list.;The list is filtered correctly.;;;;;
 ;Add filtering by washing program (column 'Program mycia').;The list is filtered correctly.;;;;;
 ;Add filtering by planned washing date 'from' (column 'Planowana data mycia od') by selecting any date from calendar.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Myjnia searching reservation (single filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple reservations are available
+Blacharnia - Myjnia searching reservation (single filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple reservations are available"
 ;On the left-side menu, go to 'Myjnia';Page 'Myjnia' is loaded.;;;;;
 ;"In carwash calendar page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;
 ;Verify sorting by washing progress (column 'Postęp mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by washing progress (column 'Postęp mycia'): | select any type from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by washing progress (column 'Postęp mycia'):
+- select any type from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by registration plate (column 'Nr rejestracyjny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (column 'Nr rejestracyjny'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Nr rejestracyjny'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by registration plate (column 'Nr rejestracyjny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by VIN (column 'Nr nadwozia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by VIN (column 'Nr nadwozia'): | in search field type in a part of VIN;The list is filtered correctly.;;;;;
+;"Verify searching by VIN (column 'Nr nadwozia'):
+- in search field type in a part of VIN";The list is filtered correctly.;;;;;
 ;Verify if searching by VIN (column 'Nr nadwozia') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by washing program (column 'Program mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by washing program (column 'Program mycia'): | in search field type in a part of washing program name;The list is filtered correctly.;;;;;
+;"Verify searching by washing program (column 'Program mycia'):
+- in search field type in a part of washing program name";The list is filtered correctly.;;;;;
 ;Verify if searching by washing program (column 'Program mycia') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by make (column 'Marka') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by make (column 'Marka'): | select any make from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by make (column 'Marka'):
+- select any make from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by model (column 'Model') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by model (column 'Model'): | select any make from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by model (column 'Model'):
+- select any make from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by who planned washing (column 'Kto zaplanował mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by who planned washing (column 'Kto zaplanował mycie'): | in search field type in a part of worker's first name/last name;The list is filtered correctly.;;;;;
+;"Verify searching by who planned washing (column 'Kto zaplanował mycie'):
+- in search field type in a part of worker's first name/last name";The list is filtered correctly.;;;;;
 ;Verify if searching by who planned washing (column 'Kto zaplanował mycie') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting bydepartment which planned washing (column 'Dział zlecający mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by department which planned washing (column 'Dział zlecający mycie'): | in search field type in a part of a department's name;The list is filtered correctly.;;;;;
+;"Verify searching by department which planned washing (column 'Dział zlecający mycie'):
+- in search field type in a part of a department's name";The list is filtered correctly.;;;;;
 ;Verify if searching by department which planned washing (column 'Dział zlecający mycie') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by washing date (column 'Data mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by washing date (column 'Data mycia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by washing date (column 'Data mycia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by who did the washing (column 'Kto wykonał mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by who did the washing (column 'Kto wykonał mycie'): | in search field type in a part of worker's first name/last name;The list is filtered correctly.;;;;;
+;"Verify searching by who did the washing (column 'Kto wykonał mycie'):
+- in search field type in a part of worker's first name/last name";The list is filtered correctly.;;;;;
 ;Verify if searching by who did the washing (column 'Kto wykonał mycie') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by comment (column 'Uwagi') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by comment (column 'Uwagi'): | in search field type in a part of a comment;The list is filtered correctly.;;;;;
+;"Verify searching by comment (column 'Uwagi'):
+- in search field type in a part of a comment";The list is filtered correctly.;;;;;
 ;Verify if searching by comment (column 'Uwagi') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Myjnia searching reservation (multiple filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple reservations are available
+Blacharnia - Myjnia searching reservation (multiple filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple reservations are available"
 ;On the left-side menu, go to 'Myjnia';Page 'Myjnia' is loaded.;;;;;
 ;"In carwash calendar page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;
 ;Filter data by washing progress: in column 'Postęp mycia' select any status from drop-down list.;The list is filtered correctly.;;;;;
@@ -669,97 +1241,239 @@ Blacharnia - Myjnia searching reservation (multiple filter);;;QA\SVCloud;QA\SVCl
 ;Add filtering by planned washing date (column 'Data mycia') by selecting any date from calendar.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista umów (single filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple reservations are available
+Blacharnia - Lista umów (single filter);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple reservations are available"
 ;On the left-side menu, go to 'Lista umów';Page 'Lista umów' is loaded.;;;;;
 ;Verify sorting by registration plate (section 'Pojazd wynajmowany', column 'Nr rejestracyjny') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (section 'Pojazd wynajmowany', column 'Nr rejestracyjny'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (section 'Pojazd wynajmowany', column 'Nr rejestracyjny'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by registration plate (section 'Pojazd wynajmowany', column 'Nr rejestracyjny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by model (section 'Pojazd wynajmowany', column 'Model') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by model (section 'Pojazd wynajmowany', column 'Model'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by model (section 'Pojazd wynajmowany', column 'Model'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by model (section 'Pojazd wynajmowany', column 'Model') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by park (section 'Pojazd wynajmowany', column 'Park') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by park (section 'Pojazd wynajmowany', column 'Park'): | select any type from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by park (section 'Pojazd wynajmowany', column 'Park'):
+- select any type from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by release date (section 'Pojazd wynajmowany', column 'Data wydania') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by release date (section 'Pojazd wynajmowany', column 'Data wydania'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by release date (section 'Pojazd wynajmowany', column 'Data wydania'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by admission date (section 'Pojazd wynajmowany', column 'Data przyjęcia') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by admission date (section 'Pojazd wynajmowany', column 'Data przyjęcia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by admission date (section 'Pojazd wynajmowany', column 'Data przyjęcia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by contract number (section 'Umowa', column 'Numer umowy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by contract number (section 'Umowa', column 'Numer umowy'): | in search field type in a part of contract number;The list is filtered correctly.;;;;;
+;"Verify searching by contract number (section 'Umowa', column 'Numer umowy'):
+- in search field type in a part of contract number";The list is filtered correctly.;;;;;
 ;Verify if searching by contract number (section 'Umowa', column 'Numer umowy') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by status (section 'Umowa', column 'Status') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by status (section 'Umowa', column 'Status'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by status (section 'Umowa', column 'Status'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by date from (section 'Umowa', column 'Data od') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by date from (section 'Umowa', column 'Data od'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by date from (section 'Umowa', column 'Data od'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by date to (section 'Umowa', column 'Data do') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by date to (section 'Umowa', column 'Data do'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by date to (section 'Umowa', column 'Data do'):
+- select any date";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by repair (section 'Pojazd naprawiany', column 'Dotyczy naprawy') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by repair (section 'Pojazd naprawiany', column 'Dotyczy naprawy'): | in search field type in a part of repair;The list is filtered correctly.;;;;;
+;"Verify searching by repair (section 'Pojazd naprawiany', column 'Dotyczy naprawy'):
+- in search field type in a part of repair";The list is filtered correctly.;;;;;
 ;Verify if searching by repair (section 'Pojazd naprawiany', column 'Dotyczy naprawy') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by tenant (section 'Pojazd naprawiany', column 'Najemca') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by tenant (section 'Pojazd naprawiany', column 'Najemca'): | in search field type in a part of tenant's name;The list is filtered correctly.;;;;;
+;"Verify searching by tenant (section 'Pojazd naprawiany', column 'Najemca'):
+- in search field type in a part of tenant's name";The list is filtered correctly.;;;;;
 ;Verify if searching by tenant (section 'Pojazd naprawiany', column 'Najemca') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by registration plate (section 'Pojazd naprawiany', column 'Nr rej') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by registration plate (section 'Pojazd naprawiany', column 'Nr rej'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (section 'Pojazd naprawiany', column 'Nr rej'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by registration plate (section 'Pojazd naprawiany', column 'Nr rej') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by model (section 'Pojazd naprawiany', column 'Model') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by model (section 'Pojazd naprawiany', column 'Model'): | select any option from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by model (section 'Pojazd naprawiany', column 'Model'):
+- select any option from drop-down list";The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by contract department (section 'Pojazd naprawiany', column 'Umowa dla') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by contract department (section 'Pojazd naprawiany', column 'Umowa dla'): | in search field type in a part of depratment's name;The list is filtered correctly.;;;;;
+;"Verify searching by contract department (section 'Pojazd naprawiany', column 'Umowa dla'):
+- in search field type in a part of depratment's name";The list is filtered correctly.;;;;;
 ;Verify if searching by contract department (section 'Pojazd naprawiany', column 'Umowa dla') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;Verify sorting by who created the repair (section 'Pojazd naprawiany', column 'Utworzył') by clicking on column's header.;The list is sorted correctly.;;;;;
-;Verify searching by  who created the repair (section 'Pojazd naprawiany', column 'Utworzył'): | in search field type in a part of worker's name;The list is filtered correctly.;;;;;
+;"Verify searching by  who created the repair (section 'Pojazd naprawiany', column 'Utworzył'):
+- in search field type in a part of worker's name";The list is filtered correctly.;;;;;
 ;Verify if searching by  who created the repair (section 'Pojazd naprawiany', column 'Utworzył') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - Lista umów (multiple filters);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded | Multiple reservations are available
+Blacharnia - Lista umów (multiple filters);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded
+Multiple reservations are available"
 ;On the left-side menu, go to 'Lista umów';Page 'Lista umów' is loaded.;;;;;
 ;Filter data by rental vehicle model (section 'Pojazd wynajmowany', column 'Model');The list is filtered correctly.;;;;;
 ;Add filtering by park (column 'Park').;The list is filtered correctly.;;;;;
 ;Add filtering by date 'from' (section 'Umowa', column 'Data od') by selecting any date from calendar.;The list is filtered correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Blacharnia - add new repair (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded
+Blacharnia - add new repair (page layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded"
 ;"In 'Zarządanie szkodami' page, click ""Dodaj naprawę"".";Pop-up window 'Nowa naprawa' is displayed.;;;;;
-;Verify 'Dane pojazdu' section: | 'Wyczyść sekcję' button | Nr rejestracyjny | Nr VIN | Data następnego badania (calendar) | Stan licznika | Rodzaj (drop-down list, pre-filled with 'osobowy') | Marka (drop-down list) | Model (drop-down list) | Typ | Rodzaj nadwozia (drop-down list) | Rok produkcji | Oznaczenia producenta | Kod koloru | Nazwa koloru;It displays correctly.;;;;;
-;Verify 'Zleceniodawca' section: | 'Kopiuj z właściciela' button | 'Kopiuj z użytkownika' button | 'Wyczyść sekcje' button | 'Firma' checkbox | Imię | Nazwisko | Prefiks | Telefon | Adres e-mail | Kraj | Wybierz adres;It displays correctly.;;;;;
-;Mark 'Firma' checkbox and verify 'Zleceniodawca' section again: | JDG checkbox | Nip prefix | Nip | Regon | Nazwa firmy | Kraj | Wybierz adres | Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail';It displays correctly.;;;;;
-;Mark 'JDG' checkbox and verify 'Zleceniodawca' section again: | Nip prefix | Nip | Regon | Nazwa firmy | Imię | Nazwisko | Kraj | Wybierz adres | Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail';It displays correctly.;;;;;
-;Verify 'Właściciel pojazdu' section: | 'Kopiuj ze zleceniodawcy' button | 'Kopiuj z użytkownika' button | 'Wyczyść sekcje' button | 'Firma' checkbox | Imię | Nazwisko | Prefiks | Telefon | Adres e-mail | Kraj | Wybierz adres;It displays correctly.;;;;;
-;Mark 'Firma' checkbox and verify 'Właściciel pojazdu' section again: | JDG checkbox | Nip prefix | Nip | Regon | Nazwa firmy | Kraj | Wybierz adres | Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail';It displays correctly.;;;;;
-;Mark 'JDG' checkbox and verify 'Właściciel pojazdu' section again: | Nip prefix | Nip | Regon | Nazwa firmy | Imię | Nazwisko | Kraj | Wybierz adres | Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail';It displays correctly.;;;;;
-;Verify 'Użytkownik pojazdu' section: | 'Kopiuj ze zleceniodawcy' button | 'Kopiuj z właściciela' button | 'Wyczyść sekcje' button | 'Firma' checkbox | Imię | Nazwisko | Prefiks | Telefon | Adres e-mail | Kraj | Wybierz adres;It displays correctly.;;;;;
-;Mark 'Firma' checkbox and verify 'Użytkownik pojazdu' section again: | JDG checkbox | Nip prefix | Nip | Regon | Nazwa firmy | Kraj | Wybierz adres | Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail';It displays correctly.;;;;;
-;Mark 'JDG' checkbox and verify 'Użytkownik pojazdu' section again: | Nip prefix | Nip | Regon | Nazwa firmy | Imię | Nazwisko | Kraj | Wybierz adres | Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail';It displays correctly.;;;;;
-;Verify 'Szkoda' section: | 'Wyczyść sekcje' button | Rodzaj szkody (drop-down list) | Doradca (drop-down list) | Numer szkody | TU szkody wiodącej (drop-down list) | Klasyfikacja szkody wiodącej (drop-down list) | Cecha naprawy (drop-down list) | 'Przyjmij pojazd' checkbox | 'Pojaz zastępczy' checkbox | Opis szkody;It displays correctly.;;;;;
+;"Verify 'Dane pojazdu' section:
+- 'Wyczyść sekcję' button
+- Nr rejestracyjny
+- Nr VIN
+- Data następnego badania (calendar)
+- Stan licznika
+- Rodzaj (drop-down list, pre-filled with 'osobowy')
+- Marka (drop-down list)
+- Model (drop-down list)
+- Typ
+- Rodzaj nadwozia (drop-down list)
+- Rok produkcji
+- Oznaczenia producenta
+- Kod koloru
+- Nazwa koloru";It displays correctly.;;;;;
+;"Verify 'Zleceniodawca' section:
+- 'Kopiuj z właściciela' button
+- 'Kopiuj z użytkownika' button
+- 'Wyczyść sekcje' button
+- 'Firma' checkbox
+- Imię
+- Nazwisko
+- Prefiks
+- Telefon
+- Adres e-mail
+- Kraj
+- Wybierz adres";It displays correctly.;;;;;
+;"Mark 'Firma' checkbox and verify 'Zleceniodawca' section again:
+- JDG checkbox
+- Nip prefix
+- Nip
+- Regon
+- Nazwa firmy
+- Kraj
+- Wybierz adres
+- Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail'";It displays correctly.;;;;;
+;"Mark 'JDG' checkbox and verify 'Zleceniodawca' section again:
+- Nip prefix
+- Nip
+- Regon
+- Nazwa firmy
+- Imię
+- Nazwisko
+- Kraj
+- Wybierz adres
+- Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail'";It displays correctly.;;;;;
+;"Verify 'Właściciel pojazdu' section:
+- 'Kopiuj ze zleceniodawcy' button
+- 'Kopiuj z użytkownika' button
+- 'Wyczyść sekcje' button
+- 'Firma' checkbox
+- Imię
+- Nazwisko
+- Prefiks
+- Telefon
+- Adres e-mail
+- Kraj
+- Wybierz adres";It displays correctly.;;;;;
+;"Mark 'Firma' checkbox and verify 'Właściciel pojazdu' section again:
+- JDG checkbox
+- Nip prefix
+- Nip
+- Regon
+- Nazwa firmy
+- Kraj
+- Wybierz adres
+- Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail'";It displays correctly.;;;;;
+;"Mark 'JDG' checkbox and verify 'Właściciel pojazdu' section again:
+- Nip prefix
+- Nip
+- Regon
+- Nazwa firmy
+- Imię
+- Nazwisko
+- Kraj
+- Wybierz adres
+- Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail'";It displays correctly.;;;;;
+;"Verify 'Użytkownik pojazdu' section:
+- 'Kopiuj ze zleceniodawcy' button
+- 'Kopiuj z właściciela' button
+- 'Wyczyść sekcje' button
+- 'Firma' checkbox
+- Imię
+- Nazwisko
+- Prefiks
+- Telefon
+- Adres e-mail
+- Kraj
+- Wybierz adres";It displays correctly.;;;;;
+;"Mark 'Firma' checkbox and verify 'Użytkownik pojazdu' section again:
+- JDG checkbox
+- Nip prefix
+- Nip
+- Regon
+- Nazwa firmy
+- Kraj
+- Wybierz adres
+- Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail'";It displays correctly.;;;;;
+;"Mark 'JDG' checkbox and verify 'Użytkownik pojazdu' section again:
+- Nip prefix
+- Nip
+- Regon
+- Nazwa firmy
+- Imię
+- Nazwisko
+- Kraj
+- Wybierz adres
+- Kontakt section with 'Imię', 'Nazwisko', 'Prefix', 'Nr telefonu', 'Adres e-mail'";It displays correctly.;;;;;
+;"Verify 'Szkoda' section:
+- 'Wyczyść sekcje' button
+- Rodzaj szkody (drop-down list)
+- Doradca (drop-down list)
+- Numer szkody
+- TU szkody wiodącej (drop-down list)
+- Klasyfikacja szkody wiodącej (drop-down list)
+- Cecha naprawy (drop-down list)
+- 'Przyjmij pojazd' checkbox
+- 'Pojaz zastępczy' checkbox
+- Opis szkody";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - add new repair;;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded
+Blacharnia - add new repair;;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded"
 ;"In 'Zarządanie szkodami' page, click ""Dodaj naprawę"".";Pop-up window 'Nowa naprawa' is displayed.;;;;;
 ;Click 'Dodaj naprawę'.;Warning message occurs: 'Proszę poprawić błędy w formularzu';;;;;
-;Verify if mandatory fields are marked with red icon: | Nr rejestracyjny | Zleceniodawca | Imię | Nazwisko | Nr telefonu | Adres e-mail | Rodzaj szkody;It displays correctly.;;;;;
+;"Verify if mandatory fields are marked with red icon:
+- Nr rejestracyjny
+- Zleceniodawca
+- Imię
+- Nazwisko
+- Nr telefonu
+- Adres e-mail
+- Rodzaj szkody";It displays correctly.;;;;;
 ;Fill in mandatory fields in sections 'Dane pojazdu' and 'Zleceniodawca'.;Fields are filled in.;;;;;
 ;In section 'Szkoda' select type of claim from drop-down list: UN - Ubezpieczeniowa.;Fields are filled in.;;;;;
 ;Click 'Dodaj naprawę'.;Warning message occurs: 'Proszę poprawić błędy w formularzu';;;;;
-;Verify if mandatory fields are marked with red icon: | TU szkody wiodącej | Klasyfikcja szkody wiodącej;It displays correctly.;;;;;
+;"Verify if mandatory fields are marked with red icon:
+- TU szkody wiodącej
+- Klasyfikcja szkody wiodącej";It displays correctly.;;;;;
 ;Fill in all mandatory fields.;Fields are filled in.;;;;;
 ;Click 'Dodaj naprawę'.;Pop-up window 'Nowa naprawa' is closed.;;;;;
-;Verify if: | new repair is pinned to the context on the top of the page (yellow sticky note) | new repair is visible on the repairs list, column 'Pierwsza wizyta';It displays correctly.;;;;;
+;"Verify if:
+- new repair is pinned to the context on the top of the page (yellow sticky note)
+- new repair is visible on the repairs list, column 'Pierwsza wizyta'";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - column 'Dokumenty': colour logic (non-mandatory documents);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded ('Zarządzanie szkodami')
-;Add new repair: | claim type: 'GN - Gwarancyjna' or another where there are no mandatory documents.;Repair has been created.;;;;;
+Blacharnia - column 'Dokumenty': colour logic (non-mandatory documents);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded ('Zarządzanie szkodami')"
+;"Add new repair:
+- claim type: 'GN - Gwarancyjna' or another where there are no mandatory documents.";Repair has been created.;;;;;
 ;In context section, click 'Pełna teczka naprawy'.;'Teczka naprawy' page is opened in a new tab.;;;;;
 ;On the left-side menu, click 'Dokumenty'.;'Dokumenty' page is displayed.;;;;;
 ;Verify if all listed documents have 'Status': 'Brak', coloured red.;It displays correctly.;;;;;
@@ -773,12 +1487,16 @@ Blacharnia - column 'Dokumenty': colour logic (non-mandatory documents);;;QA\SVC
 ;Go back to 'Zarządzanie szkodami' page.;'Zarządzanie szkodami' page is displayed.;;;;;
 ;Verify if repair's status colour is green. ;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - column 'Dokumenty': colour logic (mandatory documents);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded ('Zarządzanie szkodami')
-;Add new repair: | claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.;Repair has been created.;;;;;
+Blacharnia - column 'Dokumenty': colour logic (mandatory documents);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded ('Zarządzanie szkodami')"
+;"Add new repair:
+- claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.";Repair has been created.;;;;;
 ;In context section, click 'Pełna teczka naprawy'.;'Teczka naprawy' page is opened in a new tab.;;;;;
 ;On the left-side menu, click 'Dokumenty'.;'Dokumenty' page is displayed.;;;;;
 ;Verify if all listed documents have 'Status': 'Brak', coloured red.;It displays correctly.;;;;;
-;Verify if the are mandatory documents to be uploaded: | 'Wymagalność' other than 'Brak' | Next to document's name there is a red exclamation mark.;There are mandatory documents.;;;;;
+;"Verify if the are mandatory documents to be uploaded:
+- 'Wymagalność' other than 'Brak'
+- Next to document's name there is a red exclamation mark.";There are mandatory documents.;;;;;
 ;Go back to 'Zarządzanie szkodami' page.;'Zarządzanie szkodami' page is displayed.;;;;;
 ;Drag the repair from column 'Pierwsza wizyta' and drop into column 'Dokumenty'.;Repair has been moved to column 'Dokumenty'.;;;;;
 ;Verify if repair's status colour is grey. ;It displays correctly.;;;;;
@@ -800,13 +1518,16 @@ Blacharnia - column 'Dokumenty': colour logic (mandatory documents);;;QA\SVCloud
 ;Go back to 'Zarządzanie szkodami' page.;'Zarządzanie szkodami' page is displayed.;;;;;
 ;Verify if repair's status colour is green. ;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - column 'Dokumenty': colour logic (exising cancelled claims);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded ('Zarządzanie szkodami')
-;Add new repair: | claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.;Repair has been created.;;;;;
+Blacharnia - column 'Dokumenty': colour logic (exising cancelled claims);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded ('Zarządzanie szkodami')"
+;"Add new repair:
+- claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.";Repair has been created.;;;;;
 ;Drag the repair from column 'Pierwsza wizyta' and drop into column 'Dokumenty'.;Repair has been moved to column 'Dokumenty'.;;;;;
 ;Verify if repair's status colour is grey. ;It displays correctly.;;;;;
 ;In context section, click 'Pełna teczka naprawy'.;'Teczka naprawy' page is opened in a new tab.;;;;;
 ;On the left-side menu, click 'Szkody'.;'Szkody' page is displayed.;;;;;
-;Click 'Dodaj nową szkodę' to create new claim: | claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.;New claim is created.;;;;;
+;"Click 'Dodaj nową szkodę' to create new claim:
+- claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.";New claim is created.;;;;;
 ;Go back to 'Zarządzanie szkodami' page and refresh it.;'Zarządzanie szkodami' page is displayed and refreshed.;;;;;
 ;Verify if repair's status colour is grey. ;It displays correctly.;;;;;
 ;Go back to 'Szkody' page.;'Szkody' page is displayed.;;;;;
@@ -816,38 +1537,68 @@ Blacharnia - column 'Dokumenty': colour logic (exising cancelled claims);;;QA\SV
 ;Go back to 'Zarządzanie szkodami' page.;'Zarządzanie szkodami' page is displayed.;;;;;
 ;Verify if repair's status colour is green. ;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - column 'Dokumenty': colour logic (multiple claims);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded ('Zarządzanie szkodami')
-;Add new repair: | claim type: 'GN - Gwarancyjna' or another where there are no mandatory documents.;Repair has been created.;;;;;
+Blacharnia - column 'Dokumenty': colour logic (multiple claims);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded ('Zarządzanie szkodami')"
+;"Add new repair:
+- claim type: 'GN - Gwarancyjna' or another where there are no mandatory documents.";Repair has been created.;;;;;
 ;Drag the repair from column 'Pierwsza wizyta' and drop into column 'Dokumenty'.;Repair has been moved to column 'Dokumenty'.;;;;;
 ;Verify if repair's status colour is grey. ;It displays correctly.;;;;;
 ;In context section, click 'Pełna teczka naprawy'.;'Teczka naprawy' page is opened in a new tab.;;;;;
 ;On the left-side menu, click 'Szkody'.;'Szkody' page is displayed.;;;;;
-;Click 'Dodaj nową szkodę' to create new claim: | claim type: 'GN - Gwarancyjna' or another where there are no mandatory documents.;New claim is created.;;;;;
+;"Click 'Dodaj nową szkodę' to create new claim:
+- claim type: 'GN - Gwarancyjna' or another where there are no mandatory documents.";New claim is created.;;;;;
 ;Go back to 'Zarządzanie szkodami' page.;'Zarządzanie szkodami' page is displayed.;;;;;
 ;Verify if repair's status colour is grey. ;It displays correctly.;;;;;
 ;Go back to 'Dokumenty' page.;'Dokumenty' page is displayed.;;;;;
 ;Add any document to the first claim.;Document has been uploaded.;;;;;
 ;Go back to 'Zarządzanie szkodami' page.;'Zarządzanie szkodami' page is displayed.;;;;;
 ;Verify if repair's status colour is blue. ;It displays correctly.;;;;;
-;Go back to 'Teczka naprawy' to create third claim: | claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.;New claim is created.;;;;;
+;"Go back to 'Teczka naprawy' to create third claim:
+- claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.";New claim is created.;;;;;
 ;Go back to 'Zarządzanie szkodami' page.;'Zarządzanie szkodami' page is displayed.;;;;;
 ;Verify if repair's status colour is dark blue. ;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - repair file: Documents (layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded ('Zarządzanie szkodami')
-;Add new repair: | claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.;Repair has been created.;;;;;
+Blacharnia - repair file: Documents (layout);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded ('Zarządzanie szkodami')"
+;"Add new repair:
+- claim type: 'UN - Ubezpieczeniowa' or another where there are mandatory documents to be uploaded.";Repair has been created.;;;;;
 ;In context section, click 'Pełna teczka naprawy'.;'Teczka naprawy' page is opened in a new tab.;;;;;
 ;On the left-side menu, click 'Dokumenty'.;'Dokumenty' page is displayed.;;;;;
-;Verify top section content: | 'Wybór szkody': drop-down list with claims assigned to the repair | button: 'Wyślij wiadomość' | button: 'Pobierz teczkę';It displays correctly.;;;;;
-;Verify claim folder header: | claim type | button: 'Zmień szablon dokumentów';It displays correctly.;;;;;
-;Verify columns of documents list: | Dokument | Komentarz | Status | Wymagalność | Tryb u klienta | Do PDF? | Osoba weryfikująca;It displays correctly.;;;;;
-;Verify upload document section: | name of document which is to be uploaded | button: 'Usuń' | button: 'Przenieś/Kopiuj' | button: 'Zweryfikuj' | button: 'Pobierz folder' | button: 'Pobierz folder (PDF)' | 'drag-here' field with 'Wybierz' button | information about supported file formats and max file size;It displays correctly.;;;;;
+;"Verify top section content:
+- 'Wybór szkody': drop-down list with claims assigned to the repair
+- button: 'Wyślij wiadomość'
+- button: 'Pobierz teczkę'";It displays correctly.;;;;;
+;"Verify claim folder header:
+- claim type
+- button: 'Zmień szablon dokumentów'";It displays correctly.;;;;;
+;"Verify columns of documents list:
+- Dokument
+- Komentarz
+- Status
+- Wymagalność
+- Tryb u klienta
+- Do PDF?
+- Osoba weryfikująca";It displays correctly.;;;;;
+;"Verify upload document section:
+- name of document which is to be uploaded
+- button: 'Usuń'
+- button: 'Przenieś/Kopiuj'
+- button: 'Zweryfikuj'
+- button: 'Pobierz folder'
+- button: 'Pobierz folder (PDF)'
+- 'drag-here' field with 'Wybierz' button
+- information about supported file formats and max file size";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Blacharnia - repair file: Documents (add documents);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Blacharnia page is loaded ('Zarządzanie szkodami')
-;Add new repair: | claim type: 'UN - Ubezpieczeniowa'.;Repair has been created.;;;;;
+Blacharnia - repair file: Documents (add documents);;;QA\SVCloud;QA\SVCloud\Blacharnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Blacharnia page is loaded ('Zarządzanie szkodami')"
+;"Add new repair:
+- claim type: 'UN - Ubezpieczeniowa'.";Repair has been created.;;;;;
 ;In context section, click 'Pełna teczka naprawy'.;'Teczka naprawy' page is opened in a new tab.;;;;;
 ;On the left-side menu, click 'Dokumenty'.;'Dokumenty' page is displayed.;;;;;
 ;Verify if all listed documents have 'Status': 'Brak', coloured red.;It displays correctly.;;;;;
-;Verify if the are mandatory documents to be uploaded: | 'Wymagalność' other than 'Brak' | Next to document's name there is a red exclamation mark.;There are mandatory documents.;;;;;
+;"Verify if the are mandatory documents to be uploaded:
+- 'Wymagalność' other than 'Brak'
+- Next to document's name there is a red exclamation mark.";There are mandatory documents.;;;;;
 ;Verify if column 'Osoba weryfikująca' is empty (there are no entries for any document).;It displays correctly.;;;;;
 ;Click on any document on the list to verify if upload section name is changing accordingly to selected document.;It displays correctly.;;;;;
 ;Click on mandatory document 'Dowód rejestracyjny/pokwitowanie'.;Document is marked.;;;;;
@@ -856,9 +1607,17 @@ Blacharnia - repair file: Documents (add documents);;;QA\SVCloud;QA\SVCloud\Blac
 ;Select file in PNG format and click 'Open';"Error message occurs: ""Plik o tym formacie nie jest obsługiwany"".";;;;;
 ;In upload section, click 'Wybierz'.;New window is opened.;;;;;
 ;Select file in JPG format and click 'Open';Window is closed, file is visible in upload section.;;;;;
-;Verify if: | next to document's name there is an orange exclamation mark | status is changed to 'Jest', coloured green.;It displays correctly.;;;;;
+;"Verify if:
+- next to document's name there is an orange exclamation mark
+- status is changed to 'Jest', coloured green.";It displays correctly.;;;;;
 ;Click 'Zweryfikuj'.;Document is verified.;;;;;
-;Verify if: | there is no exclamation mark next to document's name | field in column 'Osoba weryfikująca' is filled in with name and current date | button 'Zweryfikuj' is changed to 'Cofnij weryfikację'.;It displays correctly.;;;;;
+;"Verify if:
+- there is no exclamation mark next to document's name
+- field in column 'Osoba weryfikująca' is filled in with name and current date
+- button 'Zweryfikuj' is changed to 'Cofnij weryfikację'.";It displays correctly.;;;;;
 ;Click 'Cofnij weryfikację'.;Verification is cancelled.;;;;;
-;Verify if: | next to document's name there is an orange exclamation mark | field in column 'Osoba weryfikująca' is empty | button 'Cofnij weryfikację' is changed to 'Zweryfikuj'.;It displays correctly.;;;;;
+;"Verify if:
+- next to document's name there is an orange exclamation mark
+- field in column 'Osoba weryfikująca' is empty
+- button 'Cofnij weryfikację' is changed to 'Zweryfikuj'.";It displays correctly.;;;;;
 ;End of test.;;;;;;

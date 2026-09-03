@@ -1,40 +1,87 @@
-Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
+﻿Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
 Myjnia - page layout;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in
 ;In application page go to 'Myjnia' -> 'Myjnia automatyczna'.;Carwash calendar page is displayed.;;;;;
-;Verify menu content (left side of the page): | Kalendarz myjni | Lista myć;It displays correctly.;;;;;
-;Verify left panel on the page: | today's date in format: full day name, DD.MM.YYY | 'Dzisiaj' button | 'Wybierz dzień' button | hours (blocks of half an hour);It displays correctly.;;;;;
-;Verify top panel of the page: | button: 'Wyszukaj rezerwację';It displays correctly.;;;;;
-;Verify that below top panel calendar days are displayed: | shortened name's day | DD.MM | time usage/availability;It displays correctly.;;;;;
-;Verify if below days' panel there is a bar with data per day selected in above panel: | full day's name | DD.MM | time usage/availability | number of events planned for this day;It displays correctly.;;;;;
+;"Verify menu content (left side of the page):
+- Kalendarz myjni
+- Lista myć";It displays correctly.;;;;;
+;"Verify left panel on the page:
+- today's date in format: full day name, DD.MM.YYY
+- 'Dzisiaj' button
+- 'Wybierz dzień' button
+- hours (blocks of half an hour)";It displays correctly.;;;;;
+;"Verify top panel of the page:
+- button: 'Wyszukaj rezerwację'";It displays correctly.;;;;;
+;"Verify that below top panel calendar days are displayed:
+- shortened name's day
+- DD.MM
+- time usage/availability";It displays correctly.;;;;;
+;"Verify if below days' panel there is a bar with data per day selected in above panel:
+- full day's name
+- DD.MM
+- time usage/availability
+- number of events planned for this day";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - add reservation (form layout);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - add reservation (form layout);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;In top panel of the carwash calendar, click on next Monday.;Calendar is switched to selected day.;;;;;
 ;In the main window of the calendar, click on the field next to any available hour (e.g. 10:00).;Pop-up window 'Dodaj rezerwację' is displayed.;;;;;
-;"Verify section ""Rezerwacja"": | Typ (drop-down list) | Dział, dla którego jest mycie (drop-down list, items depending on configuration) | Program mycia (drop-down list, items depending on configuration) | Data (non-editable, prefilled with selected date) | Godzina od (non-editable, prefilled with selected hour) | Godzina do (non-editable, prefilled depening on selection in 'Program mycia' field).";It displays correctly.;;;;;
-;"Verify section ""Uwagi"": | Treść (text field).";It displays correctly.;;;;;
-;"Verify section ""Pojazd"": | button: Wyczyść | Numer rejestracyjny | Nr VIN | Rodzaj (drop-down list) | Marka | Model";It displays correctly.;;;;;
-;"Verify section ""Kontakt"": | Imię | Nazwisko | Prefix | Numer telefonu | E-mail";It displays correctly.;;;;;
+;"Verify section ""Rezerwacja"":
+- Typ (drop-down list)
+- Dział, dla którego jest mycie (drop-down list, items depending on configuration)
+- Program mycia (drop-down list, items depending on configuration)
+- Data (non-editable, prefilled with selected date)
+- Godzina od (non-editable, prefilled with selected hour)
+- Godzina do (non-editable, prefilled depening on selection in 'Program mycia' field).";It displays correctly.;;;;;
+;"Verify section ""Uwagi"":
+- Treść (text field).";It displays correctly.;;;;;
+;"Verify section ""Pojazd"":
+- button: Wyczyść
+- Numer rejestracyjny
+- Nr VIN
+- Rodzaj (drop-down list)
+- Marka
+- Model";It displays correctly.;;;;;
+;"Verify section ""Kontakt"":
+- Imię
+- Nazwisko
+- Prefix
+- Numer telefonu
+- E-mail";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - add reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - add reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;In top panel of the carwash calendar, click on next Monday.;Calendar is switched to selected day.;;;;;
 ;In the main window of the calendar, click on the field next to any available hour (e.g. 10:00).;Pop-up window 'Dodaj rezerwację' is displayed.;;;;;
 ;In top panel of the carwash calendar, click on next Monday.;Calendar is switched to selected day.;;;;;
 ;In the main window of the calendar, click on the field next to any available hour (e.g. 10:00).;Pop-up window 'Dodaj rezerwację' is displayed.;;;;;
 ;Click 'Dodaj'.;Warning message occurs: 'Proszę poprawić błędy w formularzu';;;;;
-;Verify if mandatory fields are marked with red icon: | Numer rejestracyjny | Nr VIN;It displays correctly.;;;;;
+;"Verify if mandatory fields are marked with red icon:
+- Numer rejestracyjny
+- Nr VIN";It displays correctly.;;;;;
 ;"In ""Typ"" drop-down list select ""Rezerwacja na pojazd"".";"""Rezerwacja na pojazd"" is selected.";;;;;
 ;"Verify if ""Dział, dla którego jest mycia"" field isprefilled with active carwash.";It displays correctly.;;;;;
 ;"In ""Program mycia"" drop-down list select any washing program.";Program is selected.;;;;;
-;"Verify if ""Data"" field is: | inactive | prefilled with correct date";It displays correctly.;;;;;
-;"Verify if ""Godzina od"" field is: | inactive | prefilled with correct hour.";It displays correctly.;;;;;
-;"Verify if ""Godzina do"" field is: | inactive | prefilled with correct hour according to time of selected program.";It displays correctly.;;;;;
+;"Verify if ""Data"" field is:
+- inactive
+- prefilled with correct date";It displays correctly.;;;;;
+;"Verify if ""Godzina od"" field is:
+- inactive
+- prefilled with correct hour.";It displays correctly.;;;;;
+;"Verify if ""Godzina do"" field is:
+- inactive
+- prefilled with correct hour according to time of selected program.";It displays correctly.;;;;;
 ;"Fill in fields ""Numer rejestracyjny"" and ""Nr VIN"".";Fields are filled in.;;;;;
 ;"Click ""Dodaj"".";Pop-up window 'Dodaj rezerwację' is closed.;;;;;
 ;Verify if washing is visible on the calendar.;It displays correctly.;;;;;
-;Verify the washing: | colour: dark blue | title (after hovering over): Status mycia - Zaplanowane;It displays correctly.;;;;;
-;Right-click on the washing to verify available actions: | Przeplanuj | Usuń;It displays correctly.;;;;;
+;"Verify the washing:
+- colour: dark blue
+- title (after hovering over): Status mycia - Zaplanowane";It displays correctly.;;;;;
+;"Right-click on the washing to verify available actions:
+- Przeplanuj
+- Usuń";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - reschedule reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - reschedule reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Create new washing reservation [LINK];Washing reservation is created.;;;;;
 ;"Right-click on the washing and click 'Przeplanuj"".";Reservation has been pinned to the context.;;;;;
 ;Verfiy if during hovering over the calendar, there is a transparent rectangle following the coursor.;It displays correctly.;;;;;
@@ -45,58 +92,131 @@ Myjnia - reschedule reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.bi
 ;Verify if the reservation is not visible in the primary date.;The reservation is not visible in the primary date.;;;;;
 ;Reschedule the reservation again by drag-and-drop it to another hour.;The washing has been rescheduled.;;;;;
 ;End of test.;;;;;;
-Myjnia - edit reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - edit reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Create new washing reservation [LINK];Washing reservation is created.;;;;;
 ;Click on the reservation.;"Pop-up window ""Edytuj rezerwację"" is displayed.";;;;;
 ;"Verify if additonal section is visible: ""Przebieg mycia"".";It displays correctly.;;;;;
-;"Verify section ""Przebieg mycia"": | non-editable | Utworzone - name, date and hour of creation | Ostatnio planował - name, date and hour | Zaplanowane - name, date and hour of washing";It displays correctly.;;;;;
+;"Verify section ""Przebieg mycia"":
+- non-editable
+- Utworzone - name, date and hour of creation
+- Ostatnio planował - name, date and hour
+- Zaplanowane - name, date and hour of washing";It displays correctly.;;;;;
 ;"Make any changes in the reservation and click ""Zapisz"".";"Pop-up window is closed, message ""Zaktualizowano dane pojazdu"" is displayed.";;;;;
 ;Click again on the reservation to verify if changes have been applied.;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - delete reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - delete reservation;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Create new washing reservation [LINK];Washing reservation is created.;;;;;
 ;"Right-click on the washing and click 'Usuń"".";Reservation has been deleted.;;;;;
 ;End of test.;;;;;;
-Myjnia - operation: Nie przyjechał;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - operation: Nie przyjechał;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Create new washing reservation for today, hour in the near future [LINK];Washing reservation is created.;;;;;
 ;Wait until scheduled washing time is started.;The washing time is started.;;;;;
 ;"Right-click on the started washing to verify if there is a new action available: ""Nie przyjechał"".";It displays correctly.;;;;;
-;"Click action ""Nie przyjechał"" an verify the reservation: | color: grey | title (after hovering over): Status mycia - Nie przyjechał.";It displays correctly.;;;;;
+;"Click action ""Nie przyjechał"" an verify the reservation:
+- color: grey
+- title (after hovering over): Status mycia - Nie przyjechał.";It displays correctly.;;;;;
 ;"Right-click on the started washing to verify if there is a new action available: ""Wycofaj nie przyjechał"".";It displays correctly.;;;;;
-;"Click action ""Wycofaj nie przyjechał"" an verify the reservation: | color: dark blue | title (after hovering over): Status mycia - Zaplanowane.";It displays correctly.;;;;;
+;"Click action ""Wycofaj nie przyjechał"" an verify the reservation:
+- color: dark blue
+- title (after hovering over): Status mycia - Zaplanowane.";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - overdue washing;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - overdue washing;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Create new washing reservation for today [LINK];Washing reservation is created.;;;;;
 ;Go back to the calendar next day.;Calendar page is displayed.;;;;;
 ;"Verify if reservation created in step 1 has been moved to section ""Przeterminowane"".";It displays correctly.;;;;;
-;Verify overdue reservation: | color: shaded dark blue | title (after hovering over): Status mycia - Zaplanowane.;It displays correctly.;;;;;
-;Right-click to verify available actions: | Nie przyjechał;It displays correctly.;;;;;
+;"Verify overdue reservation:
+- color: shaded dark blue
+- title (after hovering over): Status mycia - Zaplanowane.";It displays correctly.;;;;;
+;"Right-click to verify available actions:
+- Nie przyjechał";It displays correctly.;;;;;
 ;Click on the reservation.;"Pop-up window ""Edytuj rezerwację"" is displayed.";;;;;
 ;Verify that no changes can be made in the resrevation.;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - Lista myć (page layout);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - Lista myć (page layout);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;On the left-side menu, go to 'Lista myć';Page 'Lista myć' is loaded.;;;;;
-;Verify to panel: | 'Odśwież' button | 'Wyczyść filtry' button | three-dot menu with 'Export do Excela' button;It displays correctly.;;;;;
-;Verify columns in page layout: | Postęp mycia | Dział zlecający mycie | Nr rejestracyjny | Nr nadwozia | Marka | Model | Zleceniodawca | Planowana data mycia od | Program mycia | Czas mycia | Kto wykonał mycie | Kiedy wykonał mycie | Uwagi | Mycie bezterminowe | Kto zaplanował mycie | Data utworzenia | Utworzył | Myjnia;It displays correctly.;;;;;
+;"Verify to panel:
+- 'Odśwież' button
+- 'Wyczyść filtry' button
+- three-dot menu with 'Export do Excela' button";It displays correctly.;;;;;
+;"Verify columns in page layout:
+- Postęp mycia
+- Dział zlecający mycie
+- Nr rejestracyjny
+- Nr nadwozia
+- Marka
+- Model
+- Zleceniodawca
+- Planowana data mycia od
+- Program mycia
+- Czas mycia
+- Kto wykonał mycie
+- Kiedy wykonał mycie
+- Uwagi
+- Mycie bezterminowe
+- Kto zaplanował mycie
+- Data utworzenia
+- Utworzył
+- Myjnia";It displays correctly.;;;;;
 ;Verify if all columns are sortable.;Columns are sortable.;;;;;
 ;Verify if next to each column's name there is a filter button.;It displays correctly.;;;;;
 ;Verify if under each column name there is a search field.;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (except columns 'Marka' and 'Model'): | Zawiera | Nie zawiera | Zaczyna się od | Kończy się | Równy | Nierówny | Wyczyść;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns 'Marka' and 'Model'): | Zawiera | Wyczyść;It displays correctly.;;;;;
-;Move the mouse over search icon to verify searching type (columns with calendars): | Równy | Nierówny | Mniejsze od | Większe | Mniejszy lub równy | Większy lub równy | Pomiędzy | Wyczyść;It displays correctly.;;;;;
-;Verify if search field for column 'Postęp mycia' is a drop-down list with following items: | (Wszystkie) | Zaplanowane | Rozpoczęte | Wstrzymane | Zakończone;It displays correctly.;;;;;
-;Verify if search field for column 'Mycie bezterminowe' is a drop-down list with following items: | (Wszystkie) | Tak | Nie;It displays correctly.;;;;;
-;Verify if search field for below columns is a calendar: | Planowana data mycia od | Kiedy wykonał mycie | Data utworzenia;It displays correctly.;;;;;
-;Verify available options for pagination: | 30 | 50 | 100;It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (except columns 'Marka' and 'Model'):
+- Zawiera
+- Nie zawiera
+- Zaczyna się od
+- Kończy się
+- Równy
+- Nierówny
+- Wyczyść";It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns 'Marka' and 'Model'):
+- Zawiera
+- Wyczyść";It displays correctly.;;;;;
+;"Move the mouse over search icon to verify searching type (columns with calendars):
+- Równy
+- Nierówny
+- Mniejsze od
+- Większe
+- Mniejszy lub równy
+- Większy lub równy
+- Pomiędzy
+- Wyczyść";It displays correctly.;;;;;
+;"Verify if search field for column 'Postęp mycia' is a drop-down list with following items:
+- (Wszystkie)
+- Zaplanowane
+- Rozpoczęte
+- Wstrzymane
+- Zakończone";It displays correctly.;;;;;
+;"Verify if search field for column 'Mycie bezterminowe' is a drop-down list with following items:
+- (Wszystkie)
+- Tak
+- Nie";It displays correctly.;;;;;
+;"Verify if search field for below columns is a calendar:
+- Planowana data mycia od
+- Kiedy wykonał mycie
+- Data utworzenia";It displays correctly.;;;;;
+;"Verify available options for pagination:
+- 30
+- 50
+- 100";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - opening help center;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - opening help center;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Click on the help icon in top-right corner.;Drop-down menu is visible.;;;;;
-;Verify drop-down menu content: | Centrum pomocy | Zgłoś problem | Zadaj pytanie;It displays correctly.;;;;;
+;"Verify drop-down menu content:
+- Centrum pomocy
+- Zgłoś problem
+- Zadaj pytanie";It displays correctly.;;;;;
 ;Click 'Centrum pomocy'.;In the new window help center page is opened (https://help.svcloud.pl/svcloudwiki/doku.php?id=myjnia:start);;;;;
 ;Go back to page 'Myjnia' to click 'Zgłoś problem'.;In the new window, customer support portal is opened (with request form).;;;;;
 ;Go back to page 'Myjnia' to click 'Zadaj pytanie'.;In the new window, customer support portal is opened (with request form).;;;;;
 ;End of test.;;;;;;
-Myjnia - cooperation with RPP (edit reservation);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - cooperation with RPP (edit reservation);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Create new washing reservation [LINK];Reservation is created.;;;;;
 ;Log in on the tablet.;User is logged in.;;;;;
 ;In application page go to 'Rejestrator postępu prac myjni' -> 'Myjnia automatyczna'.;Workers page is displayed.;;;;;
@@ -107,7 +227,8 @@ Myjnia - cooperation with RPP (edit reservation);;;QA\SVCloud;QA\SVCloud\Myjnia;
 ;Veirfy if changes are visible (newly selected program).;It displays correctly.;;;;;
 ;Go back to 'Myjnia' page to verify if changes made in step 7 are visible in washing calendar (after refreshing the page).;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - cooperation with RPP (delete reservation);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - cooperation with RPP (delete reservation);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Create new washing reservation [LINK];Reservation is created.;;;;;
 ;Log in on the tablet.;User is logged in.;;;;;
 ;In application page go to 'Rejestrator postępu prac myjni' -> 'Myjnia automatyczna'.;Workers page is displayed.;;;;;
@@ -116,73 +237,123 @@ Myjnia - cooperation with RPP (delete reservation);;;QA\SVCloud;QA\SVCloud\Myjni
 ;Click 'Edytuj' next to the reservation and verify if it dissappeared from the list.;Washing reservation is deleted.;;;;;
 ;Go back to 'Myjnia' page to verify washing reservation is NOT visible in the calendar (after refreshing the page).;Washing reservation is deleted.;;;;;
 ;End of test.;;;;;;
-Myjnia - cooperation with RPP (running the reservation);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - cooperation with RPP (running the reservation);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;Create new washing reservation [LINK];Reservation is created.;;;;;
 ;Log in on the tablet.;User is logged in.;;;;;
 ;In application page go to 'Rejestrator postępu prac myjni' -> 'Myjnia automatyczna'.;Workers page is displayed.;;;;;
 ;Select any worker.;The washing list is displayed.;;;;;
 ;Verify if washing created in step 1 is visible on the list in tab 'Planowane, section 'Planowane mycia'.;It displays correctly.;;;;;
 ;Click 'Rozpocznij' next to the reservation.;Washing is started.;;;;;
-;Go back to 'Myjnia' page to verify the washing (after refreshing the page): | colour: light blue | title (after hovering over): Status mycia - Rozpoczęte.;It displays correctly.;;;;;
+;"Go back to 'Myjnia' page to verify the washing (after refreshing the page):
+- colour: light blue
+- title (after hovering over): Status mycia - Rozpoczęte.";It displays correctly.;;;;;
 ;Go back to 'Rejestrator postępu prac myjni' and click 'Wstrzymaj' next to washing from previous steps.;Washing is paused.;;;;;
-;Go back to 'Myjnia' page to verify the washing: | colour: orange | title (after hovering over): Status mycia - Wstrzymane.;It displays correctly.;;;;;
+;"Go back to 'Myjnia' page to verify the washing:
+- colour: orange
+- title (after hovering over): Status mycia - Wstrzymane.";It displays correctly.;;;;;
 ;Go back to 'Rejestrator postępu prac myjni' and click 'Rozpocznij' next to washing from previous steps.;Washing is restarted.;;;;;
 ;Click 'Zakończ' next to the reservation.;Washing is finished.;;;;;
 ;Verify that finished washing has been moved to tab 'Zakończone'.;It displays correctly.;;;;;
-;Go back to 'Myjnia' page to verify the washing: | colour: dark green | title (after hovering over): Status mycia - Zakończone.;It displays correctly.;;;;;
+;"Go back to 'Myjnia' page to verify the washing:
+- colour: dark green
+- title (after hovering over): Status mycia - Zakończone.";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - searching reservation view layout;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in. | Myjnia page is loaded
+Myjnia - searching reservation view layout;;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in.
+Myjnia page is loaded"
 ;"In 'Kalendarz myjni' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;
-;Verify header buttons: | Wyczyść filtry;It displays correctly.;;;;;
-;Verify columns in section 'Rezerwacje': | no name column with 'Pokaż' button. | Postęp mycia (drop-down list) | Nr rejestracyjny | Nr nadwozia | Program mycia | Marka (drop-down list) | Model (drop-down list) | Kto zaplanował mycie | Dział zlecający mycie | Data mycia (calendar) | Kto wykonał mycie | Uwagi;It displays correctly.;;;;;
-;Verify if there is a search field under columns: | Nr rejestracyjny | Nr nadwozia | Program mycia | Kto zaplanował mycie | Dział zlecający mycie | Kto wykonał mycie | Uwagi;It displays correctly.;;;;;
-;Verify items in 'Status' drop-down list: | (Wszystkie) | Zaplanowane | Rozpoczęte | Wstrzymane | Zakończone;It displays correctly.;;;;;
-;In the first column, click 'Pokaż' next to any reservation to verify if: | pop-up window 'Wyszukiwanie rezerwacji' is closed | in 'Kalendarz doradców' selected reservation is displayed and highllighted with red frame;It displays correctly.;;;;;
+;"Verify header buttons:
+- Wyczyść filtry";It displays correctly.;;;;;
+;"Verify columns in section 'Rezerwacje':
+- no name column with 'Pokaż' button.
+- Postęp mycia (drop-down list)
+- Nr rejestracyjny
+- Nr nadwozia
+- Program mycia
+- Marka (drop-down list)
+- Model (drop-down list)
+- Kto zaplanował mycie
+- Dział zlecający mycie
+- Data mycia (calendar)
+- Kto wykonał mycie
+- Uwagi";It displays correctly.;;;;;
+;"Verify if there is a search field under columns:
+- Nr rejestracyjny
+- Nr nadwozia
+- Program mycia
+- Kto zaplanował mycie
+- Dział zlecający mycie
+- Kto wykonał mycie
+- Uwagi";It displays correctly.;;;;;
+;"Verify items in 'Status' drop-down list:
+- (Wszystkie)
+- Zaplanowane
+- Rozpoczęte
+- Wstrzymane
+- Zakończone";It displays correctly.;;;;;
+;"In the first column, click 'Pokaż' next to any reservation to verify if:
+- pop-up window 'Wyszukiwanie rezerwacji' is closed
+- in 'Kalendarz doradców' selected reservation is displayed and highllighted with red frame";It displays correctly.;;;;;
 ;End of test.;;;;;;
-Myjnia - searching reservation (single filter);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Myjnia page is loaded. | Multiple reservations are available.
+Myjnia - searching reservation (single filter);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Myjnia page is loaded.
+Multiple reservations are available."
 ;"In 'Kalendarz myjni' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;
-;Verify searching by washing progress (column 'Postęp mycia'): | select any type from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by washing progress (column 'Postęp mycia'):
+- select any type from drop-down list";The list is filtered correctly.;;;;;
 ;Verify sorting by washing progress (column 'Postęp mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by registration plate (column 'Nr rejestracyjny'): | in search field type in a part of registration plate;The list is filtered correctly.;;;;;
+;"Verify searching by registration plate (column 'Nr rejestracyjny'):
+- in search field type in a part of registration plate";The list is filtered correctly.;;;;;
 ;Verify if searching by registration plate (column 'Nr rejestracyjny') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by registration plate (column 'Nr rejestracyjny') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by VIN (column 'Nr nadwozia'): | in search field type in a part of VIN;The list is filtered correctly.;;;;;
+;"Verify searching by VIN (column 'Nr nadwozia'):
+- in search field type in a part of VIN";The list is filtered correctly.;;;;;
 ;Verify if searching by VIN (column 'Nr nadwozia') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by VIN (column 'Nr nadwozia') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by washing program (column 'Program mycia'): | in search field type in a part of washing program name;The list is filtered correctly.;;;;;
+;"Verify searching by washing program (column 'Program mycia'):
+- in search field type in a part of washing program name";The list is filtered correctly.;;;;;
 ;Verify if searching by washing program (column 'Program mycia') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by washing program (column 'Program mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by make (column 'Marka'): | select any make from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by make (column 'Marka'):
+- select any make from drop-down list";The list is filtered correctly.;;;;;
 ;Verify sorting by make (column 'Marka') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by model (column 'Model'): | select any make from drop-down list;The list is filtered correctly.;;;;;
+;"Verify searching by model (column 'Model'):
+- select any make from drop-down list";The list is filtered correctly.;;;;;
 ;Verify sorting by model (column 'Model') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by who planned washing (column 'Kto zaplanował mycie'): | in search field type in a part of worker's first name/last name;The list is filtered correctly.;;;;;
+;"Verify searching by who planned washing (column 'Kto zaplanował mycie'):
+- in search field type in a part of worker's first name/last name";The list is filtered correctly.;;;;;
 ;Verify if searching by who planned washing (column 'Kto zaplanował mycie') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by who planned washing (column 'Kto zaplanował mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by department which planned washing (column 'Dział zlecający mycie'): | in search field type in a part of a department's name;The list is filtered correctly.;;;;;
+;"Verify searching by department which planned washing (column 'Dział zlecający mycie'):
+- in search field type in a part of a department's name";The list is filtered correctly.;;;;;
 ;Verify if searching by department which planned washing (column 'Dział zlecający mycie') is NOT case sensitive (e.g. type in in small letters).;The list is filtered correctly.;;;;;
 ;Verify sorting bydepartment which planned washing (column 'Dział zlecający mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by washing date (column 'Data mycia'): | select any date;The list is filtered correctly.;;;;;
+;"Verify searching by washing date (column 'Data mycia'):
+- select any date";The list is filtered correctly.;;;;;
 ;Verify sorting by washing date (column 'Data mycia') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by who did the washing (column 'Kto wykonał mycie'): | in search field type in a part of worker's first name/last name;The list is filtered correctly.;;;;;
+;"Verify searching by who did the washing (column 'Kto wykonał mycie'):
+- in search field type in a part of worker's first name/last name";The list is filtered correctly.;;;;;
 ;Verify if searching by who did the washing (column 'Kto wykonał mycie') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by who did the washing (column 'Kto wykonał mycie') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
-;Verify searching by comment (column 'Uwagi'): | in search field type in a part of a comment;The list is filtered correctly.;;;;;
+;"Verify searching by comment (column 'Uwagi'):
+- in search field type in a part of a comment";The list is filtered correctly.;;;;;
 ;Verify if searching by comment (column 'Uwagi') is NOT case sensitive (e.g. type in in capital letters).;The list is filtered correctly.;;;;;
 ;Verify sorting by comment (column 'Uwagi') by clicking on column's header.;The list is sorted correctly.;;;;;
 ;Click 'Wyczyść filtry' to clear applied filters.;Filters have been removed.;;;;;
 ;End of test.;;;;;;
-Myjnia - searching reservation (multiple filters);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;User is logged in | Myjnia page is loaded. | Multiple reservations are available.
+Myjnia - searching reservation (multiple filters);;;QA\SVCloud;QA\SVCloud\Myjnia;Medium;justyna.biernacka@softvig.pl;"User is logged in
+Myjnia page is loaded.
+Multiple reservations are available."
 ;"In 'Kalendarz myjni' page click ""Wyszukaj rezerwacje"".";Pop-up window 'Wyszukiwanie rezerwacji' is displayed.;;;;;
 ;Filter data by washing progress.;The list is filtered correctly.;;;;;
 ;Add filtering by washing program.;The list is filtered correctly.;;;;;

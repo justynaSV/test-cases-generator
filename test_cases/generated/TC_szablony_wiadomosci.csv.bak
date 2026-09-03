@@ -1,4 +1,4 @@
-﻿Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
+Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
 Konfiguracja - Szablony wiadomości - Planer serwisu (page layout);;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in
 ;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;'Nowe i aktywne' page is displayed.;;;;;
 ;"Verify menu content (left side of the page):

@@ -18,7 +18,7 @@ Read the files in `style/examples/` purely as a style reference (imitate their
 conventions — row structure, step/expected phrasing, title format, coverage
 order — but don't copy their business content):
 - `style/examples/TC_authorization.csv` — login/roles, negative cases, cross-view
-- `style/examples/TC_bodyshop.csv` — largest sample: layout, filters (grid/columns), pipe-joined multi-item cells, document flows
+- `style/examples/TC_bodyshop.csv` — largest sample: layout, filters (grid/columns), multi-line bullet cells, document flows
 - `style/examples/TC_carwash.csv` — calendar/booking screen
 - `style/examples/TC_fleet.csv` — dealer fleet: extensive single-filter-per-column coverage
 - `style/examples/TEMPLATE_example.csv` — minimal format skeleton
@@ -94,7 +94,12 @@ correct it before you generate.
    bullets BEFORE the CSV — don't silently guess.
 5. Write the scenarios as a single semicolon-delimited CSV to
    `test_cases/generated/TC_<feature_or_module>.csv` (confirm the filename with
-   the user if it isn't obvious).
+   the user if it isn't obvious). Two rules that keep the Azure import working:
+   - Any cell with a newline, a `;`, or a `"` must be wrapped in double quotes,
+     with every literal `"` doubled (`""`).
+   - Start the file with a UTF-8 BOM (the U+FEFF character as the very first
+     byte) so it opens as UTF-8 when double-clicked in Excel — without it,
+     Polish diacritics get mangled on a Polish Windows.
 6. Run `node scripts/validate.js test_cases/generated/TC_<feature_or_module>.csv`
    and fix anything it flags before considering the task done. Show the user the
    final validator output.
