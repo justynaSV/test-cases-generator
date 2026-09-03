@@ -21,20 +21,18 @@ Filter tests suffixed "(single filter)" / "(single filter - grid)" / "(single fi
 
 ## Step format
 - Imperative, second-person implied: "Click", "Go to:", "Fill in field '...'", "Verify..."
-- Multi-item checks go in ONE cell as a quoted multi-line bullet list:
-  "Verify X:
-  - item 1
-  - item 2"
+- Every cell is a single physical line (no embedded line breaks — Azure DevOps'
+  CSV import and Test Plans grid paste both break on raw newlines inside a
+  cell). Multi-item checks go in ONE cell as a single line, items joined with
+  " | ": "Verify X: | item 1 | item 2"
 - Reuse of other scenarios via placeholder: "[LINK]" or "<link>" instead of repeating steps.
 - Always end with literal step: "End of test."
 
 ## Expected result format
 - Short and declarative: "Field is filled in.", "It displays correctly.", "The list is filtered correctly."
 - Exact UI copy quoted verbatim (preserve language, e.g. Polish error strings) in single quotes.
-- State/color checks as bullet list:
-  "Verify X:
-  - colour: ...
-  - title (after hovering over): ..."
+- State/color checks as a single line, items joined with " | ":
+  "Verify X: | colour: ... | title (after hovering over): ..."
 
 ## Coverage pattern per feature
 1. Page layout scenario (verify all UI elements exist) — ALWAYS FIRST.
@@ -56,7 +54,8 @@ QA Priority: Medium (unless specified otherwise)
 Assigned To: this is per-tester, not a constant. If you don't know who it's
   for, leave the literal placeholder `<tester email>` and fill it in before
   importing to Azure DevOps.
-Preconditions: plain text, can be multi-line ("User is logged in\n<Page> is loaded")
+Preconditions: plain text, single line; join multiple items with " | " if needed
+  ("User is logged in | <Page> is loaded")
 
 ## Vocabulary
 - "Verify if..." / "Verify that..." for UI state checks

@@ -4,12 +4,17 @@ Generates SVCloud test case scenarios in the established style, directly as
 Azure DevOps-import-ready CSV. No JSON schema, no conversion scripts — the
 LLM writes the CSV, a small validator checks it, done.
 
-Two ways to use it:
+Same slash-command, two agents — use whichever you have:
 
 | | Use it via | Needs |
 |---|---|---|
-| **Preferred** | VS Code + GitHub Copilot Chat, `/generate-test-case` slash-command | VS Code, Copilot |
-| **Fallback** | `web/index.html`, open directly in any browser | Nothing — no server, no install |
+| **Option A** | GitHub Copilot Chat in VS Code — `/generate-test-case` | VS Code, Copilot |
+| **Option B** | Claude Code — `/generate-test-case` | Claude Code |
+
+Both run the same interview → generate → validate flow, read the same
+[`style/style_guide.md`](style/style_guide.md) and [`style/examples/`](style/examples/),
+write to `test_cases/generated/`, and finish by running `scripts/validate.js`.
+It all happens in the chat — nothing to copy out and paste back.
 
 ## Option A — VS Code Copilot slash-command
 
@@ -46,30 +51,32 @@ The prompt file itself lives at
 [`.github/prompts/generate-test-case.prompt.md`](.github/prompts/generate-test-case.prompt.md)
 if you want to tweak how it behaves.
 
-## Option B — Browser tool (no VS Code needed)
+## Option B — Claude Code slash-command
 
-1. Open [`web/index.html`](web/index.html) directly in a browser (double-click
-   it, or host it — e.g. via GitHub Pages).
-2. **Step 1:** fill in the intake form — *Required:* module, screen name,
-   screen type; *Details* (all optional but each improves the output): menu
-   path, verbatim Polish UI labels, fields, filter columns, error messages,
-   roles, colour/cross-module logic, plus a free-text box and space to paste
-   1–2 of your own example CSVs. Then **Build prompt** and **Copy to
-   clipboard**. The assembled prompt tells the LLM to ask you for any missing
-   Polish label rather than invent one.
+1. Open this repo in Claude Code.
+2. Type `/generate-test-case`. Describe the feature after it (or give a file
+   path), or run it bare and answer the interview:
 
-   Tick **"I'll attach screenshot(s)"** if you'd rather not type out every
-   label — the built prompt then instructs the LLM to read them off the images.
-3. Paste that prompt into Copilot Chat (web), Claude, ChatGPT, or whatever
-   you have access to. **If you ticked the screenshot box, attach the
-   screenshot(s) in that same message** — the tool can't embed images, the
-   chat LLM reads them directly.
-4. **Step 2:** paste the CSV it gives you back into the second box, hit
-   **Validate**, fix anything flagged, then **Download as .csv** and add it
-   to `test_cases/generated/`.
+   ```
+   /generate-test-case admin screen for calendar event icon visibility and
+   priority, module Konfiguracja, spec in docs/icons.md
+   ```
 
-Everything runs client-side — the style guide is embedded in the page, so it
-works even opened from disk with no internet connection.
+   It **interviews you one topic at a time** — module, screen, screen type,
+   then UI labels, fields, filter columns, error messages, roles — and won't
+   start generating until the essentials are in.
+3. **Screenshots instead of typing labels:** it asks up front. Paste a
+   screenshot into your reply and it reads the Polish UI text straight off the
+   image, only asking about what isn't visible (tooltips, post-action errors).
+4. It echoes back a one-line summary for you to confirm, then writes
+   `test_cases/generated/TC_<name>.csv`, runs `node scripts/validate.js` on it,
+   and shows you the result.
+5. Review the file, fix anything flagged, commit it.
+
+The command lives at
+[`.claude/commands/generate-test-case.md`](.claude/commands/generate-test-case.md).
+It's a mirror of the Copilot prompt-file — both point at the same style guide
+and examples, so they stay in sync on format automatically.
 
 ## Repo layout
 
@@ -77,15 +84,15 @@ works even opened from disk with no internet connection.
 .github/
   prompts/generate-test-case.prompt.md   # the Copilot slash-command
   workflows/validate.yml                 # CI: validates any CSV added to test_cases/generated/
+.claude/
+  commands/generate-test-case.md         # the Claude Code slash-command (mirror of the above)
 style/
   style_guide.md                         # single source of truth for the format/rules
   examples/                              # curated real scenarios — add your own here
 test_cases/
   generated/                             # output lands here
-web/
-  index.html                             # single-file browser fallback tool
 scripts/
-  validate.js                            # the validator (used by CI, Copilot, and the browser tool)
+  validate.js                            # the validator (used by CI and both slash-commands)
 ```
 
 ## Adding your own reference examples
@@ -98,7 +105,7 @@ Currently there:
 | File | Covers |
 |---|---|
 | `TC_authorization.csv` | login/roles, negative cases, cross-view |
-| `TC_bodyshop.csv` | largest sample — layout, filters (grid/columns), multi-line bullet cells, document flows |
+| `TC_bodyshop.csv` | largest sample — layout, filters (grid/columns), pipe-joined multi-item cells, document flows |
 | `TC_carwash.csv` | calendar/booking screen |
 | `TC_fleet.csv` | dealer fleet — extensive single-filter-per-column coverage |
 | `TEMPLATE_example.csv` | minimal format skeleton — keep as-is, it's the placeholder |
@@ -106,9 +113,9 @@ Currently there:
 Add more real scenarios alongside these. They're used purely as a style
 reference, so keep them passing `npm run validate` (CI doesn't check
 `style/examples/`, but a broken example teaches the generator bad habits).
-The slash-command's example list in
-`.github/prompts/generate-test-case.prompt.md` should be kept in sync when
-you add or remove one.
+The example lists in `.github/prompts/generate-test-case.prompt.md` and
+`.claude/commands/generate-test-case.md` should be kept in sync when you add or
+remove one.
 
 ## Validating manually
 
@@ -128,9 +135,8 @@ scenario with a formatting mistake fails the check before it's merged.
 
 ## Changing the style rules
 
-Edit only [`style/style_guide.md`](style/style_guide.md) — the slash-command,
-`scripts/validate.js`, and `web/index.html` all either read it directly or
-were written from it, so there's one place to change, not several to keep in
-sync. (If you change a *structural* rule — like the header columns or the
-"End of test." row — you'll also need to update the checks in
-`scripts/validate.js` and the matching logic embedded in `web/index.html`.)
+Edit only [`style/style_guide.md`](style/style_guide.md) — both slash-commands
+read it directly at runtime, and `scripts/validate.js` was written from it, so
+there's one place to change, not several to keep in sync. (If you change a
+*structural* rule — like the header columns or the "End of test." row — you'll
+also need to update the checks in `scripts/validate.js`.)

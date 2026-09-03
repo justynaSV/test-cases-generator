@@ -1,26 +1,12 @@
 Title;Step;Expected result;Area Path;Iteration Path;QA Priority;Assigned To;Preconditions
 Konfiguracja - Szablony wiadomości - Planer serwisu (page layout);;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in
-;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;"""Nowe i aktywne"" page is displayed.";;;;;
-;"Verify menu content (left side of the page):
-- section 'Video Service' with tabs: 'Nowe i aktywne', 'Historyczne'
-- section 'Planer serwisu' with tabs: 'Nowe i aktywne', 'Historyczne'";It displays correctly.;;;;;
+;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;'Nowe i aktywne' page is displayed.;;;;;
+;Verify menu content (left side of the page): | section 'Video Service' with tabs: 'Nowe i aktywne', 'Historyczne' | section 'Planer serwisu' with tabs: 'Nowe i aktywne', 'Historyczne';It displays correctly.;;;;;
 ;Verify if header button 'NOWY SZABLON' is visible in the top-right corner of the page.;It displays correctly.;;;;;
-;"Verify breadcrumb:
-- 'Wiadomości'
-- 'Szablony wiadomości'
-- 'Nowe i aktywne'";It displays correctly.;;;;;
+;Verify breadcrumb: | 'Wiadomości' | 'Szablony wiadomości' | 'Nowe i aktywne';It displays correctly.;;;;;
 ;Verify if section title 'Planer serwisu' is displayed above the list.;It displays correctly.;;;;;
-;"Verify columns in the list:
-- Nazwa
-- Status
-- Systemowy
-- Opublikowano
-- Domyślna autoryzacja";It displays correctly.;;;;;
-;"Verify if each row displays action buttons:
-- 'EDYTUJ'
-- 'WYCOFAJ' (for templates with 'Status': 'AKTYWNY') or 'USUŃ' (for templates with 'Status': 'W PRZYGOTOWANIU')
-- 'KOPIUJ'
-- 'NOWA WERSJA'";It displays correctly.;;;;;
+;Verify columns in the list: | Nazwa | Status | Systemowy | Opublikowano | Domyślna autoryzacja;It displays correctly.;;;;;
+;Verify if each row displays action buttons: | 'EDYTUJ' | 'WYCOFAJ' (for templates with 'Status': 'AKTYWNY') or 'USUŃ' (for templates with 'Status': 'W PRZYGOTOWANIU') | 'KOPIUJ' | 'NOWA WERSJA';It displays correctly.;;;;;
 ;Verify if column 'Domyślna autoryzacja' displays a green shield icon for each template.;It displays correctly.;;;;;
 ;End of test.;;;;;;
 Konfiguracja - Szablony wiadomości - Planer serwisu - add new template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in
@@ -33,65 +19,45 @@ Konfiguracja - Szablony wiadomości - Planer serwisu - add new template;;;QA\SVC
 ;Click 'EDYTUJ' next to any question in 'Pytania' section and configure the answer options.;Question is configured.;;;;;
 ;Go to 'Ustawienia wysyłki' tab.;Tab is displayed.;;;;;
 ;Fill in field 'Treść powiadomienia SMS o nowej wiadomości' with any text.;Field is filled in.;;;;;
-;"Fill in fields:
-- 'Dostępność wiadomości' with a valid number of days
-- 'Czas na odpowiedź' with a valid number of minutes";Fields are filled in.;;;;;
+;Fill in fields: | 'Dostępność wiadomości' with a valid number of days | 'Czas na odpowiedź' with a valid number of minutes;Fields are filled in.;;;;;
 ;Click 'PUBLIKUJ SZABLON'.;Template is published: 'Status' changes to 'AKTYWNY' and field 'Opublikowano' is filled in with the current date and time.;;;;;
-;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;"""Nowe i aktywne"" page is displayed.";;;;;
+;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;'Nowe i aktywne' page is displayed.;;;;;
 ;Verify if the newly created template is visible on the list with 'Status': 'AKTYWNY'.;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Konfiguracja - Szablony wiadomości - Planer serwisu - edit template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;"User is logged in
-At least one template exists on the list."
+Konfiguracja - Szablony wiadomości - Planer serwisu - edit template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in | At least one template exists on the list.
 ;Click 'EDYTUJ' next to any existing template.;Template details page is displayed.;;;;;
 ;Verify if field 'Nazwa' is prefilled with the template's current name.;It displays correctly.;;;;;
 ;Update field 'Nazwa' with a new value.;Field is filled in.;;;;;
 ;In 'Wiadomość' tab, update field 'Treść wiadomości' with new text.;Field is filled in.;;;;;
 ;Click 'PUBLIKUJ SZABLON' to save the changes.;Changes are saved.;;;;;
-;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;"""Nowe i aktywne"" page is displayed.";;;;;
+;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;'Nowe i aktywne' page is displayed.;;;;;
 ;Verify if the template is visible on the list with the updated name.;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Konfiguracja - Szablony wiadomości - Planer serwisu - copy template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;"User is logged in
-At least one template exists on the list."
+Konfiguracja - Szablony wiadomości - Planer serwisu - copy template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in | At least one template exists on the list.
 ;Click 'KOPIUJ' next to any existing template.;A new template is added to the list with 'Status': 'W PRZYGOTOWANIU', containing a copy of the original template's content.;;;;;
 ;Click 'EDYTUJ' next to the newly created copy.;Template details page is displayed.;;;;;
-;"Verify if fields are prefilled with the same values as the original template:
-- Nazwa
-- Treść wiadomości
-- Stopka
-- Pytania
-- Ustawienia wysyłki";It displays correctly.;;;;;
+;Verify if fields are prefilled with the same values as the original template: | Nazwa | Treść wiadomości | Stopka | Pytania | Ustawienia wysyłki;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Konfiguracja - Szablony wiadomości - Planer serwisu - create new version of active template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;"User is logged in
-At least one template with 'Status': 'AKTYWNY' exists on the list."
+Konfiguracja - Szablony wiadomości - Planer serwisu - create new version of active template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in | At least one template with 'Status': 'AKTYWNY' exists on the list.
 ;Click 'NOWA WERSJA' next to a template with 'Status': 'AKTYWNY'.;A new draft version of the template is added below the active version, with 'Status': 'W PRZYGOTOWANIU'.;;;;;
 ;Click 'EDYTUJ' next to the newly created draft version.;Template details page is displayed.;;;;;
 ;Update field 'Treść wiadomości' with new text.;Field is filled in.;;;;;
 ;Click 'PUBLIKUJ SZABLON'.;The draft becomes the active version: its 'Status' changes to 'AKTYWNY' with the updated content, and the previous active version is no longer displayed.;;;;;
-;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;"""Nowe i aktywne"" page is displayed.";;;;;
+;Go to: 'Wiadomości' -> 'Szablony wiadomości' -> 'Planer serwisu' -> 'Nowe i aktywne'.;'Nowe i aktywne' page is displayed.;;;;;
 ;Verify if the template's row displays a single 'Status': 'AKTYWNY' entry with the updated content.;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Konfiguracja - Szablony wiadomości - Planer serwisu - withdraw active template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;"User is logged in
-At least one template with 'Status': 'AKTYWNY' exists on the list."
+Konfiguracja - Szablony wiadomości - Planer serwisu - withdraw active template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in | At least one template with 'Status': 'AKTYWNY' exists on the list.
 ;Click 'WYCOFAJ' next to a template with 'Status': 'AKTYWNY'.;Confirmation pop-up is displayed.;;;;;
 ;Confirm the withdrawal.;The template is withdrawn and no longer displayed with 'Status': 'AKTYWNY' on the 'Nowe i aktywne' tab.;;;;;
 ;On the left-side menu, go to 'Historyczne' (under 'Planer serwisu').;'Historyczne' page is displayed.;;;;;
 ;Verify if the withdrawn template is visible on the list.;It displays correctly.;;;;;
 ;End of test.;;;;;;
-Konfiguracja - Szablony wiadomości - Planer serwisu - delete draft template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;"User is logged in
-At least one template with 'Status': 'W PRZYGOTOWANIU' exists on the list."
+Konfiguracja - Szablony wiadomości - Planer serwisu - delete draft template;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in | At least one template with 'Status': 'W PRZYGOTOWANIU' exists on the list.
 ;Click 'USUŃ' next to a template with 'Status': 'W PRZYGOTOWANIU'.;Confirmation pop-up is displayed.;;;;;
 ;Confirm the deletion.;The template is removed from the list.;;;;;
 ;End of test.;;;;;;
-Konfiguracja - Szablony wiadomości - Planer serwisu - status colour logic;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;"User is logged in
-A newly created, never-published template exists on the list.
-An active template with a draft new version (created via 'NOWA WERSJA') exists on the list."
-;"Verify status of a newly created template that has never been published:
-- label: 'W PRZYGOTOWANIU'
-- colour: green";It displays correctly.;;;;;
-;"Verify status of a draft version created via 'NOWA WERSJA' for an already active template:
-- label: 'W PRZYGOTOWANIU'
-- colour: red";It displays correctly.;;;;;
-;"Verify status of a published template:
-- label: 'AKTYWNY'
-- colour: blue";It displays correctly.;;;;;
+Konfiguracja - Szablony wiadomości - Planer serwisu - status colour logic;;;QA\SVCloud;QA\SVCloud\Konfiguracja;Medium;justyna.biernacka@softvig.pl;User is logged in | A newly created, never-published template exists on the list. | An active template with a draft new version (created via 'NOWA WERSJA') exists on the list.
+;Verify status of a newly created template that has never been published: | label: 'W PRZYGOTOWANIU' | colour: green;It displays correctly.;;;;;
+;Verify status of a draft version created via 'NOWA WERSJA' for an already active template: | label: 'W PRZYGOTOWANIU' | colour: red;It displays correctly.;;;;;
+;Verify status of a published template: | label: 'AKTYWNY' | colour: blue;It displays correctly.;;;;;
 ;End of test.;;;;;;

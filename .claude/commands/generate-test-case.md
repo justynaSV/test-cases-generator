@@ -1,46 +1,45 @@
 ---
-description: 'Generate SVCloud test case scenarios in the established CSV style'
-name: 'generate-test-case'
-argument-hint: '<feature/module description or a file reference — or leave blank and answer the intake questions>'
-agent: 'agent'
+description: Generate SVCloud test case scenarios in the established CSV style
+argument-hint: <feature/module description or a file path — or leave blank and answer the intake questions>
 ---
+
 Generate SVCloud test case scenarios for the following feature:
 
-${input:feature:Describe the feature, paste a user story, or reference a file (e.g. #file:spec.md). You can also leave this blank and answer the intake questions.}
+$ARGUMENTS
 
-Follow the CSV format and every rule in [style/style_guide.md](../../style/style_guide.md)
-exactly — title format, row structure, step/expected-result phrasing, coverage
-order, and metadata defaults.
+(If nothing is provided above, that's fine — run the intake interview below.)
 
-Use the files in [style/examples](../../style/examples) purely as a style
-reference (imitate their conventions — row structure, step/expected phrasing,
-title format, coverage order — but don't copy their business content):
-- [TC_authorization.csv](../../style/examples/TC_authorization.csv) — login/roles, negative cases, cross-view
-- [TC_bodyshop.csv](../../style/examples/TC_bodyshop.csv) — largest sample: layout, filters (grid/columns), pipe-joined multi-item cells, document flows
-- [TC_carwash.csv](../../style/examples/TC_carwash.csv) — calendar/booking screen
-- [TC_fleet.csv](../../style/examples/TC_fleet.csv) — dealer fleet: extensive single-filter-per-column coverage
-- [TEMPLATE_example.csv](../../style/examples/TEMPLATE_example.csv) — minimal format skeleton
+Read `style/style_guide.md` and follow every rule in it exactly — title format,
+row structure, step/expected-result phrasing, coverage order, and metadata
+defaults. It is the single source of truth; if anything here conflicts with it,
+the style guide wins.
+
+Read the files in `style/examples/` purely as a style reference (imitate their
+conventions — row structure, step/expected phrasing, title format, coverage
+order — but don't copy their business content):
+- `style/examples/TC_authorization.csv` — login/roles, negative cases, cross-view
+- `style/examples/TC_bodyshop.csv` — largest sample: layout, filters (grid/columns), pipe-joined multi-item cells, document flows
+- `style/examples/TC_carwash.csv` — calendar/booking screen
+- `style/examples/TC_fleet.csv` — dealer fleet: extensive single-filter-per-column coverage
+- `style/examples/TEMPLATE_example.csv` — minimal format skeleton
 
 ## Step 1 — Intake (do this before writing anything)
 
-Read whatever the user already provided above (and any `#file:` they
-referenced).
+Read whatever the user already provided above (and any file path they referenced).
 
-**Screenshots are the fastest way to hand over UI labels, but they usually
-can't be attached to the `/generate-test-case` invocation itself — prompt-file
-requests are text-only.** So, as your very first move, before any other
-question, tell the user:
+**Screenshots are the fastest way to hand over UI labels.** As your very first
+move, before any other question, tell the user:
 
 > If you have screenshots or mockups of this screen, paste them in your next
 > reply and I'll read the labels, columns and buttons straight off them.
 > Otherwise just answer the questions and we'll do it by text.
 
-When images do arrive on a later turn, read the UI text off them — buttons,
-field labels, column headers, menu items, section titles, visible error/toast
-text — and use that to fill items 4–8 below instead of asking. Transcribe
-Polish strings exactly as shown, including diacritics and casing. Only ask
-about labels that aren't legible or aren't shown (hover tooltips, states not
-currently on screen, error text that only appears after an action).
+When images arrive on a later turn, read the UI text off them — buttons, field
+labels, column headers, menu items, section titles, visible error/toast text —
+and use that to fill items 4–8 below instead of asking. Transcribe Polish strings
+exactly as shown, including diacritics and casing. Only ask about labels that
+aren't legible or aren't shown (hover tooltips, states not currently on screen,
+error text that only appears after an action).
 
 Then work through the checklist below. **Ask the user for every item you still
 can't answer — one topic per message, in this order. Don't dump the whole list
@@ -76,8 +75,8 @@ assumption (see Step 2.4) and carry on:**
     the literal `<tester email>` placeholder).
 
 When the checklist is done, echo back a one-line summary
-(`Module: … | Screen: … | Type: … | Coverage I'll generate: …`) and let the
-user correct it before you generate.
+(`Module: … | Screen: … | Type: … | Coverage I'll generate: …`) and let the user
+correct it before you generate.
 
 ## Step 2 — Generate
 
@@ -93,8 +92,9 @@ user correct it before you generate.
    rather than guessing the spelling.
 4. If you still had to assume anything the user didn't confirm, list it as short
    bullets BEFORE the CSV — don't silently guess.
-5. Output the scenarios as a single semicolon-delimited CSV block.
-6. Save the result to `test_cases/generated/TC_<feature_or_module>.csv`
-   (confirm the filename with the user if it isn't obvious).
-7. Run `node scripts/validate.js test_cases/generated/TC_<feature_or_module>.csv`
-   and fix anything it flags before considering the task done.
+5. Write the scenarios as a single semicolon-delimited CSV to
+   `test_cases/generated/TC_<feature_or_module>.csv` (confirm the filename with
+   the user if it isn't obvious).
+6. Run `node scripts/validate.js test_cases/generated/TC_<feature_or_module>.csv`
+   and fix anything it flags before considering the task done. Show the user the
+   final validator output.
